@@ -7,5 +7,6 @@ int main()
     
     Test test;
     //test.Test_FileRead_fgets();
-    test.Test_FileRead_fgetc();
+    //test.Test_FileRead_fgetc();
+    test.Test_MapRead();
 }

@@ -37,3 +37,11 @@ void Test::Test_FileRead_fgetc()
 		fp = nullptr;
 	}
 }
+
+void Test::Test_MapRead()
+{
+	Map* pMap = new Map(".//Data//SampleMap.txt");
+
+	delete pMap;
+	pMap = nullptr;
+}

@@ -1,6 +1,9 @@
 #pragma once
+#include <iostream>
 #include <memory.h>
 #include "Enums.h"
+
+using namespace std;
 
 // 좌표계 (x+ : 오른쪽, y+ : 아래쪽) 
 
@@ -27,8 +30,19 @@ public:
 		map = new TerrainType[width * height];
 		memset(map, 0, sizeof(TerrainType) * width * height);
 	}
+	Map(const char* filename)
+	{
+		ReadMapData(filename);
+	}
 
-	void ReadMapData(char* fileName);
+	~Map()
+	{
+		if (map != nullptr)		// 이전에 로딩된 맵이 있으면
+		{
+			delete map;			// 삭제
+			map = nullptr;
+		}
+	}
 
 private:
 	int width = 10;
@@ -36,7 +50,12 @@ private:
 
 	TerrainType* map;	// 2차원 배열이지만 1차원으로 사용
 
-
 	// 기능
+
+	/// <summary>
+	/// 맵파일을 읽는 함수
+	/// </summary>
+	/// <param name="fileName">맵파일의 전체 경로</param>
+	void ReadMapData(const char* fileName);
 };
 
