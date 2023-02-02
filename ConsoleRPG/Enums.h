@@ -6,5 +6,6 @@ enum TerrainType
 	Forest,		// 숲
 	Mountain,	// 산(이동불가)
 	Desert,		// 사막
+	StartPoint,	// 시작지점
 	NumOfTypes
 };

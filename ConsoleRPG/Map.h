@@ -10,27 +10,23 @@ using namespace std;
 class Map
 {
 	// 변수
-	//	전체 영역 크기	
-	//	지형
-		// 지형의 종류
-		// 전체 영역에서 지형의 배치
 	// PC나 NPC 배치 정보
 public:
-	Map()
+	Map()	// 10 * 10 평지맵 만들기
 	{
 		width = 10;
 		height = 10;
 		map = new TerrainType[width * height];
 		memset(map, 0, sizeof(TerrainType) * width * height);		
 	}
-	Map(int xSize, int ySize)
+	Map(int xSize, int ySize)	// xSize * ySize 평지맵 만들기
 	{
 		width = xSize;
 		height = ySize;
 		map = new TerrainType[width * height];
 		memset(map, 0, sizeof(TerrainType) * width * height);
 	}
-	Map(const char* filename)
+	Map(const char* filename)	// filename에 있는 파일 읽어서 맵 만들기
 	{
 		ReadMapData(filename);
 	}
@@ -50,7 +46,6 @@ private:
 
 	TerrainType* map;	// 2차원 배열이지만 1차원으로 사용
 
-	// 기능
 
 	/// <summary>
 	/// 맵파일을 읽는 함수
