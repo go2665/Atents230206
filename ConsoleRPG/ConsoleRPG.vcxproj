@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClCompile Include="ConsoleRPG.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ConsoleRPG.h" />
     <ClInclude Include="Enums.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="Test.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -28,6 +28,8 @@ public:
 		memset(map, 0, sizeof(TerrainType) * width * height);
 	}
 
+	void ReadMapData(char* fileName);
+
 private:
 	int width = 10;
 	int height = 10;
