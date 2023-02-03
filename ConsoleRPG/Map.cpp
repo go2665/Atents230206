@@ -21,6 +21,7 @@ void Map::ReadMapData(const char* fileName)
 		int buffer[512];
 		int index = 0;
 		int lineCount = 0;
+		int startIndex = -1;
 		while (true)							// 일단 무한 루프를 돌리고
 		{
 			char c = fgetc(fp);					// 파일에서 글자 하나를 읽은 다음에
@@ -37,7 +38,7 @@ void Map::ReadMapData(const char* fileName)
 
 			if (buffer[index] == StartPoint)	// 시작지점 별도 처리
 			{
-				startPosition = Position(index % width, index / width);	// 시작지점 따로 저장해 놓기
+				startIndex = index;				
 			}
 
 			index++;							// 읽은 글자 갯수
@@ -49,6 +50,11 @@ void Map::ReadMapData(const char* fileName)
 
 		height = lineCount;						// 높이 저장
 		width = index / height;					// index와 height이용해서 width 계산
+
+		if (startIndex != -1)
+		{
+			startPosition = Position(index % width, index / width);	// 시작지점 따로 저장해 놓기
+		}
 
 		fclose(fp);								// 열어놓은 파일을 닫기
 		fp = nullptr;

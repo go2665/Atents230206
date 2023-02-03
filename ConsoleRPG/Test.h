@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Map.h"
 #include "Position.h"
+#include "Character.h"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ private :
 
 	// 2/3
 	void Test_Position();
+	void Test_Character();
 
 };
 

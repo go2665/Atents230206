@@ -5,7 +5,8 @@ void Test::TestRun()
 	//Test_FileRead_fgets();
 	//Test_FileRead_fgetc();
 	//Test_MapRead();
-	Test_Position();
+	//Test_Position();
+	Test_Character();
 }
 
 void Test::Test_FileRead_fgets()
@@ -69,4 +70,14 @@ void Test::Test_Position()
 	
 	
 	int i = 0;
+}
+
+void Test::Test_Character()
+{
+	Character c = Character("юс╫ц");
+	c.Initialize();
+	
+	int i = 0;
+
+	c.CleanUp();
 }
