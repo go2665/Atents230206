@@ -9,6 +9,8 @@ void Character::Initialize()
 	pMap = new Map("./Data/SampleMap.txt");
 	position = pMap->GetStartPosition();
 
+	StatusReRoll();
+
 	cout << "[" << name << "]이 " << "(" << position.x << "," << position.y << ")에 있습니다." << endl;
 }
 
