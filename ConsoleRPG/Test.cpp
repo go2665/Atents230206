@@ -61,6 +61,10 @@ void Test::Test_Position()
 	Position c = Position(b);	// c(1,2)
 	Position d = a;
 	a = b + c;
-
+	a = a * 3;
+	a = a - b;
+	a = a / 2;
+	a += Position(3, 5);
+	
 	int i = 0;
 }

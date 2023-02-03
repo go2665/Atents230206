@@ -27,7 +27,13 @@ public:
 
 	// 명령어 오버로딩(연산자 오버로딩)
 	Position& operator= (const Position& ref);	// 대입 연산자
+	Position& operator+= (const Position& ref);
+
 	const Position operator+(const Position& ref);
+	const Position operator-(const Position& ref);
+	const Position operator*(const int& ref);
+	const Position operator/(const int& ref);
+
 
 	// 실습 : 명령어 오버로딩 만들어보기
 	//	1. - 오버로딩하기.	(1,2) - (0,1) = (1,1)
