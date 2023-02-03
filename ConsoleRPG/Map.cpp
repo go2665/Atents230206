@@ -34,6 +34,12 @@ void Map::ReadMapData(const char* fileName)
 				break;
 
 			buffer[index] = c - '0';			// 글자를 숫자로 바꾸기
+
+			if (buffer[index] == StartPoint)	// 시작지점 별도 처리
+			{
+				startPosition = Position(index % width, index / width);	// 시작지점 따로 저장해 놓기
+			}
+
 			index++;							// 읽은 글자 갯수
 		}
 		lineCount++;	// 파일이 끝났으니 마지막줄 수 추가

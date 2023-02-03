@@ -25,6 +25,11 @@ public:
 	int x;
 	int y;
 
+	//const Position& Left = Position(-1, 0);
+	//const Position& Right = Position(1, 0);
+	//const Position& Up = Position(0, 1);
+	//const Position& Down = Position(0, -1);
+
 	// 명령어 오버로딩(연산자 오버로딩)
 	Position& operator= (const Position& ref);	// 대입 연산자
 	Position& operator+= (const Position& ref);

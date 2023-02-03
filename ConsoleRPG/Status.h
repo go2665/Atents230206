@@ -1,4 +1,7 @@
 #pragma once
+
+// 모든 스텟은 1~20 사이의 범위를 가진다.
+
 struct Status
 {
 public:

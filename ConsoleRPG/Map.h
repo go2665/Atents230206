@@ -2,6 +2,7 @@
 #include <iostream>
 #include <memory.h>
 #include "Enums.h"
+#include "Position.h"
 
 using namespace std;
 
@@ -40,11 +41,15 @@ public:
 		}
 	}
 
+	const Position GetStartPosition() { return startPosition; }	// 읽기 전용으로 startPosition 값 전달하기
+
 private:
 	int width = 10;
 	int height = 10;
 
 	TerrainType* map;	// 2차원 배열이지만 1차원으로 사용
+
+	Position startPosition;
 
 
 	/// <summary>
