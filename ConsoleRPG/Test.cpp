@@ -1,5 +1,13 @@
 #include "Test.h"
 
+void Test::TestRun()
+{
+	//Test_FileRead_fgets();
+	//Test_FileRead_fgetc();
+	//Test_MapRead();
+	Test_Position();
+}
+
 void Test::Test_FileRead_fgets()
 {
 	FILE* fp = nullptr;
@@ -44,4 +52,15 @@ void Test::Test_MapRead()
 
 	delete pMap;
 	pMap = nullptr;
+}
+
+void Test::Test_Position()
+{
+	Position a = Position();	// a(0,0)
+	Position b = Position(1,2);	// b(1,2)
+	Position c = Position(b);	// c(1,2)
+	Position d = a;
+	a = b + c;
+
+	int i = 0;
 }
