@@ -25,15 +25,31 @@ public:
 	void Initialize();	
 
 	/// <summary>
+	/// 캐릭터용 루프
+	/// </summary>
+	void Loop();
+
+	/// <summary>
 	/// 삭제용 함수. delete 전에 반드시 한번 실행되어야 한다.
 	/// </summary>
 	void CleanUp();
 
 protected:
+
+	/// <summary>
+	/// 종료 입력 처리용
+	/// </summary>
+	const int INPUT_EXIT = -1;
+
 	/// <summary>
 	/// 이 플레이어가 있는 맵
 	/// </summary>
 	Map* pMap = nullptr;	
+
+	/// <summary>
+	/// 이 플레이어의 현재 상태(이동중, 전투중 등등)
+	/// </summary>
+	PlayerState state = Move;
 
 	/// <summary>
 	/// 플레이어의 이름(최대 32자. 한글은 16자)
@@ -64,6 +80,10 @@ protected:
 	/// </summary>
 	void StatusReRoll();
 
+	/// <summary>
+	/// 플레이어의 이동 처리 함수
+	/// </summary>
+	int InputProcess_Move();
 
 };
 

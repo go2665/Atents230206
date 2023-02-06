@@ -9,3 +9,16 @@ enum TerrainType
 	StartPoint,	// 시작지점
 	NumOfTypes
 };
+
+enum PlayerState
+{
+	Move = 0,	// 이동 상태
+};
+
+enum Input_Move
+{
+	Move_East = 1,
+	Move_West,
+	Move_South,
+	Move_North
+};

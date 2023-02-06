@@ -77,7 +77,7 @@ void Test::Test_Character()
 	Character c = Character("юс╫ц");
 	c.Initialize();
 	
-	int i = 0;
+	c.Loop();
 
 	c.CleanUp();
 }
