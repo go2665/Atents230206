@@ -5,17 +5,52 @@ bool Map::IsValidPosition(const Position& pos) const
 	return (pos.x >= 0) && (pos.x < width) && (pos.y >= 0) && (pos.y < height);
 }
 
+void Map::PrintLandscape(const Position& pos) const
+{
+	if (IsValidPosition(pos))
+	{
+		int index = GridPositionToIndex(pos);
+		TerrainType type = terrainMap[index];
+		switch (type)
+		{
+		case Plane:
+			cout << "이 곳은 평지다." << endl;
+			break;
+		case Forest:
+			cout << "이 곳은 숲이다." << endl;
+			break;
+		case Mountain:
+			cout << "이 곳은 산이다." << endl;
+			break;
+		case Desert:
+			cout << "이 곳은 사막이다." << endl;
+			break;
+		case StartPoint:
+			cout << "이 곳은 시작지점이다." << endl;
+			break;
+		case NumOfTypes:
+		default:
+			cout << "ERROR - 맵에 설정되지 않은 지형이 있습니다.!!!!!!!!!!!!!!" << endl;
+			break;
+		}
+	}
+	else
+	{
+		cout << "이곳은 맵 바깥입니다." << endl;
+	}
+}
+
 void Map::ReadMapData(const char* fileName)
 {
 	// 실습
 	// 데이터 폴더에 있는 SampleMap.txt 읽어서
-	// TerrainType* map; 변수를 채우기(엔터는 제외해야 한다.)
+	// TerrainType* terrainMap; 변수를 채우기(엔터는 제외해야 한다.)
 	// 엔터를 표현하는 글자 : '\n'
 
-	if (map != nullptr)		// 이전에 로딩된 맵이 있으면
+	if (terrainMap != nullptr)		// 이전에 로딩된 맵이 있으면
 	{
-		delete map;			// 삭제
-		map = nullptr;
+		delete terrainMap;			// 삭제
+		terrainMap = nullptr;
 	}
 
 	FILE* fp = nullptr;
@@ -50,15 +85,15 @@ void Map::ReadMapData(const char* fileName)
 		}
 		lineCount++;	// 파일이 끝났으니 마지막줄 수 추가
 				
-		map = new TerrainType[index];
-		memcpy_s(map, sizeof(TerrainType) * index, buffer, sizeof(int) * index);	// map에 데이터 복사
+		terrainMap = new TerrainType[index];
+		memcpy_s(terrainMap, sizeof(TerrainType) * index, buffer, sizeof(int) * index);	// map에 데이터 복사
 
 		height = lineCount;						// 높이 저장
 		width = index / height;					// index와 height이용해서 width 계산
 
 		if (startIndex != -1)
 		{
-			startPosition = Position(startIndex % width, startIndex / width);	// 시작지점 따로 저장해 놓기
+			startPosition = IndexToGridPosition(startIndex);	// 시작지점 따로 저장해 놓기
 		}
 
 		fclose(fp);								// 열어놓은 파일을 닫기
@@ -71,4 +106,14 @@ void Map::ReadMapData(const char* fileName)
 		width = 0;		
 	}
 
+}
+
+Position Map::IndexToGridPosition(const int index) const
+{
+	return Position(index % width, index / width);
+}
+
+int Map::GridPositionToIndex(const Position& pos) const
+{
+	return pos.x + pos.y * width;
 }

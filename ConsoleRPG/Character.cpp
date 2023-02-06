@@ -51,6 +51,7 @@ void Character::StatusReRoll()
 
 void Character::PrintPosition()
 {
+	pMap->PrintLandscape(position);
 	cout << "[" << name << "]이(가) " << "(" << position.x << "," << position.y << ")에 있습니다." << endl << endl;
 }
 
