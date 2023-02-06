@@ -1,5 +1,10 @@
 #include "Map.h"
 
+bool Map::IsValidPosition(const Position& pos) const
+{	
+	return (pos.x >= 0) && (pos.x < width) && (pos.y >= 0) && (pos.y < height);
+}
+
 void Map::ReadMapData(const char* fileName)
 {
 	// 실습
@@ -53,7 +58,7 @@ void Map::ReadMapData(const char* fileName)
 
 		if (startIndex != -1)
 		{
-			startPosition = Position(index % width, index / width);	// 시작지점 따로 저장해 놓기
+			startPosition = Position(startIndex % width, startIndex / width);	// 시작지점 따로 저장해 놓기
 		}
 
 		fclose(fp);								// 열어놓은 파일을 닫기

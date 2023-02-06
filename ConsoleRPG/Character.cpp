@@ -11,7 +11,7 @@ void Character::Initialize()
 
 	StatusReRoll();
 
-	cout << "[" << name << "]이 " << "(" << position.x << "," << position.y << ")에 있습니다." << endl;
+	PrintPosition();
 }
 
 void Character::Loop()
@@ -49,6 +49,11 @@ void Character::StatusReRoll()
 	status.wisdom = rand() % 20 + 1;
 }
 
+void Character::PrintPosition()
+{
+	cout << "[" << name << "]이(가) " << "(" << position.x << "," << position.y << ")에 있습니다." << endl << endl;
+}
+
 int Character::InputProcess_Move()
 {
 	int input = INPUT_EXIT;
@@ -56,23 +61,41 @@ int Character::InputProcess_Move()
 		<< Move_South << "), 북(" << Move_North << ")" << endl;
 	cout << "어디로 이동할까요? : ";
 	cin >> input;
+
+	Position tempPos = position;
 	switch ((Input_Move)input)
 	{
 	case Move_East:
 		cout << "동쪽으로 이동합니다." << endl;
+		tempPos += Position(1, 0);
 		break;
 	case Move_West:
 		cout << "서쪽으로 이동합니다." << endl;
+		tempPos += Position(-1, 0);
 		break;
 	case Move_South:
 		cout << "남쪽으로 이동합니다." << endl;
+		tempPos += Position(0, 1);
 		break;
 	case Move_North:
 		cout << "북쪽으로 이동합니다." << endl;
+		tempPos += Position(0, -1);
 		break;
 	default:
 		cout << "입력이 잘못되었습니다." << endl;
 		return INPUT_EXIT;		
 	}
+
+	if (pMap->IsValidPosition(tempPos))
+	{
+		position = tempPos;
+	}
+	else
+	{
+		cout << "맵 밖입니다. 이동하지 않습니다." << endl;
+	}
+
+	PrintPosition();
+
 	return input;
 }

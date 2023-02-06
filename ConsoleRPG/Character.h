@@ -81,6 +81,11 @@ protected:
 	void StatusReRoll();
 
 	/// <summary>
+	/// 자신의 위치를 출력하는 함수
+	/// </summary>
+	void PrintPosition();
+
+	/// <summary>
 	/// 플레이어의 이동 처리 함수
 	/// </summary>
 	int InputProcess_Move();

@@ -43,6 +43,13 @@ public:
 
 	const Position GetStartPosition() { return startPosition; }	// 읽기 전용으로 startPosition 값 전달하기
 
+	/// <summary>
+	/// 파라메터로 받은 위치가 맵 안인지 아닌지 체크하는 함수
+	/// </summary>
+	/// <param name="pos">확인할 위치</param>
+	/// <returns>true면 맵 안, false면 맵 밖</returns>
+	bool IsValidPosition(const Position& pos) const;	// 함수 뒤에 const를 붙여서 맴버 변수가 변경되지 않게 한다.
+
 private:
 	int width = 10;
 	int height = 10;
