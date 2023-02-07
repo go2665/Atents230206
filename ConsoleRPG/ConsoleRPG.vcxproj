@@ -130,6 +130,7 @@
     <ClCompile Include="ConsoleRPG.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
@@ -138,6 +139,7 @@
     <ClInclude Include="Enums.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="Monster.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Status.h" />
     <ClInclude Include="Test.h" />
