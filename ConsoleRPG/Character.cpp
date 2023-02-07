@@ -1,10 +1,11 @@
 #include "Character.h"
+#include "Utils.h"
 
 void Character::Initialize()
 {
 	CleanUp();	// 완전히 정리하고 새 시작하기
 
-	srand((unsigned int)time(nullptr));
+	Utils::SetRandomSeedByTime();
 
 	pMap = new Map("./Data/SampleMap.txt");
 	position = pMap->GetStartPosition();

@@ -3,6 +3,7 @@
 #include <memory.h>
 #include "Enums.h"
 #include "Position.h"
+#include "Utils.h"
 
 using namespace std;
 

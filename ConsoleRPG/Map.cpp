@@ -154,24 +154,52 @@ int Map::GridPositionToIndex(const Position& pos) const
 void Map::OnEnterEvent_Plane(const void* p)
 {
 	cout << "평야의 효과가 발동됩니다." << endl;
+	
+	// 10% 확률로 몬스터 등장
+
+	float f = Utils::GetRandom();
+	if( f < 0.1f )
+	{
+		cout << "몬스터가 나타났다!" << endl;
+	}
 }
 
 void Map::OnEnterEvent_Forest(const void* p)
 {
 	cout << "숲의 효과가 발동됩니다." << endl;
+
+	// 30% 확률로 몬스터 등장
+	float f = Utils::GetRandom();
+	if (f < 0.3f)
+	{
+		cout << "몬스터가 나타났다!" << endl;
+	}
 }
 
 void Map::OnEnterEvent_Mountain(const void* p)
 {
 	cout << "산의 효과가 발동됩니다." << endl;
+	// 70% 확률로 몬스터 등장
+	float f = Utils::GetRandom();
+	if (f < 0.7f)
+	{
+		cout << "몬스터가 나타났다!" << endl;
+	}
 }
 
 void Map::OnEnterEvent_Desert(const void* p)
 {
 	cout << "사막의 효과가 발동됩니다." << endl;
+	// 50% 확률로 몬스터 등장
+	float f = Utils::GetRandom();
+	if (f < 0.5f)
+	{
+		cout << "몬스터가 나타났다!" << endl;
+	}
 }
 
 void Map::OnEnterEvent_StartPoint(const void* p)
 {
 	cout << "시작지점의 효과가 발동됩니다." << endl;
+
 }
