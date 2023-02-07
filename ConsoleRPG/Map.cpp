@@ -1,4 +1,5 @@
 #include "Map.h"
+#include "Character.h"
 
 bool Map::IsValidPosition(const Position& pos) const
 {	
@@ -37,6 +38,38 @@ void Map::PrintLandscape(const Position& pos) const
 	else
 	{
 		cout << "이곳은 맵 바깥입니다." << endl;
+	}
+}
+
+void Map::OnMapMove(const void* pPlayer)
+{
+	Character* p = (Character*)pPlayer;
+	const Position& pos = p->GetPosition();
+	PrintLandscape(pos);
+	
+	TerrainType terrain = terrainMap[GridPositionToIndex(pos)];
+
+	switch (terrain)
+	{
+	case Plane:
+		OnEnterEvent_Plane(pPlayer);
+		break;
+	case Forest:
+		OnEnterEvent_Forest(pPlayer);
+		break;
+	case Mountain:
+		OnEnterEvent_Mountain(pPlayer);
+		break;
+	case Desert:
+		OnEnterEvent_Desert(pPlayer);
+		break;
+	case StartPoint:
+		OnEnterEvent_StartPoint(pPlayer);
+		break;
+	case NumOfTypes:
+	default:
+
+		break;
 	}
 }
 
@@ -116,4 +149,29 @@ Position Map::IndexToGridPosition(const int index) const
 int Map::GridPositionToIndex(const Position& pos) const
 {
 	return pos.x + pos.y * width;
+}
+
+void Map::OnEnterEvent_Plane(const void* p)
+{
+	cout << "평야의 효과가 발동됩니다." << endl;
+}
+
+void Map::OnEnterEvent_Forest(const void* p)
+{
+	cout << "숲의 효과가 발동됩니다." << endl;
+}
+
+void Map::OnEnterEvent_Mountain(const void* p)
+{
+	cout << "산의 효과가 발동됩니다." << endl;
+}
+
+void Map::OnEnterEvent_Desert(const void* p)
+{
+	cout << "사막의 효과가 발동됩니다." << endl;
+}
+
+void Map::OnEnterEvent_StartPoint(const void* p)
+{
+	cout << "시작지점의 효과가 발동됩니다." << endl;
 }

@@ -56,6 +56,12 @@ public:
 	/// <param name="pos">풍경을 출력할 함수</param>
 	void PrintLandscape(const Position& pos) const;
 
+	/// <summary>
+	/// 특정 지역에 들어갔을 때 실행될 함수
+	/// </summary>
+	/// <param name="pos">누군가 들어간 위치</param>
+	void OnMapMove(const void* pPlayer);
+
 private:
 	int width = 10;
 	int height = 10;
@@ -84,5 +90,15 @@ private:
 	/// <param name="pos">변경할 그리드 위치</param>
 	/// <returns>변경된 인덱스값</returns>
 	int GridPositionToIndex(const Position& pos) const;
+
+	/// <summary>
+	/// 평야 지역에 들어갔을 때 실행될 함수
+	/// </summary>
+	void OnEnterEvent_Plane(const void* p);
+	void OnEnterEvent_Forest(const void* p);
+	void OnEnterEvent_Mountain(const void* p);
+	void OnEnterEvent_Desert(const void* p);
+	void OnEnterEvent_StartPoint(const void* p);
+	
 };
 

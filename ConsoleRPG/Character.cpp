@@ -40,6 +40,14 @@ void Character::CleanUp()
 	pMap = nullptr;
 }
 
+void Character::SetPosition(const Position& newPos)
+{
+	position = newPos;
+	PrintPosition();
+		
+	pMap->OnMapMove(this);
+}
+
 void Character::StatusReRoll()
 {
 	status.strength = rand() % 20 + 1;	//1~20
@@ -50,8 +58,7 @@ void Character::StatusReRoll()
 }
 
 void Character::PrintPosition()
-{
-	pMap->PrintLandscape(position);
+{	
 	cout << "[" << name << "]이(가) " << "(" << position.x << "," << position.y << ")에 있습니다." << endl << endl;
 }
 
@@ -89,14 +96,12 @@ int Character::InputProcess_Move()
 
 	if (pMap->IsValidPosition(tempPos))
 	{
-		position = tempPos;
+		SetPosition(tempPos);
 	}
 	else
 	{
 		cout << "맵 밖입니다. 이동하지 않습니다." << endl;
 	}
-
-	PrintPosition();
 
 	return input;
 }
