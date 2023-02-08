@@ -1,8 +1,8 @@
 #pragma once
 #include "ConsoleRPG.h"
-#include "Physical.h"
+#include "HumanoidBase.h"
 
-class Monster : public Physical
+class Monster : public HumanoidBase
 {
 public :
 	Monster()
@@ -19,7 +19,7 @@ public :
 	/// target을 공격하는 함수
 	/// </summary>
 	/// <param name="target">공격 대상</param>
-	virtual void Attack(Physical& target);	
+	virtual void Attack(HumanoidBase& target);	
 
 protected:
 	/// <summary>

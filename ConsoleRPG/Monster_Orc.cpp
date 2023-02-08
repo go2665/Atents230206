@@ -1,13 +1,13 @@
 #include "Monster_Orc.h"
 
-void Monster_Orc::Attack(Physical& target)
+void Monster_Orc::Attack(HumanoidBase& target)
 {
 	float f = Utils::GetRandom();
 	int damage = 0;
 	if (f < 0.5f)	// 50%
 	{
 		cout << "일반 공격" << endl;
-		damage = status.strength * 1.2f;
+		damage = (int)(status.strength * 1.2f);
 	}
 	else if (f < 0.8f)	// 30%
 	{

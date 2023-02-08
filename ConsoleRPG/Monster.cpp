@@ -14,7 +14,7 @@ void Monster::CleanUp()
 	fpSkill_2 = nullptr;
 }
 
-void Monster::Attack(Physical& target)
+void Monster::Attack(HumanoidBase& target)
 {
 	int damage = 1;
 	target.TakeDamage(damage);

@@ -7,7 +7,7 @@ public:
 	Monster_Orc() : Monster()
 	{		
 	}
-	virtual void Attack(Physical& target) override;
+	virtual void Attack(HumanoidBase& target) override;
 
 protected:
 

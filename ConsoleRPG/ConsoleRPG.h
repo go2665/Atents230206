@@ -3,7 +3,7 @@
 #include <functional>
 #include "Enums.h"
 #include "Position.h"
-#include "Physical.h"
+#include "HumanoidBase.h"
 
 #include "Utils.h"
 

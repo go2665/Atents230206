@@ -1,11 +1,11 @@
 #pragma once
 #include "Status.h"
 
-class Physical
+class HumanoidBase
 {
 public :
-//	Physical() {};
-//	~Physical() {};
+//	HumanoidBase() {};
+//	~HumanoidBase() {};
 
 	/// <summary>
 	/// 데미지를 받는 함수

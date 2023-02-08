@@ -2,11 +2,11 @@
 #include <iostream>
 #include "Map.h"
 #include "Position.h"
-#include "Physical.h"
+#include "HumanoidBase.h"
 
 using namespace std;
 
-class Character : public Physical
+class Character : public HumanoidBase
 {
 public:
 	Character()

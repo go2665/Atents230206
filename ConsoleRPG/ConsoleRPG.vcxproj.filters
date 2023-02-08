@@ -33,7 +33,7 @@
     <ClCompile Include="Monster.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Physical.cpp">
+    <ClCompile Include="HumanoidBase.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Monster_Orc.cpp">
@@ -68,7 +68,7 @@
     <ClInclude Include="Monster.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Physical.h">
+    <ClInclude Include="HumanoidBase.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Monster_Orc.h">
