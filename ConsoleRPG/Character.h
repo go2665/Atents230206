@@ -1,12 +1,12 @@
 #pragma once
 #include <iostream>
 #include "Map.h"
-#include "Status.h"
 #include "Position.h"
+#include "Physical.h"
 
 using namespace std;
 
-class Character
+class Character : public Physical
 {
 public:
 	Character()
@@ -62,18 +62,11 @@ protected:
 	/// 플레이어의 이름(최대 32자. 한글은 16자)
 	/// </summary>
 	char name[32];
-
-	/// <summary>
-	/// 플레이어의 스테이터스
-	/// </summary>
-	Status status;
-
+		
 	int level = 1;
 	int exp = 0;
 	int maxExp = 100;		// 레벨업에 필요한 경험치
 
-	int hp = 1;
-	int maxHP = 1;
 	int mp = 1;
 	int maxMP = 1;
 
