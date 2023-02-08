@@ -1,4 +1,5 @@
 #include "Test.h"
+#include "Monster_Orc.h"
 
 void Test::TestRun()
 {
@@ -6,7 +7,8 @@ void Test::TestRun()
 	//Test_FileRead_fgetc();
 	//Test_MapRead();
 	//Test_Position();
-	Test_Character();
+	//Test_Character();
+	Test_Ork();
 }
 
 void Test::Test_FileRead_fgets()
@@ -80,4 +82,21 @@ void Test::Test_Character()
 	c.Loop();
 
 	c.CleanUp();
+}
+
+void Test::Test_Ork()
+{
+	Monster_Orc* orc1 = new Monster_Orc();
+	Monster_Orc* orc2 = new Monster_Orc();
+
+	for (int i = 0; i < 100; i++)
+	{
+		orc1->Attack(*orc2);
+	}
+
+
+	delete orc2;
+	orc2 = nullptr;
+	delete orc1;
+	orc1 = nullptr;
 }

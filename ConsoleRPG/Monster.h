@@ -21,7 +21,7 @@ public :
 	/// <param name="target">공격 대상</param>
 	virtual void Attack(Physical& target);	
 
-private:
+protected:
 	/// <summary>
 	/// 이름
 	/// </summary>

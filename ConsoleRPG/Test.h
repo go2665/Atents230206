@@ -21,5 +21,7 @@ private :
 	void Test_Position();
 	void Test_Character();
 
+	// 2/8
+	void Test_Ork();
 };
 
