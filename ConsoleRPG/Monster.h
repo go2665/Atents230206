@@ -15,32 +15,8 @@ public :
 		CleanUp();
 	}	
 
-	/// <summary>
-	/// target을 공격하는 함수
-	/// </summary>
-	/// <param name="target">공격 대상</param>
-	virtual void Attack(HumanoidBase& target);	
-
 protected:
-	/// <summary>
-	/// 이름
-	/// </summary>
-	char name[32];	
-
-	/// <summary>
-	/// 레벨
-	/// </summary>
-	int level = 1;
-
-	/// <summary>
-	/// 현재 MP
-	/// </summary>
-	int mp = 1;
-
-	/// <summary>
-	/// 최대 MP
-	/// </summary>
-	int maxMP = 1;
+	
 
 	/// <summary>
 	/// 초기화용 함수. 생성자에서 실행된다.

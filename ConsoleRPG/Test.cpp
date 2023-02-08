@@ -92,6 +92,7 @@ void Test::Test_Ork()
 	for (int i = 0; i < 100; i++)
 	{
 		orc1->Attack(*orc2);
+		cout << endl;
 	}
 
 

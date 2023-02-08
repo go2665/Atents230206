@@ -2,6 +2,8 @@
 
 void Monster_Orc::Attack(HumanoidBase& target)
 {
+	HumanoidBase::Attack(target);
+
 	float f = Utils::GetRandom();
 	int damage = 0;
 	if (f < 0.5f)	// 50%
@@ -55,6 +57,11 @@ int Monster_Orc::AxeThrowing()
 	}
 
 	return damage;
+}
+
+void Monster_Orc::Initialize()
+{
+	strcpy_s(name, "임시이름");
 }
 
 

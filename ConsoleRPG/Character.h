@@ -58,17 +58,8 @@ protected:
 	/// </summary>
 	PlayerState state = Move;
 
-	/// <summary>
-	/// 플레이어의 이름(최대 32자. 한글은 16자)
-	/// </summary>
-	char name[32];
-		
-	int level = 1;
 	int exp = 0;
 	int maxExp = 100;		// 레벨업에 필요한 경험치
-
-	int mp = 1;
-	int maxMP = 1;
 
 	/// <summary>
 	/// 플레이어의 위치
