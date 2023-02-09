@@ -144,6 +144,7 @@
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Monster_Orc.h" />
     <ClInclude Include="HumanoidBase.h" />
+    <ClInclude Include="NamePicker.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Status.h" />
     <ClInclude Include="Test.h" />

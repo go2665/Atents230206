@@ -26,5 +26,6 @@ private :
 
 	// 2/9
 	void Test_RandomRange();
+	void Test_List();
 };
 

@@ -1,3 +1,4 @@
+#include <list>
 #include "Test.h"
 #include "Monster_Orc.h"
 
@@ -8,8 +9,9 @@ void Test::TestRun()
 	//Test_MapRead();
 	//Test_Position();
 	//Test_Character();
-	Test_Ork();
+	//Test_Ork();
 	//Test_RandomRange();
+	Test_List();
 }
 
 void Test::Test_FileRead_fgets()
@@ -136,5 +138,69 @@ void Test::Test_RandomRange()
 	sum += counts[10];
 	cout << "합계 : " << sum << endl;
 
+
+}
+
+void Test::Test_List()
+{
+	list<int> testList;
+
+	testList.push_back(10);
+	testList.push_back(20);
+	testList.push_back(30);
+	testList.push_front(40);
+	testList.push_front(50);
+	testList.push_front(60);
+
+	list<int>::iterator myIter = testList.begin();
+	cout << *myIter << endl;
+	myIter++;
+	cout << *myIter << endl;
+	myIter = testList.end();
+	myIter--;
+	cout << *myIter << endl;
+
+	list<int>::reverse_iterator myRIter = testList.rbegin();
+	cout << *myIter << endl;
+
+	cout << "For 사용하기" << endl;
+	for (list<int>::iterator iter = testList.begin(); iter != testList.end(); iter++)
+	{
+		cout << *iter << endl;
+	}
+
+	cout << "For 사용하기2" << endl;
+	for (auto iter = testList.begin(); iter != testList.end(); iter++)
+	{
+		cout << *iter << endl;
+	}
+
+	testList.pop_back();
+	testList.pop_front();
+	cout << "For 사용하기3" << endl;	// 50 40 10 20
+	for (auto iter = testList.begin(); iter != testList.end(); iter++)
+	{
+		cout << *iter << endl;
+	}
+
+	myIter = testList.begin();
+	myIter++;
+	myIter++;
+	testList.erase(myIter);
+	cout << "For 사용하기4" << endl;	// 50 40 20
+	for (auto iter = testList.begin(); iter != testList.end(); iter++)
+	{
+		cout << *iter << endl;
+	}
+
+	myIter = testList.begin();
+	myIter++;
+	testList.insert(myIter, 100);
+
+	cout << "For 사용하기5" << endl;	// 50 100 40 20
+	for (auto iter = testList.begin(); iter != testList.end(); iter++)
+	{
+		cout << *iter << endl;
+	}
 
 }
