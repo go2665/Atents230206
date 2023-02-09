@@ -4,7 +4,7 @@
 class Monster_Orc : public Monster
 {
 public:
-	Monster_Orc() : Monster()
+	Monster_Orc()
 	{	
 		Initialize();
 	}
@@ -16,5 +16,7 @@ protected:
 	int AxeThrowing();
 
 	virtual void Initialize() override;
+
+	virtual void SetRandomStatus() override;
 };
 

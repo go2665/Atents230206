@@ -9,6 +9,7 @@ void Test::TestRun()
 	//Test_Position();
 	//Test_Character();
 	Test_Ork();
+	//Test_RandomRange();
 }
 
 void Test::Test_FileRead_fgets()
@@ -87,17 +88,53 @@ void Test::Test_Character()
 void Test::Test_Ork()
 {
 	Monster_Orc* orc1 = new Monster_Orc();
-	Monster_Orc* orc2 = new Monster_Orc();
+	orc1->PrintStatus();
+	/*Monster_Orc* orc2 = new Monster_Orc();
+	orc2->PrintStatus();*/
 
-	for (int i = 0; i < 100; i++)
-	{
-		orc1->Attack(*orc2);
-		cout << endl;
-	}
+	//for (int i = 0; i < 100; i++)
+	//{
+	//	orc1->Attack(*orc2);
+	//	cout << endl;
+	//}
 
 
-	delete orc2;
-	orc2 = nullptr;
+	//delete orc2;
+	//orc2 = nullptr;
 	delete orc1;
 	orc1 = nullptr;
+}
+
+void Test::Test_RandomRange()
+{
+	Utils::SetRandomSeedByTime();
+	int counts[11];
+	memset(counts, 0, sizeof(int) * 11);	// counts를 0으로 초기화
+
+	for (int i = 0; i < 2000000; i++)
+	{
+		int num = Utils::GetRandom(10, 19);		// 총 10개 범위
+		//cout << "Random Number(10~19) : " << num << endl;
+		if (num < 10 || 20 < num)
+		{
+			cout << "Random Number(10~20)(ERROR) : " << num << endl;
+			counts[10]++;
+		}
+		else
+		{
+			counts[num - 10]++;
+		}
+	}
+
+	int sum = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		cout << i + 10 << " : " << counts[i] << endl;
+		sum += counts[i];
+	}
+	cout << "에러 : " << counts[10] << endl;
+	sum += counts[10];
+	cout << "합계 : " << sum << endl;
+
+
 }

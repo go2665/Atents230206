@@ -16,4 +16,18 @@ void HumanoidBase::TakeDamage(int damage)
 
 void HumanoidBase::SetRandomStatus()
 {	
+	cout << this->name << "ÀÇ ½ºÅ×ÀÌÅÍ½º¸¦ ¼³Á¤ÇÕ´Ï´Ù." << endl;
+}
+
+void HumanoidBase::PrintStatus()
+{
+	cout << " ¦£¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¤\n";
+	printf(" ¦¢ ÀÌ¸§ : %-20s (Lv : %d)              ¦¢\n", name, level );
+	printf(" ¦¢ Health : ( %3d / %3d )     Mana : ( %3d / %3d )   ¦¢\n", hp, maxHP, mp, maxMP);
+	printf(" ¦¢ Èû   : %5d  ¦¢", status.strength);
+	printf(" ¦¢ ¹ÎÃ¸ : %5d  ¦¢", status.dexterity);
+	printf(" ¦¢ Áö´É : %5d  ¦¢\n", status.intelligence);
+	printf(" ¦¢ Ã¼·Â : %5d  ¦¢", status.stamina);
+	printf(" ¦¢ ÁöÇý : %5d  ¦¢                 ¦¢\n", status.wisdom);
+	cout << " ¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥\n";
 }

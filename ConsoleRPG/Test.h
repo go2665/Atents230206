@@ -23,5 +23,8 @@ private :
 
 	// 2/8
 	void Test_Ork();
+
+	// 2/9
+	void Test_RandomRange();
 };
 

@@ -62,6 +62,22 @@ int Monster_Orc::AxeThrowing()
 void Monster_Orc::Initialize()
 {
 	strcpy_s(name, "임시이름");
+	Monster::Initialize();
+}
+
+void Monster_Orc::SetRandomStatus()
+{
+	HumanoidBase::SetRandomStatus();
+	status.strength = Utils::GetRandom(15,26);		// 15 ~ 25
+	status.dexterity = Utils::GetRandom(10,16);		// 10 ~ 15
+	status.intelligence = Utils::GetRandom(1,6);	// 1  ~  5
+	status.stamina = Utils::GetRandom(15,21);		// 15 ~ 20
+	status.wisdom = Utils::GetRandom(1,6);			// 1  ~  5
+
+	maxHP = status.stamina * 10;
+	hp = maxHP;
+	maxMP = status.wisdom * 10;
+	mp = maxMP;
 }
 
 

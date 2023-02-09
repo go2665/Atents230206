@@ -18,6 +18,11 @@ public :
 	/// </summary>
 	/// <param name="damage">적이 나에게 준 데미지(감소전)</param>
 	virtual void TakeDamage(int damage);
+	
+	/// <summary>
+	/// 스테이터스 출력하는 함수
+	/// </summary>
+	virtual void PrintStatus();
 
 protected:
 	/// <summary>
@@ -59,7 +64,6 @@ protected:
 	/// 스테이터스를 랜덤으로 설정하는 함수
 	/// </summary>
 	virtual void SetRandomStatus();
-
 
 };
 

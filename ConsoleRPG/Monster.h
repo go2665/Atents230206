@@ -5,15 +5,13 @@
 class Monster : public HumanoidBase
 {
 public :
-	Monster()
+/*	Monster()
 	{
-		Initialize();
 	}
 
 	virtual ~Monster()
 	{
-		CleanUp();
-	}	
+	}*/	
 
 protected:
 	
