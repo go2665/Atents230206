@@ -4,6 +4,11 @@
 
 void Test::TestRun()
 {
+	// 주말 과제
+	// 1. 현재 버프 시스템의 버그 수정하기
+	// 2. 몬스터 종류에 맞춰서 버프 추가하기
+	// 3. 적에게 거는 버프 만들기(옵션)
+
 	Test_Buff();
 	//Test_RandomNames();
 	//Test_FileRead_fgets();
