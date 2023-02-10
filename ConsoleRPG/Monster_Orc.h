@@ -8,12 +8,17 @@ public:
 	{	
 		Initialize();
 	}
+	~Monster_Orc()
+	{
+		CleanUp();
+	}
 	virtual void Attack(HumanoidBase& target) override;
 
 protected:
 
 	int Smash();
 	int AxeThrowing();
+	void Rage();
 
 	virtual void Initialize() override;
 

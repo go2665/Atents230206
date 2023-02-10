@@ -1,7 +1,11 @@
 #include "Monster_Orc.h"
+#include "Buff_Rage.h"
 
 void Monster_Orc::Attack(HumanoidBase& target)
 {
+	// 턴 시작
+	OnTurnStart();
+
 	HumanoidBase::Attack(target);
 
 	float f = Utils::GetRandom();
@@ -13,14 +17,17 @@ void Monster_Orc::Attack(HumanoidBase& target)
 	}
 	else if (f < 0.8f)	// 30%
 	{
-		damage = Smash();
+		Rage();
 	}
 	else // 20%
 	{
-		damage = AxeThrowing();
+		damage = Smash();
+		//damage = AxeThrowing();
 	}
+	target.TakeDamage(damage);	
 
-	target.TakeDamage(damage);
+	// 턴 종료
+	OnTurnEnd();
 }
 
 int Monster_Orc::Smash()
@@ -59,9 +66,17 @@ int Monster_Orc::AxeThrowing()
 	return damage;
 }
 
+void Monster_Orc::Rage()
+{
+	cout << "스킬 발동 : 분노!" << endl;
+	Buff_Rage* pBuff = new Buff_Rage();
+	buffList.push_back(pBuff);
+}
+
 void Monster_Orc::Initialize()
 {
-	strcpy_s(name, "임시이름");
+	int index = Utils::GetRandom(0, NamePicker::orcNameCount);
+	strcpy_s(name, NamePicker::GetOrcName(index));
 	Monster::Initialize();
 }
 

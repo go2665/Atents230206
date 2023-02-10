@@ -1,6 +1,5 @@
 #pragma once
 #include "ConsoleRPG.h"
-#include "HumanoidBase.h"
 
 class Monster : public HumanoidBase
 {
@@ -37,6 +36,11 @@ protected:
 	function<void(Monster&)> fpSkill_2;
 
 	//inline void Test() { cout << "Å×½ºÆ®" << level << endl; }
+
+	list<BuffBase*> buffList;
+
+	virtual void OnTurnStart();
+	virtual void OnTurnEnd();
 };
 
 //inline void Test123() { cout << "Hello" << endl; }

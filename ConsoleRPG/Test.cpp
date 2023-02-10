@@ -4,6 +4,8 @@
 
 void Test::TestRun()
 {
+	Test_Buff();
+	//Test_RandomNames();
 	//Test_FileRead_fgets();
 	//Test_FileRead_fgetc();
 	//Test_MapRead();
@@ -11,8 +13,45 @@ void Test::TestRun()
 	//Test_Character();
 	//Test_Ork();
 	//Test_RandomRange();
-	Test_List();
+	//Test_List();
 }
+
+void Test::Test_Buff()
+{
+	Monster_Orc* pOrc1 = new Monster_Orc();
+	Monster_Orc* pOrc2 = new Monster_Orc();
+	int counter = 50;
+
+	pOrc1->PrintStatus();
+	pOrc2->PrintStatus();
+	while (pOrc1->GetHP() > 0 && pOrc2->GetHP() > 0 && counter > 0)
+	{
+		pOrc1->Attack(*pOrc2);
+		pOrc2->Attack(*pOrc1);
+		pOrc1->PrintStatus();
+		pOrc2->PrintStatus();
+		counter--;
+	}
+	
+
+	delete pOrc1;
+	pOrc1 = nullptr;
+	delete pOrc2;
+	pOrc2 = nullptr;
+}
+
+void Test::Test_RandomNames()
+{
+	for (int i = 0; i < 100; i++)
+	{
+		Monster_Orc* pOrc = new Monster_Orc();
+		pOrc->PrintStatus();
+
+		delete pOrc;
+		pOrc = nullptr;
+	}
+}
+
 
 void Test::Test_FileRead_fgets()
 {
@@ -106,7 +145,6 @@ void Test::Test_Ork()
 	delete orc1;
 	orc1 = nullptr;
 }
-
 void Test::Test_RandomRange()
 {
 	Utils::SetRandomSeedByTime();
@@ -203,4 +241,13 @@ void Test::Test_List()
 		cout << *iter << endl;
 	}
 
+	list<int>::iterator findIter = find(testList.begin(), testList.end(), 140);
+	if (findIter != testList.end())
+	{
+		cout << *findIter << "를 찾았다." << endl;
+	}
+	else
+	{
+		cout << "원하는 데이터를 찾을 수 없다." << endl;
+	}
 }

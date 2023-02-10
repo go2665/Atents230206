@@ -24,6 +24,32 @@ public :
 	/// </summary>
 	virtual void PrintStatus();
 
+	inline const char* GetName() { return name; }
+	//inline const int GetStringth() { return status.strength; }
+	//inline const int GetDexterity() { return status.dexterity; }
+	//inline const int GetIntelligence() { return status.intelligence; }
+	//inline const int GetStatmina() { return status.stamina; }
+	//inline const int GetWisdom() { return status.wisdom; }
+	inline const int GetMaxHP() { return maxHP; }
+	inline const int GetHP() { return hp; }
+
+	//inline void SetStrength(int str) { status.strength = str; }
+	//inline void SetDexterity(int dex) { status.dexterity= dex; }
+	//inline void SetIntelligence(int intel) { status.intelligence = intel; }
+	//inline void SetStamina(int stm) { status.stamina = stm; }
+	//inline void SetWisdom(int wis) { status.wisdom = wis; }
+	//inline void SetHP(int _hp) { hp = _hp; }
+	//inline void SetMP(int _mp) { mp = _mp; }
+
+	inline void AddStrength(int str) { status.strength += str; }
+	inline void AddDexterity(int dex) { status.dexterity += dex; }
+	inline void AddIntelligence(int intel) { status.intelligence += intel; }
+	inline void AddStamina(int stm) { status.stamina += stm; }
+	inline void AddWisdom(int wis) { status.wisdom += wis; }
+	inline void AddHP(int _hp) { hp += _hp; }
+	inline void AddMP(int _mp) { mp += _mp; }
+
+
 protected:
 	/// <summary>
 	/// 플레이어의 이름(최대 32자. 한글은 16자)

@@ -12,20 +12,31 @@ public :
 	void TestRun();
 
 private :
-	void Test_FileRead_fgets();
-	void Test_FileRead_fgetc();
+	// 2/10
+	void Test_Buff();
+	void Test_RandomNames();
 
-	void Test_MapRead();
+	// 2/9
+	void Test_RandomRange();
+	void Test_List();
+
+	// 2/8
+	void Test_Ork();
 
 	// 2/3
 	void Test_Position();
 	void Test_Character();
 
-	// 2/8
-	void Test_Ork();
+	// 2/3 ¿Ã¿¸
+	void Test_FileRead_fgets();
+	void Test_FileRead_fgetc();
 
-	// 2/9
-	void Test_RandomRange();
-	void Test_List();
+	void Test_MapRead();
+
+	
+
+	
+
+	
 };
 

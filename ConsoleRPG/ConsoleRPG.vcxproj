@@ -127,16 +127,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Buff_Rage.cpp" />
     <ClCompile Include="ConsoleRPG.cpp" />
     <ClCompile Include="Map.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Monster_Orc.cpp" />
     <ClCompile Include="HumanoidBase.cpp" />
+    <ClCompile Include="NamePicker.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BuffBase.h" />
+    <ClInclude Include="Buff_Rage.h" />
     <ClInclude Include="ConsoleRPG.h" />
     <ClInclude Include="Enums.h" />
     <ClInclude Include="Map.h" />
