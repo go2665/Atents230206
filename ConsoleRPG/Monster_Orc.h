@@ -8,7 +8,7 @@ public:
 	{	
 		Initialize();
 	}
-	~Monster_Orc()
+	virtual ~Monster_Orc()
 	{
 		CleanUp();
 	}

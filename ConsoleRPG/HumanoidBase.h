@@ -83,11 +83,12 @@ protected:
 	/// 현재 MP
 	/// </summary>
 	int mp = 1;
-
+	
 	/// <summary>
 	/// 최대 MP
 	/// </summary>
 	int maxMP = 1;
+
 
 	/// <summary>
 	/// 스테이터스를 랜덤으로 설정하는 함수

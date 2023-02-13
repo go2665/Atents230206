@@ -10,8 +10,7 @@ void HumanoidBase::Attack(HumanoidBase& target)
 
 void HumanoidBase::TakeDamage(int damage)
 {
-	cout << this->name << "은 " << damage << "의 피해를 받았다." << endl;
-	
+	cout << this->name << "은 " << damage << "의 피해를 받았다." << endl;	
 }
 
 void HumanoidBase::SetRandomStatus()

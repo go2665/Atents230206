@@ -10,7 +10,8 @@ void Test::TestRun()
 	// 2. 몬스터 종류에 맞춰서 버프 추가하기
 	// 3. 적에게 거는 버프 만들기(옵션)
 
-	Test_Buff2();
+	Test_Buff3();
+	//Test_Buff2();
 	//Test_Buff();
 	//Test_RandomNames();
 	//Test_FileRead_fgets();
@@ -21,6 +22,23 @@ void Test::TestRun()
 	//Test_Ork();
 	//Test_RandomRange();
 	//Test_List();
+}
+
+void Test::Test_Buff3()
+{
+	Test_Orc* pOrc1 = new Test_Orc();
+	Test_Orc* pOrc2 = new Test_Orc();
+	
+	pOrc2->PrintStatus();
+
+	pOrc1->UseBuff(*pOrc2);
+
+	pOrc2->PrintStatus();
+
+	delete pOrc1;
+	delete pOrc2;
+	pOrc1 = nullptr;
+	pOrc2 = nullptr;
 }
 
 void Test::Test_Buff2()
@@ -47,6 +65,10 @@ void Test::Test_Buff2()
 
 	pOrc1->PrintStatus();	// 힘 20
 
+	delete pOrc1;
+	delete pOrc2;
+	pOrc1 = nullptr;
+	pOrc2 = nullptr;
 }
 
 void Test::Test_Buff()

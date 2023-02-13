@@ -14,6 +14,9 @@ public :
 	virtual void OnTurnStart();
 	virtual void OnTurnEnd();
 
+
+	void AddBuff(BuffBase* pBuff);
+
 protected:
 	
 
@@ -39,6 +42,9 @@ protected:
 
 	//inline void Test() { cout << "테스트" << level << endl; }
 
+	/// <summary>
+	/// 버프 목록
+	/// </summary>
 	list<BuffBase*> buffList;
 };
 

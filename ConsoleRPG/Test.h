@@ -14,6 +14,7 @@ public :
 private :
 	// 2/13
 	void Test_Buff2();
+	void Test_Buff3();
 
 	// 2/10
 	void Test_Buff();

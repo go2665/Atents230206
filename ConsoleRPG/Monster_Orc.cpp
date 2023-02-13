@@ -64,8 +64,7 @@ void Monster_Orc::Rage()
 {
 	cout << "스킬 발동 : 분노!" << endl;
 	Buff_Rage* pBuff = new Buff_Rage();
-	buffList.push_back(pBuff);
-	pBuff->InstanceEffect(*this);
+	AddBuff(pBuff);
 }
 
 void Monster_Orc::Initialize()

@@ -16,6 +16,7 @@ void Monster::CleanUp()
 	{
 		delete (*iter);
 	}
+	buffList.clear();
 	fpSkill_1 = nullptr;
 	fpSkill_2 = nullptr;
 }
@@ -53,3 +54,8 @@ void Monster::OnTurnEnd()
 	// & : 변수의 주소값
 }
 
+void Monster::AddBuff(BuffBase* pBuff)
+{
+	buffList.push_back(pBuff);
+	pBuff->InstanceEffect(*this);
+}

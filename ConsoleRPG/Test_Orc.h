@@ -8,11 +8,13 @@ public:
 	{
 		Initialize();
 	}
-	~Test_Orc()
+	virtual ~Test_Orc()
 	{
 		CleanUp();
 	}
 	virtual void Attack(HumanoidBase& target) override;
+	void UseBuff(HumanoidBase& target);
+
 protected:
 	virtual void SetRandomStatus() override;
 };
