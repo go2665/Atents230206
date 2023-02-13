@@ -22,10 +22,9 @@ void Monster::CleanUp()
 
 void Monster::OnTurnStart()
 {
-	for (auto iter = buffList.begin(); iter != buffList.end(); iter++)
-	{
-		(*iter)->Effect(*this);
-	}
+	//for (auto iter = buffList.begin(); iter != buffList.end(); iter++)
+	//{		
+	//}
 }
 
 void Monster::OnTurnEnd()
@@ -33,7 +32,7 @@ void Monster::OnTurnEnd()
 	list<BuffBase*> deleteList;
 	for (auto iter = buffList.begin(); iter != buffList.end(); iter++)
 	{
-		int dutation = (*iter)->RemoveEffect(*this);
+		int dutation = (*iter)->OnTurnEnd(*this);
 		if (dutation <= 0)
 		{
 			deleteList.push_back(*iter);
@@ -42,6 +41,7 @@ void Monster::OnTurnEnd()
 
 	for (auto iter = deleteList.begin(); iter != deleteList.end(); iter++)
 	{
+		(*iter)->RemoveEffect(*this);
 		buffList.remove(*iter);
 
 		// erase  : iterator가 가르키는 위치에 있는 항목을 삭제

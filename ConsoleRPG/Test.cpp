@@ -1,6 +1,7 @@
 #include <list>
 #include "Test.h"
 #include "Monster_Orc.h"
+#include "Test_Orc.h"
 
 void Test::TestRun()
 {
@@ -9,7 +10,8 @@ void Test::TestRun()
 	// 2. 몬스터 종류에 맞춰서 버프 추가하기
 	// 3. 적에게 거는 버프 만들기(옵션)
 
-	Test_Buff();
+	Test_Buff2();
+	//Test_Buff();
 	//Test_RandomNames();
 	//Test_FileRead_fgets();
 	//Test_FileRead_fgetc();
@@ -21,20 +23,54 @@ void Test::TestRun()
 	//Test_List();
 }
 
+void Test::Test_Buff2()
+{
+	Test_Orc* pOrc1 = new Test_Orc();
+	Monster* pOrc2 = new Monster();
+
+	pOrc1->PrintStatus();	// 힘 10
+
+	pOrc1->OnTurnStart();
+	pOrc1->Attack(*pOrc2);
+	pOrc1->PrintStatus();	// 힘 15
+	pOrc1->OnTurnEnd();		// 1 : 2턴 남음
+
+	pOrc1->OnTurnStart();
+	pOrc1->Attack(*pOrc2);	
+	pOrc1->PrintStatus();	// 힘 20
+	pOrc1->OnTurnEnd();		// 1 : 1턴 남음. 2 : 2턴 남음
+
+	pOrc1->OnTurnStart();
+	pOrc1->Attack(*pOrc2);
+	pOrc1->PrintStatus();	// 힘 25
+	pOrc1->OnTurnEnd();		// 1 : 종료. 2: 1턴 남음. 3 : 2턴 남음
+
+	pOrc1->PrintStatus();	// 힘 20
+
+}
+
 void Test::Test_Buff()
 {
 	Monster_Orc* pOrc1 = new Monster_Orc();
-	Monster_Orc* pOrc2 = new Monster_Orc();
+	//Monster_Orc* pOrc2 = new Monster_Orc();
+	Monster* pOrc2 = new Monster();
 	int counter = 50;
 
 	pOrc1->PrintStatus();
 	pOrc2->PrintStatus();
 	while (pOrc1->GetHP() > 0 && pOrc2->GetHP() > 0 && counter > 0)
 	{
+		pOrc1->OnTurnStart();
+		pOrc2->OnTurnStart();
+
 		pOrc1->Attack(*pOrc2);
 		pOrc2->Attack(*pOrc1);
+
 		pOrc1->PrintStatus();
 		pOrc2->PrintStatus();
+
+		pOrc1->OnTurnEnd();
+		pOrc2->OnTurnEnd();
 		counter--;
 	}
 	

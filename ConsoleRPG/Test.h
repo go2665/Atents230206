@@ -12,6 +12,9 @@ public :
 	void TestRun();
 
 private :
+	// 2/13
+	void Test_Buff2();
+
 	// 2/10
 	void Test_Buff();
 	void Test_RandomNames();

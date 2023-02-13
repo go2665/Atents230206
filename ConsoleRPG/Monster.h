@@ -11,6 +11,8 @@ public :
 	virtual ~Monster()
 	{
 	}*/	
+	virtual void OnTurnStart();
+	virtual void OnTurnEnd();
 
 protected:
 	
@@ -38,9 +40,6 @@ protected:
 	//inline void Test() { cout << "Å×½ºÆ®" << level << endl; }
 
 	list<BuffBase*> buffList;
-
-	virtual void OnTurnStart();
-	virtual void OnTurnEnd();
 };
 
 //inline void Test123() { cout << "Hello" << endl; }

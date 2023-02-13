@@ -41,7 +41,10 @@ public :
 	//inline void SetHP(int _hp) { hp = _hp; }
 	//inline void SetMP(int _mp) { mp = _mp; }
 
-	inline void AddStrength(int str) { status.strength += str; }
+	inline void AddStrength(int str) { 
+		status.strength += str; 
+		int i = 0;
+	}
 	inline void AddDexterity(int dex) { status.dexterity += dex; }
 	inline void AddIntelligence(int intel) { status.intelligence += intel; }
 	inline void AddStamina(int stm) { status.stamina += stm; }

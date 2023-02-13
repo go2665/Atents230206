@@ -137,6 +137,7 @@
     <ClCompile Include="NamePicker.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="Test.cpp" />
+    <ClCompile Include="Test_Orc.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BuffBase.h" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Position.h" />
     <ClInclude Include="Status.h" />
     <ClInclude Include="Test.h" />
+    <ClInclude Include="Test_Orc.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

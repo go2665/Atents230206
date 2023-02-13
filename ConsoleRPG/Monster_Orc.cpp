@@ -3,9 +3,6 @@
 
 void Monster_Orc::Attack(HumanoidBase& target)
 {
-	// 턴 시작
-	OnTurnStart();
-
 	HumanoidBase::Attack(target);
 
 	float f = Utils::GetRandom();
@@ -25,9 +22,6 @@ void Monster_Orc::Attack(HumanoidBase& target)
 		//damage = AxeThrowing();
 	}
 	target.TakeDamage(damage);	
-
-	// 턴 종료
-	OnTurnEnd();
 }
 
 int Monster_Orc::Smash()
@@ -71,6 +65,7 @@ void Monster_Orc::Rage()
 	cout << "스킬 발동 : 분노!" << endl;
 	Buff_Rage* pBuff = new Buff_Rage();
 	buffList.push_back(pBuff);
+	pBuff->InstanceEffect(*this);
 }
 
 void Monster_Orc::Initialize()

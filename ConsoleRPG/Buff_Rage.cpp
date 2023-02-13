@@ -1,18 +1,18 @@
 #include "Buff_Rage.h"
 #include "HumanoidBase.h"
 
-void Buff_Rage::Effect(HumanoidBase& target)
+void Buff_Rage::InstanceEffect(HumanoidBase& target)
 {
-	target.AddStrength(strength);
+	target.AddStrength(buffStrength);
 }
 
-int Buff_Rage::RemoveEffect(HumanoidBase& target)
+void Buff_Rage::ContinuousEffect(HumanoidBase& target)
 {
-	target.AddStrength(-strength);
 	int max = target.GetMaxHP();	
-	target.AddHP((int)(-max * damage));
+	target.AddHP((int)(-max * tickDamage));
+}
 
-	duration--;
-
-	return duration;
+void Buff_Rage::RemoveEffect(HumanoidBase& target)
+{
+	target.AddStrength(-buffStrength);
 }
