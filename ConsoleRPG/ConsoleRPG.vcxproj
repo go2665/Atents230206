@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BuffBase.cpp" />
     <ClCompile Include="Buff_Rage.cpp" />
     <ClCompile Include="ConsoleRPG.cpp" />
     <ClCompile Include="Map.cpp" />
