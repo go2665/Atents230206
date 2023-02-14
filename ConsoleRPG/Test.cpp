@@ -2,15 +2,12 @@
 #include "Test.h"
 #include "Monster_Orc.h"
 #include "Test_Orc.h"
+#include "Monster_Wolf.h"
 
 void Test::TestRun()
 {
-	// 주말 과제
-	// 1. 현재 버프 시스템의 버그 수정하기
-	// 2. 몬스터 종류에 맞춰서 버프 추가하기
-	// 3. 적에게 거는 버프 만들기(옵션)
-
-	Test_Buff3();
+	Test_MonsterBattle();
+	//Test_Buff3();
 	//Test_Buff2();
 	//Test_Buff();
 	//Test_RandomNames();
@@ -22,6 +19,65 @@ void Test::TestRun()
 	//Test_Ork();
 	//Test_RandomRange();
 	//Test_List();
+}
+
+void Test::Test_MonsterBattle()
+{
+	Utils::SetRandomSeedByTime();
+
+	Monster_Orc* pOrc = new Monster_Orc();
+	pOrc->PrintStatus();
+	Monster_Wolf* pWolf = new Monster_Wolf();
+	pWolf->PrintStatus();
+
+	int counter = 0;
+	while (pOrc->GetHP() > 0 && pWolf->GetHP() > 0 && counter < 100)
+	{
+		counter++;
+
+		cout << endl << "----------" << counter << "턴 시작----------" << endl;
+
+		pOrc->OnTurnStart();
+		pWolf->OnTurnStart();
+
+		pOrc->Attack(*pWolf);
+		pOrc->PrintStatus();
+		pWolf->PrintStatus();
+
+		if (pWolf->GetHP() <= 0)
+		{
+			break;
+		}
+
+		pWolf->Attack(*pOrc);
+		pOrc->PrintStatus();
+		pWolf->PrintStatus();
+
+		pOrc->OnTurnEnd();
+		pWolf->OnTurnEnd();
+		
+	}
+
+	if (counter > 99)
+	{
+		cout << "무승부 " << endl;
+	}
+	else if (pOrc->GetHP() > 0)
+	{
+		cout << "오크의 승리!" << endl;
+	}
+	else if (pWolf->GetHP() > 0)
+	{
+		cout << "늑대의 승리!" << endl;
+	}
+
+
+
+
+	delete pOrc;
+	delete pWolf;
+	pOrc = nullptr;
+	pWolf = nullptr;
 }
 
 void Test::Test_Buff3()

@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BuffBase.cpp" />
+    <ClCompile Include="Buff_Bite.cpp" />
     <ClCompile Include="Buff_Rage.cpp" />
     <ClCompile Include="ConsoleRPG.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -135,6 +136,7 @@
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Monster_Orc.cpp" />
     <ClCompile Include="HumanoidBase.cpp" />
+    <ClCompile Include="Monster_Wolf.cpp" />
     <ClCompile Include="NamePicker.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="Test.cpp" />
@@ -142,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BuffBase.h" />
+    <ClInclude Include="Buff_Bite.h" />
     <ClInclude Include="Buff_Rage.h" />
     <ClInclude Include="ConsoleRPG.h" />
     <ClInclude Include="Enums.h" />
@@ -150,6 +153,7 @@
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Monster_Orc.h" />
     <ClInclude Include="HumanoidBase.h" />
+    <ClInclude Include="Monster_Wolf.h" />
     <ClInclude Include="NamePicker.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Status.h" />

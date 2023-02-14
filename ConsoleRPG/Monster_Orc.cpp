@@ -26,7 +26,7 @@ void Monster_Orc::Attack(HumanoidBase& target)
 
 int Monster_Orc::Smash()
 {
-	cout << "스킬 발동 : 스메시" << endl;
+	cout << "스킬 발동 : [스메시]" << endl;
 	float f = Utils::GetRandom();
 	int damage = 0;
 	if (f < 0.8f)
@@ -44,7 +44,7 @@ int Monster_Orc::Smash()
 
 int Monster_Orc::AxeThrowing()
 {
-	cout << "스킬 발동 : 도끼 던지기" << endl;
+	cout << "스킬 발동 : [도끼 던지기]" << endl;
 	float f = Utils::GetRandom();
 	int damage = 0;
 	if (f < 0.5f)
@@ -62,7 +62,7 @@ int Monster_Orc::AxeThrowing()
 
 void Monster_Orc::Rage()
 {
-	cout << "스킬 발동 : 분노!" << endl;
+	cout << "스킬 발동 : [분노]" << endl;
 	Buff_Rage* pBuff = new Buff_Rage();
 	AddBuff(pBuff);
 }

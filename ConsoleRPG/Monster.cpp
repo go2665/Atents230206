@@ -59,3 +59,17 @@ void Monster::AddBuff(BuffBase* pBuff)
 	buffList.push_back(pBuff);
 	pBuff->InstanceEffect(*this);
 }
+
+void Monster::PrintStatus()
+{
+	HumanoidBase::PrintStatus();
+	if (buffList.size() > 0)
+	{
+		cout << "    น๖วม : ";
+		for (auto iter = buffList.begin(); iter != buffList.end(); iter++)
+		{
+			cout << "[" << (*iter)->GetName() << "] ";
+		}
+	}
+	cout << endl;
+}

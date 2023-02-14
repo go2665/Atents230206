@@ -39,5 +39,11 @@ public:
 	/// </summary>
 	/// <returns>버프 남은 턴 수</returns>
 	virtual int OnTurnEnd(HumanoidBase& target);
+
+	/// <summary>
+	/// 이름 확인용 함수
+	/// </summary>
+	/// <returns></returns>
+	inline const char* GetName() { return name; }
 };
 

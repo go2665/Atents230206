@@ -17,6 +17,8 @@ public :
 
 	void AddBuff(BuffBase* pBuff);
 
+	virtual void PrintStatus() override;
+
 protected:
 	
 

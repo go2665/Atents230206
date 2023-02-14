@@ -12,6 +12,9 @@ public :
 	void TestRun();
 
 private :
+	// 2/14
+	void Test_MonsterBattle();
+
 	// 2/13
 	void Test_Buff2();
 	void Test_Buff3();

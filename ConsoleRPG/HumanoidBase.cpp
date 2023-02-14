@@ -5,17 +5,18 @@ using namespace std;
 
 void HumanoidBase::Attack(HumanoidBase& target)
 {
-	cout << this->name << "는 " << target.name << "을 공격한다." << endl;
+	cout << "[" << this->name << "]는 [" << target.name << "]을 공격한다." << endl;
 }
 
 void HumanoidBase::TakeDamage(int damage)
 {
-	cout << this->name << "은 " << damage << "의 피해를 받았다." << endl;	
+	hp -= damage;
+	cout << "[" << this->name << "]은 (" << damage << ")의 피해를 받았다." << endl;
 }
 
 void HumanoidBase::SetRandomStatus()
 {	
-	cout << this->name << "의 스테이터스를 설정합니다." << endl;
+	cout << "[" << this->name << "]의 스테이터스를 설정합니다." << endl;
 }
 
 void HumanoidBase::PrintStatus()
@@ -28,5 +29,5 @@ void HumanoidBase::PrintStatus()
 	printf(" │ 지능 : %5d  │\n", status.intelligence);
 	printf(" │ 체력 : %5d  │", status.stamina);
 	printf(" │ 지혜 : %5d  │                 │\n", status.wisdom);
-	cout << " └───────────────────────────────────────────────────┘\n\n";
+	cout << " └───────────────────────────────────────────────────┘\n";
 }

@@ -14,7 +14,7 @@ public :
 	virtual void Attack(HumanoidBase& target);
 
 	/// <summary>
-	/// 데미지를 받는 함수
+	/// 데미지를 받는 함수(방어력 계산할 때)
 	/// </summary>
 	/// <param name="damage">적이 나에게 준 데미지(감소전)</param>
 	virtual void TakeDamage(int damage);
@@ -41,15 +41,12 @@ public :
 	//inline void SetHP(int _hp) { hp = _hp; }
 	//inline void SetMP(int _mp) { mp = _mp; }
 
-	inline void AddStrength(int str) { 
-		status.strength += str; 
-		int i = 0;
-	}
+	inline void AddStrength(int str) { status.strength += str; }
 	inline void AddDexterity(int dex) { status.dexterity += dex; }
 	inline void AddIntelligence(int intel) { status.intelligence += intel; }
 	inline void AddStamina(int stm) { status.stamina += stm; }
 	inline void AddWisdom(int wis) { status.wisdom += wis; }
-	inline void AddHP(int _hp) { hp += _hp; }
+	inline void AddHP(int _hp) { hp += _hp; }	// 방어력 무시
 	inline void AddMP(int _mp) { mp += _mp; }
 
 
