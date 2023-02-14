@@ -22,3 +22,9 @@ enum Input_Move
 	Move_South,
 	Move_North
 };
+
+enum CharacterType
+{
+	Player = 0,
+	Enemy
+};

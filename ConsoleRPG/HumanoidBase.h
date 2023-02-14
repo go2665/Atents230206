@@ -1,11 +1,13 @@
 #pragma once
 #include "Status.h"
+#include "Enums.h"
 
 class HumanoidBase
 {
 public :
 //	HumanoidBase() {};
 //	~HumanoidBase() {};
+	
 
 	/// <summary>
 	/// target을 공격하는 함수
@@ -46,11 +48,33 @@ public :
 	inline void AddIntelligence(int intel) { status.intelligence += intel; }
 	inline void AddStamina(int stm) { status.stamina += stm; }
 	inline void AddWisdom(int wis) { status.wisdom += wis; }
-	inline void AddHP(int _hp) { hp += _hp; }	// 방어력 무시
-	inline void AddMP(int _mp) { mp += _mp; }
+	inline void AddHP(int _hp) 
+	{ 
+		hp += _hp; 
+		if (hp > maxHP)
+			hp = maxHP;
+		if (hp < 0)
+		{
+			Die();
+			hp = 0;
+		}
+	}	// 방어력 무시
+	inline void AddMP(int _mp) 
+	{ 
+		mp += _mp; 
+		if (mp > maxHP)
+			mp = maxHP;
+		if (mp < 0)
+			mp = 0;
+	}
 
+	inline CharacterType GetType() { return type; }
+
+	inline void SetBattleTarget(HumanoidBase* pTarget) { pBattleTarget = pTarget; }
 
 protected:
+	CharacterType type = Enemy;
+
 	/// <summary>
 	/// 플레이어의 이름(최대 32자. 한글은 16자)
 	/// </summary>
@@ -86,11 +110,15 @@ protected:
 	/// </summary>
 	int maxMP = 1;
 
+	HumanoidBase* pBattleTarget = nullptr;
+
 
 	/// <summary>
 	/// 스테이터스를 랜덤으로 설정하는 함수
 	/// </summary>
 	virtual void SetRandomStatus();
 
+
+	virtual void Die() {};
 };
 

@@ -35,7 +35,7 @@ int Monster_Wolf::Rush()
 	if (f < 0.9f)
 	{
 		cout << "돌진 명중!" << endl;
-		damage = status.strength * 3;
+		damage = status.strength * 10;
 	}
 	else
 	{

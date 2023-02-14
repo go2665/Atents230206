@@ -23,5 +23,7 @@ protected:
 	virtual void Initialize() override;
 
 	virtual void SetRandomStatus() override;
+
+	virtual void Die() override;
 };
 

@@ -41,6 +41,8 @@ public:
 	/// <returns>position의 참조 값</returns>
 	inline const Position& GetPosition() { return position; }
 
+	inline void AddExp(int _exp) { exp += _exp; }
+
 protected:
 
 	/// <summary>

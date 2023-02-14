@@ -20,7 +20,9 @@ public :
 	virtual void PrintStatus() override;
 
 protected:
-	
+	int rewardHP = 0;
+	int rewardMP = 0;
+	int rewardExp = 0;
 
 	/// <summary>
 	/// 초기화용 함수. 생성자에서 실행된다.
@@ -48,6 +50,7 @@ protected:
 	/// 버프 목록
 	/// </summary>
 	list<BuffBase*> buffList;
+
 };
 
 //inline void Test123() { cout << "Hello" << endl; }

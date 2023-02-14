@@ -30,6 +30,9 @@ void Test::Test_MonsterBattle()
 	Monster_Wolf* pWolf = new Monster_Wolf();
 	pWolf->PrintStatus();
 
+	pOrc->SetBattleTarget(pWolf);
+	pWolf->SetBattleTarget(pOrc);
+
 	int counter = 0;
 	while (pOrc->GetHP() > 0 && pWolf->GetHP() > 0 && counter < 100)
 	{

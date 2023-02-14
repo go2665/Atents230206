@@ -10,6 +10,8 @@ void Character::Initialize()
 	pMap = new Map("./Data/SampleMap.txt");
 	position = pMap->GetStartPosition();
 
+	type = Player;
+
 	StatusReRoll();
 
 	PrintPosition();
