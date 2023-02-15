@@ -57,6 +57,10 @@ void Monster_Wolf::Initialize()
 {
 	int index = Utils::GetRandom(0, NamePicker::wolfNameCount);
 	strcpy_s(name, NamePicker::GetWolfName(index));
+
+	rewardExp = 20;
+	rewardHP = 50;
+
 	Monster::Initialize();
 }
 
@@ -66,13 +70,34 @@ void Monster_Wolf::SetRandomStatus()
 	status.strength = Utils::GetRandom(10,12);		// 10 ~ 11
 	status.dexterity = Utils::GetRandom(12,20);		// 12 ~ 19
 	status.intelligence = Utils::GetRandom(1,6);	// 1  ~  5
-	status.stamina = Utils::GetRandom(15,21);		// 15 ~ 20
+	status.stamina = Utils::GetRandom(5,11);		// 5 ~ 10
 	status.wisdom = Utils::GetRandom(1,6);			// 1  ~  5
 
 	maxHP = status.stamina * 10;
 	hp = maxHP;
 	maxMP = status.wisdom * 10;
 	mp = maxMP;
+}
+
+void Monster_Wolf::Die()
+{
+	HumanoidBase::Die();
+	if (pBattleTarget != nullptr)
+	{
+		if (pBattleTarget->GetType() == Player)
+		{
+			Character* player = (Character*)pBattleTarget;
+			cout << "경험치를 (" << rewardExp << ")만큼 획득합니다." << endl;
+			player->AddExp(rewardExp);
+		}
+
+		float rate = Utils::GetRandom();
+		if (rate < 0.75f)
+		{
+			cout << "HP 오브를 얻었습니다. HP가 (" << rewardHP << ")만큼 회복됩니다." << endl;
+			pBattleTarget->AddHP(rewardHP);
+		}
+	}
 }
 
 

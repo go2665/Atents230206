@@ -112,6 +112,8 @@ protected:
 
 	HumanoidBase* pBattleTarget = nullptr;
 
+	bool isAlive = true;	// 이 변수를 이용해서 한번만 죽게 만들기
+
 
 	/// <summary>
 	/// 스테이터스를 랜덤으로 설정하는 함수
@@ -119,6 +121,6 @@ protected:
 	virtual void SetRandomStatus();
 
 
-	virtual void Die() {};
+	virtual void Die();
 };
 

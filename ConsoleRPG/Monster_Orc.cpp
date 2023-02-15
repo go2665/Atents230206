@@ -96,6 +96,7 @@ void Monster_Orc::SetRandomStatus()
 
 void Monster_Orc::Die()
 {
+	HumanoidBase::Die();
 	if (pBattleTarget != nullptr)
 	{
 		//Character* bad = (Character*)pBattleTarget;		// 되든 안되든 해본다. 무사히 되는 다행인데 안되면 망한다.		
@@ -104,20 +105,20 @@ void Monster_Orc::Die()
 		if (pBattleTarget->GetType() == Player)
 		{
 			Character* player = (Character*)pBattleTarget;
-			cout << "경험치를 (" << rewardExp << ")만큼 획득합니다.";
+			cout << "경험치를 (" << rewardExp << ")만큼 획득합니다." << endl;
 			player->AddExp(rewardExp);
 		}
 
 		float rate = Utils::GetRandom();
 		if (rate < 0.5f)
 		{
-			cout << "HP 오브를 얻었습니다. HP가 (" << rewardHP << ")만큼 회복됩니다.";
+			cout << "HP 오브를 얻었습니다. HP가 (" << rewardHP << ")만큼 회복됩니다." << endl;
 			pBattleTarget->AddHP(rewardHP);
 		}
 		rate = Utils::GetRandom();
 		if (rate < 0.1f)
 		{
-			cout << "MP 오브를 얻었습니다. MP가 (" << rewardMP << ")만큼 회복됩니다.";
+			cout << "MP 오브를 얻었습니다. MP가 (" << rewardMP << ")만큼 회복됩니다." << endl;
 			pBattleTarget->AddMP(rewardMP);
 		}		
 	}
