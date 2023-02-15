@@ -6,7 +6,8 @@
 
 void Test::TestRun()
 {
-	Test_MonsterBattle();
+	Test_MonsterDie();
+	//Test_MonsterBattle();
 	//Test_Buff3();
 	//Test_Buff2();
 	//Test_Buff();
@@ -19,6 +20,26 @@ void Test::TestRun()
 	//Test_Ork();
 	//Test_RandomRange();
 	//Test_List();
+}
+
+void Test::Test_MonsterDie()
+{
+	Monster_Orc* pOrc = new Monster_Orc();
+	Monster_Wolf* pWolf = new Monster_Wolf();
+
+	pOrc->OnTurnStart();
+	pWolf->OnTurnStart();
+
+	pOrc->AddHP(-(pOrc->GetHP() - 1));
+	pWolf->Attack(*pOrc);
+
+	pOrc->OnTurnEnd();
+	pWolf->OnTurnEnd();
+
+	delete pOrc;
+	delete pWolf;
+	pOrc = nullptr;
+	pWolf = nullptr;
 }
 
 void Test::Test_MonsterBattle()

@@ -112,7 +112,7 @@ protected:
 
 	HumanoidBase* pBattleTarget = nullptr;
 
-	bool isAlive = true;	// 이 변수를 이용해서 한번만 죽게 만들기
+	bool isAlive = true;	// 이 변수를 이용해서 한번만 죽게 만들기(4시 30분까지)
 
 
 	/// <summary>

@@ -21,6 +21,12 @@ void Monster::CleanUp()
 	fpSkill_2 = nullptr;
 }
 
+void Monster::Die()
+{
+	HumanoidBase::Die();
+	CleanUp();
+}
+
 void Monster::OnTurnStart()
 {
 	//for (auto iter = buffList.begin(); iter != buffList.end(); iter++)

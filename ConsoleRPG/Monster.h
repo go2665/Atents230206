@@ -34,6 +34,8 @@ protected:
 	/// </summary>
 	virtual void CleanUp();	
 
+	virtual void Die() override;
+
 	/// <summary>
 	/// 1번 스킬용 함수를 저장할 함수 포인터
 	/// </summary>

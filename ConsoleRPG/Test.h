@@ -12,6 +12,9 @@ public :
 	void TestRun();
 
 private :
+	// 2/15
+	void Test_MonsterDie();
+
 	// 2/14
 	void Test_MonsterBattle();
 

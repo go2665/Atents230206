@@ -7,12 +7,12 @@ void Monster_Wolf::Attack(HumanoidBase& target)
 
 	float f = Utils::GetRandom();
 	int damage = 0;
-	if (f < 0.7f)	// 50%
+	if (f < 0.0f)	// 50%
 	{
 		cout << "일반 공격" << endl;
 		damage = (int)(status.strength * 1.2f);
 	}
-	else if (f < 0.8f)	// 30%
+	else if (f < 0.0f)	// 30%
 	{
 		damage = Rush();
 	}
@@ -81,21 +81,24 @@ void Monster_Wolf::SetRandomStatus()
 
 void Monster_Wolf::Die()
 {
-	HumanoidBase::Die();
-	if (pBattleTarget != nullptr)
+	if (isAlive)
 	{
-		if (pBattleTarget->GetType() == Player)
+		Monster::Die();
+		if (pBattleTarget != nullptr)
 		{
-			Character* player = (Character*)pBattleTarget;
-			cout << "경험치를 (" << rewardExp << ")만큼 획득합니다." << endl;
-			player->AddExp(rewardExp);
-		}
+			if (pBattleTarget->GetType() == Player)
+			{
+				Character* player = (Character*)pBattleTarget;
+				cout << "경험치를 (" << rewardExp << ")만큼 획득합니다." << endl;
+				player->AddExp(rewardExp);
+			}
 
-		float rate = Utils::GetRandom();
-		if (rate < 0.75f)
-		{
-			cout << "HP 오브를 얻었습니다. HP가 (" << rewardHP << ")만큼 회복됩니다." << endl;
-			pBattleTarget->AddHP(rewardHP);
+			float rate = Utils::GetRandom();
+			if (rate < 0.75f)
+			{
+				cout << "HP 오브를 얻었습니다. HP가 (" << rewardHP << ")만큼 회복됩니다." << endl;
+				pBattleTarget->AddHP(rewardHP);
+			}
 		}
 	}
 }
