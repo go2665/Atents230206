@@ -34,6 +34,7 @@ public :
 	//inline const int GetWisdom() { return status.wisdom; }
 	inline const int GetMaxHP() { return maxHP; }
 	inline const int GetHP() { return hp; }
+	inline const int GetDexterity() { return status.dexterity; }
 
 	//inline void SetStrength(int str) { status.strength = str; }
 	//inline void SetDexterity(int dex) { status.dexterity= dex; }
@@ -71,6 +72,8 @@ public :
 	inline CharacterType GetType() { return type; }
 
 	inline void SetBattleTarget(HumanoidBase* pTarget) { pBattleTarget = pTarget; }
+
+	inline bool IsAlive() { return isAlive; }
 
 protected:
 	CharacterType type = Enemy;
