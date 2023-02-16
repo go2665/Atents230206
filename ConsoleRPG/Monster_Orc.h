@@ -12,7 +12,7 @@ public:
 	{
 		CleanUp();
 	}
-	virtual void Attack(HumanoidBase& target) override;
+	virtual void Attack(Creature_Base& target) override;
 
 protected:
 

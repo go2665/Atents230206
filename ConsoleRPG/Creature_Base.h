@@ -2,24 +2,27 @@
 #include "Status.h"
 #include "Enums.h"
 
-class HumanoidBase
+class Creature_Base
 {
 public :
-//	HumanoidBase() {};
-//	~HumanoidBase() {};
+//	Creature_Base() {};
+//	~Creature_Base() {};
 	
 
 	/// <summary>
 	/// target을 공격하는 함수
 	/// </summary>
 	/// <param name="target">공격 대상</param>
-	virtual void Attack(HumanoidBase& target);
+	virtual void Attack(Creature_Base& target);
 
 	/// <summary>
 	/// 데미지를 받는 함수(방어력 계산할 때)
 	/// </summary>
 	/// <param name="damage">적이 나에게 준 데미지(감소전)</param>
 	virtual void TakeDamage(int damage);
+
+	virtual void OnTurnStart() {};
+	virtual void OnTurnEnd() {};
 	
 	/// <summary>
 	/// 스테이터스 출력하는 함수
@@ -71,7 +74,7 @@ public :
 
 	inline CharacterType GetType() { return type; }
 
-	inline void SetBattleTarget(HumanoidBase* pTarget) { pBattleTarget = pTarget; }
+	inline void SetBattleTarget(Creature_Base* pTarget) { pBattleTarget = pTarget; }
 
 	inline bool IsAlive() { return isAlive; }
 
@@ -113,7 +116,7 @@ protected:
 	/// </summary>
 	int maxMP = 1;
 
-	HumanoidBase* pBattleTarget = nullptr;
+	Creature_Base* pBattleTarget = nullptr;
 
 	bool isAlive = true;	// 이 변수를 이용해서 한번만 죽게 만들기(4시 30분까지)
 

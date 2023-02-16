@@ -1,24 +1,24 @@
 #include "BuffBase.h"
-#include "HumanoidBase.h"
+#include "Creature_Base.h"
 #include <iostream>
 using namespace std;
 
-void BuffBase::ContinuousEffect(HumanoidBase& target)
+void BuffBase::ContinuousEffect(Creature_Base& target)
 {
 	cout << "[" << target.GetName() << "]에게 [" << name << "] 버프의 지속효과가 적용됩니다." << endl;
 }		
 
-void BuffBase::InstanceEffect(HumanoidBase& target)
+void BuffBase::InstanceEffect(Creature_Base& target)
 {
 	cout << "[" << target.GetName() << "]에게 [" << name << "] 버프의 효과가 적용됩니다." << endl;
 }		
 
-void BuffBase::RemoveEffect(HumanoidBase& target)
+void BuffBase::RemoveEffect(Creature_Base& target)
 {
 	cout << "[" << target.GetName() << "]에게 [" << name << "] 버프의 효과가 제거됩니다." << endl;
 }
 
-int BuffBase::OnTurnEnd(HumanoidBase& target) 
+int BuffBase::OnTurnEnd(Creature_Base& target) 
 {
 	ContinuousEffect(target);
 	duration--;

@@ -1,14 +1,14 @@
 #include "Test_Orc.h"
 #include "Buff_Rage.h"
 
-void Test_Orc::Attack(HumanoidBase& target)
+void Test_Orc::Attack(Creature_Base& target)
 {
-	HumanoidBase::Attack(target);
+	Creature_Base::Attack(target);
 
 	Rage();	
 }
 
-void Test_Orc::UseBuff(HumanoidBase& target)
+void Test_Orc::UseBuff(Creature_Base& target)
 {
 	Monster& targetMonster = (Monster&)target;
 	Buff_Rage* pBuff = new Buff_Rage();

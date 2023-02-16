@@ -12,12 +12,12 @@ public:
 	{
 		CleanUp();
 	}
-	virtual void Attack(HumanoidBase& target) override;
+	virtual void Attack(Creature_Base& target) override;
 
 protected:
 
 	int Rush();
-	void Bite(HumanoidBase& target);
+	void Bite(Creature_Base& target);
 
 	virtual void Initialize() override;
 

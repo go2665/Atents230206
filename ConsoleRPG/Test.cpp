@@ -1,12 +1,15 @@
 #include <list>
 #include "Test.h"
+#include "BattleManager.h"
+#include "Character.h"
 #include "Monster_Orc.h"
 #include "Test_Orc.h"
 #include "Monster_Wolf.h"
 
 void Test::TestRun()
 {
-	Test_MonsterDie();
+	Test_BattleManager();
+	//Test_MonsterDie();
 	//Test_MonsterBattle();
 	//Test_Buff3();
 	//Test_Buff2();
@@ -20,6 +23,31 @@ void Test::TestRun()
 	//Test_Ork();
 	//Test_RandomRange();
 	//Test_List();
+}
+
+void Test::Test_BattleManager()
+{
+	BattleManager bm;
+
+	cout << "Test 전투 시작전 설정" << endl;
+	Character* pChar = new Character();
+	pChar->Initialize();
+	Monster_Orc* pOrc = new Monster_Orc();
+
+	bm.SetPlayer(pChar);
+	bm.Start(pOrc);
+
+	cout << "Test 전투 루프 시작" << endl;
+	while (!bm.IsBattleEnd())
+	{
+		bm.TurnLoop();
+	}
+
+	cout << "Test 전투 종료" << endl;
+	
+	pChar->CleanUp();
+	delete pChar;
+	pChar = nullptr;
 }
 
 void Test::Test_MonsterDie()

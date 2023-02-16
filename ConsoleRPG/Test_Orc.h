@@ -12,8 +12,8 @@ public:
 	{
 		CleanUp();
 	}
-	virtual void Attack(HumanoidBase& target) override;
-	void UseBuff(HumanoidBase& target);
+	virtual void Attack(Creature_Base& target) override;
+	void UseBuff(Creature_Base& target);
 
 protected:
 	virtual void SetRandomStatus() override;

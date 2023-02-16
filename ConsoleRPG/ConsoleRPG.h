@@ -5,7 +5,7 @@
 #include "Enums.h"
 #include "Position.h"
 #include "BuffBase.h"
-#include "HumanoidBase.h"
+#include "Creature_Base.h"
 
 #include "Utils.h"
 #include "NamePicker.h"

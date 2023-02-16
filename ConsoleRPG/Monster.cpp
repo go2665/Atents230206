@@ -23,7 +23,7 @@ void Monster::CleanUp()
 
 void Monster::Die()
 {
-	HumanoidBase::Die();
+	Creature_Base::Die();
 	CleanUp();
 }
 
@@ -68,7 +68,7 @@ void Monster::AddBuff(BuffBase* pBuff)
 
 void Monster::PrintStatus()
 {
-	HumanoidBase::PrintStatus();
+	Creature_Base::PrintStatus();
 	if (buffList.size() > 0)
 	{
 		cout << "    น๖วม : ";

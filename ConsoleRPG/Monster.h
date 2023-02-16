@@ -1,7 +1,7 @@
 #pragma once
 #include "ConsoleRPG.h"
 
-class Monster : public HumanoidBase
+class Monster : public Creature_Base
 {
 public :
 /*	Monster()
@@ -11,8 +11,8 @@ public :
 	virtual ~Monster()
 	{
 	}*/	
-	virtual void OnTurnStart();
-	virtual void OnTurnEnd();
+	virtual void OnTurnStart() override;
+	virtual void OnTurnEnd() override;
 
 
 	void AddBuff(BuffBase* pBuff);

@@ -15,11 +15,11 @@ public:
 	int damage = 10;
 	float tickDamage = 0.2f;
 
-	virtual void InstanceEffect(HumanoidBase& target) override;
-	virtual void RemoveEffect(HumanoidBase& target) override;
+	virtual void InstanceEffect(Creature_Base& target) override;
+	virtual void RemoveEffect(Creature_Base& target) override;
 
 private:
-	virtual void ContinuousEffect(HumanoidBase& target) override;
+	virtual void ContinuousEffect(Creature_Base& target) override;
 
 };
 

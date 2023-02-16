@@ -1,9 +1,9 @@
 #include "Monster_Orc.h"
 #include "Buff_Rage.h"
 
-void Monster_Orc::Attack(HumanoidBase& target)
+void Monster_Orc::Attack(Creature_Base& target)
 {
-	HumanoidBase::Attack(target);
+	Creature_Base::Attack(target);
 
 	float f = Utils::GetRandom();
 	int damage = 0;
@@ -81,7 +81,7 @@ void Monster_Orc::Initialize()
 
 void Monster_Orc::SetRandomStatus()
 {
-	HumanoidBase::SetRandomStatus();
+	Creature_Base::SetRandomStatus();
 	status.strength = Utils::GetRandom(15,26);		// 15 ~ 25
 	status.dexterity = Utils::GetRandom(10,16);		// 10 ~ 15
 	status.intelligence = Utils::GetRandom(1,6);	// 1  ~  5

@@ -1,10 +1,10 @@
 #include "Buff_Bite.h"
-#include "HumanoidBase.h"
+#include "Creature_Base.h"
 #include <iostream>
 
 using namespace std;
 
-void Buff_Bite::InstanceEffect(HumanoidBase& target)
+void Buff_Bite::InstanceEffect(Creature_Base& target)
 {
 	BuffBase::InstanceEffect(target);
 
@@ -13,7 +13,7 @@ void Buff_Bite::InstanceEffect(HumanoidBase& target)
 	target.TakeDamage(damage);
 }
 
-void Buff_Bite::ContinuousEffect(HumanoidBase& target)
+void Buff_Bite::ContinuousEffect(Creature_Base& target)
 {
 	BuffBase::ContinuousEffect(target);
 	int max = target.GetMaxHP();	
@@ -23,7 +23,7 @@ void Buff_Bite::ContinuousEffect(HumanoidBase& target)
 	cout << "[" << target.GetName() << "]의 HP가 (" << damage << ")만큼 감소합니다." << endl;
 }
 
-void Buff_Bite::RemoveEffect(HumanoidBase& target)
+void Buff_Bite::RemoveEffect(Creature_Base& target)
 {
 	BuffBase::RemoveEffect(target);
 	target.AddDexterity(-buffDex);

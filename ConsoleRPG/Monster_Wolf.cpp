@@ -1,9 +1,9 @@
 #include "Monster_Wolf.h"
 #include "Buff_Bite.h"
 
-void Monster_Wolf::Attack(HumanoidBase& target)
+void Monster_Wolf::Attack(Creature_Base& target)
 {
-	HumanoidBase::Attack(target);
+	Creature_Base::Attack(target);
 
 	float f = Utils::GetRandom();
 	int damage = 0;
@@ -45,7 +45,7 @@ int Monster_Wolf::Rush()
 	return damage;
 }
 
-void Monster_Wolf::Bite(HumanoidBase& target)
+void Monster_Wolf::Bite(Creature_Base& target)
 {
 	cout << "스킬 발동 : [물기]" << endl;
 	Buff_Bite* pBuff = new Buff_Bite();
@@ -66,7 +66,7 @@ void Monster_Wolf::Initialize()
 
 void Monster_Wolf::SetRandomStatus()
 {
-	HumanoidBase::SetRandomStatus();
+	Creature_Base::SetRandomStatus();
 	status.strength = Utils::GetRandom(10,12);		// 10 ~ 11
 	status.dexterity = Utils::GetRandom(12,20);		// 12 ~ 19
 	status.intelligence = Utils::GetRandom(1,6);	// 1  ~  5

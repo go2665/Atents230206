@@ -19,7 +19,7 @@ private:
 	/// 전투 중인 플레이어와 몬스터를 저장할 배열
 	/// 항성 0번 캐릭터가 매 턴마다 먼저 공격한다.(민첩이 높은 캐릭터가 0번)
 	/// </summary>
-	HumanoidBase* battlers[2] = { nullptr, nullptr };
+	Creature_Base* battlers[2] = { nullptr, nullptr };
 
 	int turn = 0;
 

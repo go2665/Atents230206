@@ -1,31 +1,31 @@
 #include <iostream>
-#include "HumanoidBase.h"
+#include "Creature_Base.h"
 using namespace std;
 
 
-void HumanoidBase::Attack(HumanoidBase& target)
+void Creature_Base::Attack(Creature_Base& target)
 {
 	cout << "[" << this->name << "]는 [" << target.name << "]을 공격한다." << endl;
 }
 
-void HumanoidBase::TakeDamage(int damage)
+void Creature_Base::TakeDamage(int damage)
 {
 	cout << "[" << this->name << "]은 (" << damage << ")의 피해를 받았다." << endl;
 	AddHP(-damage);
 }
 
-void HumanoidBase::SetRandomStatus()
+void Creature_Base::SetRandomStatus()
 {	
 	cout << "[" << this->name << "]의 스테이터스를 설정합니다." << endl;
 }
 
-void HumanoidBase::Die()
+void Creature_Base::Die()
 {
 	cout << "[" << this->name << "]가 죽었습니다." << endl;
 	isAlive = false;	// 죽었다고 표시
 }
 
-void HumanoidBase::PrintStatus()
+void Creature_Base::PrintStatus()
 {
 	cout << "\n ┌───────────────────────────────────────────────────┐\n";
 	printf(" │ 이름 : %-20s (Lv : %d)              │\n", name, level );
