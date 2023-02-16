@@ -13,6 +13,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{858b4bc9-02d5-45ab-ad20-8d352feb972b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{52d82677-9620-416e-97d7-4bdf9d12e803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Creature">
+      <UniqueIdentifier>{1b53fae6-52ce-4ad2-957e-a91018f912be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Creature\Character">
+      <UniqueIdentifier>{32b75081-1f27-4278-8914-f65461b228db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Creature\Monster">
+      <UniqueIdentifier>{cbf01d25-44e1-4291-9dec-c3b02d045b6f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,10 +36,43 @@
     <ClCompile Include="Test.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Position.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="NamePicker.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Creature_Base.cpp">
+      <Filter>Creature</Filter>
+    </ClCompile>
+    <ClCompile Include="BuffBase.cpp">
+      <Filter>Creature</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="NamePicker.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Enums.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Status.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Creature_Base.h">
+      <Filter>Creature</Filter>
+    </ClInclude>
+    <ClInclude Include="BuffBase.h">
+      <Filter>Creature</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -127,11 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BuffBase.cpp" />
+    <ClCompile Include="Creature_Base.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NamePicker.cpp" />
+    <ClCompile Include="Position.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BuffBase.h" />
+    <ClInclude Include="Creature_Base.h" />
+    <ClInclude Include="Enums.h" />
+    <ClInclude Include="NamePicker.h" />
+    <ClInclude Include="Position.h" />
+    <ClInclude Include="Status.h" />
     <ClInclude Include="Test.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
