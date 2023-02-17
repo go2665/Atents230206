@@ -55,15 +55,23 @@ void Creature_Base::OnBattleEnd()
 
 void Creature_Base::AddBuff(Creature_Base& target, BuffBase* pBuff)
 {
-	// 누가 누구에게 버프를 걸었음.
-	buffList.push_back(pBuff);
+	cout << "[" << this->name << "]가 [" << target.GetName() << "]에게 [" << pBuff->GetName() << "] 버프를 겁니다." << endl;
+	target.buffList.push_back(pBuff);
 }
-
 
 void Creature_Base::SetRandomStatus()
 {	
 	cout << "[" << this->name << "]의 스테이터스를 설정합니다." << endl;
-	// 기본 스텟 주기
+	
+	status.strength = 5;
+	status.dexterity = 5;
+	status.intelligence = 5;
+	status.stamina = 5;
+	status.wisdom = 5;
+	maxHP = status.stamina * 10;
+	hp = maxHP;
+	maxMP = status.wisdom * 10;
+	mp = maxMP;
 }
 
 void Creature_Base::Die()

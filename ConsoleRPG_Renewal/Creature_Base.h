@@ -88,12 +88,12 @@ public:
 	/// <summary>
 	/// pBattleTarget을 공격하는 함수. 각 개별 클래스마다 override 할 것
 	/// </summary>
-	virtual void Attack() {}
+	virtual void Attack();
 
 	/// <summary>
 	/// 데미지를 받아 처리하는 함수. 각 개별 클래스마다 override 할 것
 	/// </summary>
-	virtual void Defence(int damage) {}
+	virtual void Defence(int damage);
 
 	/// <summary>
 	/// 스테이터스 출력하는 함수
