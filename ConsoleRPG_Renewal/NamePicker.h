@@ -1,4 +1,6 @@
 #pragma once
+#include "Enums.h"
+#include "Utils.h"
 
 class NamePicker
 {
@@ -25,4 +27,6 @@ public :
 			return wolfNames[index];
 		return nullptr;
 	}
+
+	static const char* GetName(CreatureType type);
 };

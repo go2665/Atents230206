@@ -5,3 +5,25 @@ const char* NamePicker::orcNames[orcNameCount] = {
 
 const char* NamePicker::wolfNames[wolfNameCount] = {
 	"´Á´ë", "°ËÀº ´Á´ë", "ÇÏ¾á ´Á´ë", "°¥»ö ´Á´ë", "ºÓÀº ´Á´ë" };
+
+const char* NamePicker::GetName(CreatureType type)
+{
+	const char* result = nullptr;
+	int index = 0;
+	switch (type)
+	{
+	case Orc:
+		index = Utils::GetRandom(0, orcNameCount);
+		result = GetOrcName(index);
+		break;
+	case Wolf:
+		index = Utils::GetRandom(0, wolfNameCount);
+		result = GetWolfName(index);
+		break;
+	case Player:
+	case None:
+	default:
+		break;
+	}
+	return result;
+}
