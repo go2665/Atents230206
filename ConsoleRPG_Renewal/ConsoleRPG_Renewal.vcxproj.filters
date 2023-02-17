@@ -63,6 +63,9 @@
     <ClCompile Include="Character.cpp">
       <Filter>Creature\Character</Filter>
     </ClCompile>
+    <ClCompile Include="Buff_Bite.cpp">
+      <Filter>Buff</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="Character.h">
       <Filter>Creature\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Buff_Bite.h">
+      <Filter>Buff</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

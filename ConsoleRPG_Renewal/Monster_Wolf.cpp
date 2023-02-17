@@ -48,6 +48,8 @@ int Monster_Wolf::Bite()
 	cout << "스킬 발동 : [물기]" << endl;
 	Buff_Bite* pBuff = new Buff_Bite();	
 	AddBuff(*pBattleTarget, pBuff);
+	pBuff->InstanceEffect(*pBattleTarget);
+	return 0;
 }
 
 int Monster_Wolf::Rush()
