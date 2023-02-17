@@ -61,11 +61,13 @@ void Creature_Base::OnBattleStart(Creature_Base* pTarget)
 	if (!isBattle)
 	{
 		isBattle = true;
+		pBattleTarget = pTarget;
 	}
 }
 
 void Creature_Base::OnBattleEnd()
 {
+	pBattleTarget = nullptr;
 	isBattle = false;
 }
 

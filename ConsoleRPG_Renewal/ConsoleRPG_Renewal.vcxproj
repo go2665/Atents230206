@@ -131,6 +131,7 @@
     <ClCompile Include="Buff_Bite.cpp" />
     <ClCompile Include="Buff_Rage.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="CreatureFactory.cpp" />
     <ClCompile Include="Creature_Base.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monster_Orc.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="Buff_Bite.h" />
     <ClInclude Include="Buff_Rage.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="CreatureFactory.h" />
     <ClInclude Include="Creature_Base.h" />
     <ClInclude Include="Enums.h" />
     <ClInclude Include="Monster.h" />

@@ -72,14 +72,14 @@ public :
 			mp = 0;
 	}
 
-	inline CharacterType GetType() { return type; }
+	inline CreatureType GetType() { return type; }
 
 	inline void SetBattleTarget(Creature_Base* pTarget) { pBattleTarget = pTarget; }
 
 	inline bool IsAlive() { return isAlive; }
 
 protected:
-	CharacterType type = Enemy;
+	CreatureType type = Enemy;
 
 	/// <summary>
 	/// 플레이어의 이름(최대 32자. 한글은 16자)

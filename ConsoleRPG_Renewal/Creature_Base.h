@@ -15,7 +15,7 @@ protected:
 	/// <summary>
 	/// 캐릭터의 타입(현재 플레이어, 적만 있음)
 	/// </summary>
-	CharacterType type = Enemy;
+	CreatureType type = None;
 
 	/// <summary>
 	/// 플레이어의 이름(최대 32자. 한글은 16자)
@@ -161,7 +161,7 @@ public :
 	inline bool IsBattle() { return isBattle; }
 
 	// 각종 Getter 함수
-	inline CharacterType GetType() { return type; }
+	inline CreatureType GetType() { return type; }
 	inline const char* GetName() { return name; }
 	inline const int GetStringth() { return status.strength; }
 	inline const int GetDexterity() { return status.dexterity; }

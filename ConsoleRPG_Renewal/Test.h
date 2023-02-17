@@ -6,5 +6,9 @@ class Test
 {
 public:
 	void Run();
+
+private:
+	// 2/17
+	void Test_CreatureFactory();
 };
 

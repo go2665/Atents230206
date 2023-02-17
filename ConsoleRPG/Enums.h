@@ -23,7 +23,7 @@ enum Input_Move
 	Move_North
 };
 
-enum CharacterType
+enum CreatureType
 {
 	Player = 0,
 	Enemy
