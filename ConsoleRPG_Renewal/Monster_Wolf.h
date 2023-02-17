@@ -10,6 +10,9 @@ protected:
 	int Bite();
 	int Rush();
 
+	virtual void OnTurnAction() override;
+	virtual void OnTurnEnd() override;
+
 	virtual void SetRandomStatus() override;
 	virtual void Die() override;
 };

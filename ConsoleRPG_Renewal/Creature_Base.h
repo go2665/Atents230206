@@ -76,7 +76,7 @@ public:
 	/// <summary>
 	/// 초기화용 함수. 팩토리에서 실행.
 	/// </summary>
-	virtual void Initialize() {};
+	virtual void Initialize();
 
 	/// <summary>
 	/// 정리용 함수. Die에서 실행
@@ -135,7 +135,7 @@ protected:
 	/// <summary>
 	/// Loop가 끝날 때 실행될 함수
 	/// </summary>
-	virtual void OnTurnEnd() {};
+	virtual void OnTurnEnd();
 
 	/// <summary>
 	/// 스테이터스를 랜덤으로 설정하는 함수

@@ -10,8 +10,9 @@ using namespace std;
 
 void Monster_Wolf::Initialize()
 {
-	int index = Utils::GetRandom(0, NamePicker::orcNameCount);
-	strcpy_s(name, NamePicker::GetOrcName(index));
+	Monster::Initialize();
+
+	strcpy_s(name, NamePicker::GetName(Wolf));
 
 	rewardExp = 30;
 	rewardHP = 100;
@@ -48,7 +49,6 @@ int Monster_Wolf::Bite()
 	cout << "스킬 발동 : [물기]" << endl;
 	Buff_Bite* pBuff = new Buff_Bite();	
 	AddBuff(*pBattleTarget, pBuff);
-	pBuff->InstanceEffect(*pBattleTarget);
 	return 0;
 }
 
@@ -68,6 +68,16 @@ int Monster_Wolf::Rush()
 	}
 
 	return damage;
+}
+
+void Monster_Wolf::OnTurnAction()
+{
+	Attack();
+}
+
+void Monster_Wolf::OnTurnEnd()
+{
+	PrintStatus();
 }
 
 void Monster_Wolf::SetRandomStatus()

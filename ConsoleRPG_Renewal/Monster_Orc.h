@@ -10,6 +10,9 @@ protected:
 	int Rage();
 	int Smash();
 
+	virtual void OnTurnAction() override;
+	virtual void OnTurnEnd() override;
+
 	virtual void SetRandomStatus() override;
 	virtual void Die() override;
 };

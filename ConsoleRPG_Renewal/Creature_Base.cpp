@@ -3,6 +3,11 @@
 using namespace std;
 
 
+void Creature_Base::Initialize()
+{
+	SetRandomStatus();
+}
+
 void Creature_Base::CleanUp()
 {
 	for (auto iter = buffList.begin(); iter != buffList.end(); iter++)
@@ -74,7 +79,29 @@ void Creature_Base::OnBattleEnd()
 void Creature_Base::AddBuff(Creature_Base& target, BuffBase* pBuff)
 {
 	cout << "[" << this->name << "]가 [" << target.GetName() << "]에게 [" << pBuff->GetName() << "] 버프를 겁니다." << endl;
+	pBuff->InstanceEffect(target);
 	target.buffList.push_back(pBuff);
+}
+
+void Creature_Base::OnTurnEnd()
+{
+	list<BuffBase*> deleteList;
+	for (auto iter = buffList.begin(); iter != buffList.end(); iter++)
+	{
+		int dutation = (*iter)->OnTurnEnd(*this);
+		if (dutation <= 0)
+		{
+			deleteList.push_back(*iter);
+		}
+	}
+
+	for (auto iter = deleteList.begin(); iter != deleteList.end(); iter++)
+	{
+		(*iter)->RemoveEffect(*this);
+		buffList.remove(*iter);
+
+		delete (*iter);
+	}
 }
 
 void Creature_Base::SetRandomStatus()

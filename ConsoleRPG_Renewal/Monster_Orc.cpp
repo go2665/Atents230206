@@ -10,8 +10,9 @@ using namespace std;
 
 void Monster_Orc::Initialize()
 {
-	int index = Utils::GetRandom(0, NamePicker::orcNameCount);
-	strcpy_s(name, NamePicker::GetOrcName(index));
+	Monster::Initialize();
+
+	strcpy_s(name, NamePicker::GetName(Orc));
 
 	rewardExp = 30;
 	rewardHP = 100;
@@ -68,6 +69,16 @@ int Monster_Orc::Smash()
 	}
 
 	return damage;
+}
+
+void Monster_Orc::OnTurnAction()
+{
+	Attack();
+}
+
+void Monster_Orc::OnTurnEnd()
+{
+	PrintStatus();
 }
 
 void Monster_Orc::SetRandomStatus()

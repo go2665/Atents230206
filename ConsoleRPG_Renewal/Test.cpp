@@ -24,10 +24,8 @@ void Test::Test_CreatureFactory()
 
 	while (pOrc->IsAlive() && pWolf->IsAlive())
 	{
-		pOrc->Attack();
-		pOrc->PrintStatus();
-		pWolf->Attack();
-		pWolf->PrintStatus();
+		pOrc->Loop();
+		pWolf->Loop();
 	}
 
 	pOrc->OnBattleEnd();
