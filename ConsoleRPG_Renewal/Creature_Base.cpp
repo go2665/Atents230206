@@ -3,6 +3,15 @@
 using namespace std;
 
 
+void Creature_Base::CleanUp()
+{
+	for (auto iter = buffList.begin(); iter != buffList.end(); iter++)
+	{
+		delete (*iter);
+	}
+	buffList.clear();
+}
+
 void Creature_Base::Loop()
 {
 	OnTurnStart();
@@ -22,8 +31,15 @@ void Creature_Base::Defence(int damage)
 {
 	if (isBattle)
 	{
-		cout << "[" << this->name << "]은 (" << damage << ")의 피해를 받았다." << endl;
-		AddHP(-damage);
+		// 방어 공식 들어갈 부분----------------
+		// 각 크리쳐 별로 별도 구현
+		// ------------------------------------
+
+		if (damage > 0)
+		{
+			cout << "[" << this->name << "]은 (" << damage << ")의 피해를 받았다." << endl;
+			AddHP(-damage);
+		}
 	}
 }
 
@@ -68,9 +84,9 @@ void Creature_Base::SetRandomStatus()
 	status.intelligence = 5;
 	status.stamina = 5;
 	status.wisdom = 5;
-	maxHP = status.stamina * 10;
+	maxHP = status.stamina * HP_Multiplier;
 	hp = maxHP;
-	maxMP = status.wisdom * 10;
+	maxMP = status.wisdom * MP_Multiplier;
 	mp = maxMP;
 }
 

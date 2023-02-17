@@ -28,6 +28,9 @@
     <Filter Include="Creature\Monster">
       <UniqueIdentifier>{cbf01d25-44e1-4291-9dec-c3b02d045b6f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Buff">
+      <UniqueIdentifier>{23f9617f-63c1-4c22-bf46-2775d873ea9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -45,8 +48,20 @@
     <ClCompile Include="Creature_Base.cpp">
       <Filter>Creature</Filter>
     </ClCompile>
+    <ClCompile Include="Monster_Orc.cpp">
+      <Filter>Creature\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster_Wolf.cpp">
+      <Filter>Creature\Monster</Filter>
+    </ClCompile>
     <ClCompile Include="BuffBase.cpp">
-      <Filter>Creature</Filter>
+      <Filter>Buff</Filter>
+    </ClCompile>
+    <ClCompile Include="Buff_Rage.cpp">
+      <Filter>Buff</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Creature\Character</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -71,8 +86,23 @@
     <ClInclude Include="Creature_Base.h">
       <Filter>Creature</Filter>
     </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>Creature\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster_Wolf.h">
+      <Filter>Creature\Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster_Orc.h">
+      <Filter>Creature\Monster</Filter>
+    </ClInclude>
     <ClInclude Include="BuffBase.h">
-      <Filter>Creature</Filter>
+      <Filter>Buff</Filter>
+    </ClInclude>
+    <ClInclude Include="Buff_Rage.h">
+      <Filter>Buff</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Creature\Character</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

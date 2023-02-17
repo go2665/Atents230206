@@ -9,6 +9,9 @@ class Creature_Base
 public:
 
 protected:
+	const int HP_Multiplier = 10;
+	const int MP_Multiplier = 10;
+
 	/// <summary>
 	/// 캐릭터의 타입(현재 플레이어, 적만 있음)
 	/// </summary>
@@ -78,7 +81,7 @@ public:
 	/// <summary>
 	/// 정리용 함수. Die에서 실행
 	/// </summary>
-	virtual void CleanUp() {};
+	virtual void CleanUp();
 
 	/// <summary>
 	/// 루프에서 실행할 함수. 턴 시작/턴 행동/턴 종료 처리 .
@@ -167,7 +170,6 @@ public :
 	inline const int GetWisdom() { return status.wisdom; }
 	inline const int GetMaxHP() { return maxHP; }
 	inline const int GetHP() { return hp; }
-	inline const int GetDexterity() { return status.dexterity; }
 
 	// 데이터 변화용 함수
 	inline void AddStrength(int str) { status.strength += str; }
