@@ -75,11 +75,6 @@ void Monster_Wolf::OnTurnAction()
 	Attack();
 }
 
-void Monster_Wolf::OnTurnEnd()
-{
-	PrintStatus();
-}
-
 void Monster_Wolf::SetRandomStatus()
 {
 	Creature_Base::SetRandomStatus();

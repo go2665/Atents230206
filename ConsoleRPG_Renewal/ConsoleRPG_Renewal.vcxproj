@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BattleManager.cpp" />
     <ClCompile Include="BuffBase.cpp" />
     <ClCompile Include="Buff_Bite.cpp" />
     <ClCompile Include="Buff_Rage.cpp" />
@@ -141,6 +142,7 @@
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BattleManager.h" />
     <ClInclude Include="BuffBase.h" />
     <ClInclude Include="Buff_Bite.h" />
     <ClInclude Include="Buff_Rage.h" />

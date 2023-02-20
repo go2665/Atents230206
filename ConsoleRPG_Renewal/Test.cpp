@@ -3,7 +3,7 @@
 #include "CreatureFactory.h"
 #include "Creature_Base.h"
 #include "Monster_Orc.h"
-
+#include "BattleManager.h"
 
 void Test::Run()
 {
@@ -16,20 +16,10 @@ void Test::Test_CreatureFactory()
 	cout << "Å×½ºÆ® - CreatureFactory" << endl;
 	Creature_Base* pOrc = CreatureFactory::MakeCreature(Orc);
 	Creature_Base* pWolf = CreatureFactory::MakeCreature(Wolf);
-	pOrc->PrintStatus();
-	pWolf->PrintStatus();
 
-	pOrc->OnBattleStart(pWolf);
-	pWolf->OnBattleStart(pOrc);
-
-	while (pOrc->IsAlive() && pWolf->IsAlive())
-	{
-		pOrc->Loop();
-		pWolf->Loop();
-	}
-
-	pOrc->OnBattleEnd();
-	pWolf->OnBattleEnd();
+	BattleManager bm;
+	bm.SetBattlers(pOrc, pWolf);
+	bm.BattleStart();
 
 	CreatureFactory::DestroyCreature(pOrc);
 	CreatureFactory::DestroyCreature(pWolf);

@@ -69,6 +69,9 @@
     <ClCompile Include="CreatureFactory.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
+    <ClCompile Include="BattleManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -115,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="CreatureFactory.h">
       <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="BattleManager.h">
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

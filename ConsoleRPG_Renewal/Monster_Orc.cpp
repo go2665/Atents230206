@@ -76,11 +76,6 @@ void Monster_Orc::OnTurnAction()
 	Attack();
 }
 
-void Monster_Orc::OnTurnEnd()
-{
-	PrintStatus();
-}
-
 void Monster_Orc::SetRandomStatus()
 {
 	Creature_Base::SetRandomStatus();

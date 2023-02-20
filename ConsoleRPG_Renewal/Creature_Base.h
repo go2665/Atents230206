@@ -160,7 +160,7 @@ public :
 	/// <returns>전투 중이면 true. 전투중이 아니면 false</returns>
 	inline bool IsBattle() { return isBattle; }
 
-	// 각종 Getter 함수
+	// 각종 Getter 함수	
 	inline CreatureType GetType() { return type; }
 	inline const char* GetName() { return name; }
 	inline const int GetStringth() { return status.strength; }
@@ -170,6 +170,9 @@ public :
 	inline const int GetWisdom() { return status.wisdom; }
 	inline const int GetMaxHP() { return maxHP; }
 	inline const int GetHP() { return hp; }
+
+	// Setter
+	inline void SetBattleTarget(Creature_Base* pTarget) { pBattleTarget = pTarget; }
 
 	// 데이터 변화용 함수
 	inline void AddStrength(int str) { status.strength += str; }
