@@ -10,6 +10,7 @@ using namespace std;
 
 void Monster_Orc::Initialize()
 {
+	type = Orc;
 	strcpy_s(name, NamePicker::GetName(Orc));
 
 	rewardExp = 30;

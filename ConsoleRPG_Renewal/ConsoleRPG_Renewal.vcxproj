@@ -135,6 +135,7 @@
     <ClCompile Include="CreatureFactory.cpp" />
     <ClCompile Include="Creature_Base.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Monster_Orc.cpp" />
     <ClCompile Include="Monster_Wolf.cpp" />
     <ClCompile Include="NamePicker.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="CreatureFactory.h" />
     <ClInclude Include="Creature_Base.h" />
     <ClInclude Include="Enums.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Monster_Orc.h" />
     <ClInclude Include="Monster_Wolf.h" />

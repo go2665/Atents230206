@@ -72,6 +72,9 @@
     <ClCompile Include="BattleManager.cpp">
       <Filter>Common</Filter>
     </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -120,6 +123,9 @@
       <Filter>Utility</Filter>
     </ClInclude>
     <ClInclude Include="BattleManager.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
       <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
