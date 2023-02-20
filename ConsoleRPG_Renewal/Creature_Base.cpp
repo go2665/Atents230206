@@ -59,6 +59,15 @@ void Creature_Base::PrintStatus()
 	printf(" 弛 羹溘 : %5d  弛", status.stamina);
 	printf(" 弛 雖�� : %5d  弛                 弛\n", status.wisdom);
 	cout << " 戌式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式式戎\n";
+	if (buffList.size() > 0)
+	{
+		cout << "    幗Щ : ";
+		for (auto iter = buffList.begin(); iter != buffList.end(); iter++)
+		{
+			cout << "[" << (*iter)->GetName() << "] ";
+		}
+	}
+	cout << endl;
 }
 
 void Creature_Base::OnBattleStart(Creature_Base* pTarget)

@@ -10,13 +10,13 @@ using namespace std;
 
 void Monster_Orc::Initialize()
 {
-	Monster::Initialize();
-
 	strcpy_s(name, NamePicker::GetName(Orc));
 
 	rewardExp = 30;
 	rewardHP = 100;
 	rewardMP = 50;
+
+	Monster::Initialize();
 }
 
 void Monster_Orc::Attack()
