@@ -66,8 +66,8 @@ void Creature_Base::PrintStatus()
 		{
 			cout << "[" << (*iter)->GetName() << "] ";
 		}
+		cout << endl << endl;
 	}
-	cout << endl;
 }
 
 void Creature_Base::OnBattleStart(Creature_Base* pTarget)

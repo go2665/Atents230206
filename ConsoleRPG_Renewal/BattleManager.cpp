@@ -36,15 +36,23 @@ void BattleManager::BattleStart()
 
 void BattleManager::BattleTurnLoop()
 {
+	cout << "-------------------- " << turn << "ÅÏ ½ÃÀÛ -------------------------------" << endl;
 	battlers[0]->Loop();
 	if (IsBattleEnd())
 	{
 		return;
 	}
 	battlers[1]->Loop();
+	if (IsBattleEnd())
+	{
+		return;
+	}
 
 	battlers[0]->PrintStatus();
 	battlers[1]->PrintStatus();
+	
+	turn++;
+	cout << "--------------------------------------------------------------" << endl << endl;
 }
 
 void BattleManager::BattleEnd()

@@ -9,7 +9,7 @@ class Creature_Base
 public:
 
 protected:
-	const int HP_Multiplier = 100;
+	const int HP_Multiplier = 20;
 	const int MP_Multiplier = 10;
 
 	/// <summary>
