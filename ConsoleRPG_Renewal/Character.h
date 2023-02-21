@@ -6,9 +6,14 @@
 class Character : public Creature_Base
 {
 private:
+	const int MAX_NAME_SIZE = 10;
 	void InputNameProcess();
 
+	char skill1_Name[16];
+	char skill2_Name[16];
+
 protected:
+	RaceType race = HumanType;
 	const int ExpCap = 100;
 	int exp = 0;
 	int maxExp = ExpCap;
@@ -47,39 +52,18 @@ public:
 	virtual void Attack() override;
 
 	/// <summary>
-	/// 데미지를 받아 처리하는 함수. 각 개별 클래스마다 override 할 것
-	/// </summary>
-	virtual void Defence(int damage) override;
-
-	/// <summary>
 	/// 스테이터스 출력하는 함수
 	/// </summary>
 	virtual void PrintStatus() override;
 
 protected:
 	/// <summary>
-	/// Loop 시작될 때 실행될 함수.
-	/// </summary>
-	virtual void OnTurnStart() override;
-
-	/// <summary>
-	/// Loop 안에서 해당 크리처가 매 턴마다 하는 행동이 기록된 함수.
-	/// </summary>
-	virtual void OnTurnAction() override;
-
-	/// <summary>
-	/// Loop가 끝날 때 실행될 함수
-	/// </summary>
-	virtual void OnTurnEnd() override;
-
-	/// <summary>
-	/// 스테이터스를 랜덤으로 설정하는 함수
-	/// </summary>
-	virtual void SetRandomStatus() override;
-
-	/// <summary>
 	/// 죽었을 때 실행될 함수
 	/// </summary>
 	virtual void Die() override;
+
+	virtual void NormalAttack();
+	virtual void Skill01();
+	virtual void Skill02();
 };
 

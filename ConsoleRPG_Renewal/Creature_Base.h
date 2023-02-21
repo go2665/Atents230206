@@ -18,7 +18,7 @@ protected:
 	CreatureType type = None;
 
 	/// <summary>
-	/// 플레이어의 이름(최대 32자. 한글은 16자)
+	/// 플레이어의 이름(최대 31자. 한글은 15자)
 	/// </summary>
 	char name[32];
 

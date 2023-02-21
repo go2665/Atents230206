@@ -86,7 +86,7 @@ void Monster_Orc::SetRandomStatus()
 	status.stamina = Utils::GetRandom(15, 21);		// 15 ~ 20
 	status.wisdom = Utils::GetRandom(1, 6);			// 1  ~  5
 
-	maxHP = status.stamina * HP_Multiplier;
+	maxHP = (int)(status.stamina * HP_Multiplier * 1.2f);
 	hp = maxHP;
 	maxMP = status.wisdom * MP_Multiplier;
 	mp = maxMP;

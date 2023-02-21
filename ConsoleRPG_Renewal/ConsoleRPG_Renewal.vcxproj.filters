@@ -75,6 +75,9 @@
     <ClCompile Include="Map.cpp">
       <Filter>Common</Filter>
     </ClCompile>
+    <ClCompile Include="Human.cpp">
+      <Filter>Creature\Character</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -127,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Human.h">
+      <Filter>Creature\Character</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

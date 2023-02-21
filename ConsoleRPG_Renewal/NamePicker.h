@@ -29,4 +29,6 @@ public :
 	}
 
 	static const char* GetName(CreatureType type);
+
+	static const char* GetRaceName(RaceType race);
 };

@@ -27,3 +27,17 @@ const char* NamePicker::GetName(CreatureType type)
 	}
 	return result;
 }
+
+const char* NamePicker::GetRaceName(RaceType race)
+{
+	switch (race)
+	{
+	case HumanType:
+		return "인간";
+	case ElfType:
+		return "엘프";
+	case DrawfType:
+		return "드워프";
+	}
+	return nullptr;
+}

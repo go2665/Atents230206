@@ -5,8 +5,6 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleRPG_Renewal", "ConsoleRPG_Renewal\ConsoleRPG_Renewal.vcxproj", "{2CAA7F44-D85E-4BAA-B8CC-72CFC20602C7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleRPG", "ConsoleRPG\ConsoleRPG.vcxproj", "{7B3ADED9-4719-4671-8E72-D30E568328BD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -23,14 +21,6 @@ Global
 		{2CAA7F44-D85E-4BAA-B8CC-72CFC20602C7}.Release|x64.Build.0 = Release|x64
 		{2CAA7F44-D85E-4BAA-B8CC-72CFC20602C7}.Release|x86.ActiveCfg = Release|Win32
 		{2CAA7F44-D85E-4BAA-B8CC-72CFC20602C7}.Release|x86.Build.0 = Release|Win32
-		{7B3ADED9-4719-4671-8E72-D30E568328BD}.Debug|x64.ActiveCfg = Debug|x64
-		{7B3ADED9-4719-4671-8E72-D30E568328BD}.Debug|x64.Build.0 = Debug|x64
-		{7B3ADED9-4719-4671-8E72-D30E568328BD}.Debug|x86.ActiveCfg = Debug|Win32
-		{7B3ADED9-4719-4671-8E72-D30E568328BD}.Debug|x86.Build.0 = Debug|Win32
-		{7B3ADED9-4719-4671-8E72-D30E568328BD}.Release|x64.ActiveCfg = Release|x64
-		{7B3ADED9-4719-4671-8E72-D30E568328BD}.Release|x64.Build.0 = Release|x64
-		{7B3ADED9-4719-4671-8E72-D30E568328BD}.Release|x86.ActiveCfg = Release|Win32
-		{7B3ADED9-4719-4671-8E72-D30E568328BD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -30,3 +30,10 @@ enum CreatureType
 	Orc,
 	Wolf
 };
+
+enum RaceType
+{
+	HumanType = 0,
+	ElfType,
+	DrawfType
+};

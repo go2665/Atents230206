@@ -8,6 +8,11 @@ public:
 	void Run();
 
 private:
+	// 2/21
+	void Test_CharacterPrintStatus();
+	void Test_CharacterAttackSelect();
+	void Test_CharacterNameInput();
+
 	// 2/17
 	void Test_CreatureFactory();
 };
