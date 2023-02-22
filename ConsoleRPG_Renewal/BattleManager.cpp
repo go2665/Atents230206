@@ -60,8 +60,21 @@ void BattleManager::BattleEnd()
 	battlers[1]->OnBattleEnd();
 	battlers[0]->OnBattleEnd();
 
+	Creature_Base* winner;
+	Creature_Base* loser;
+	if (battlers[0]->IsAlive())
+	{
+		winner = battlers[0];
+		loser = battlers[1];
+	}
+	else
+	{
+		winner = battlers[1];
+		loser = battlers[0];
+	}
+	cout << "전투 종료." << endl;
+	cout << "[" << winner->GetName() << "]가 [" << loser->GetName() << "]를 이겼습니다." << endl;
+
 	battlers[0] = nullptr;
 	battlers[1] = nullptr;
-
-	cout << "전투 종료." << endl;
 }

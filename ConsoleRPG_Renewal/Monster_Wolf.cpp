@@ -98,6 +98,12 @@ void Monster_Wolf::Die()
 		Monster::Die();
 		if (pBattleTarget != nullptr)	// 죽었을 때 싸우던 대상이 있으면
 		{
+			float rate = Utils::GetRandom();
+			if (rate < 0.75f)
+			{
+				cout << "HP 오브를 얻었습니다. HP가 (" << rewardHP << ")만큼 회복됩니다." << endl;
+				pBattleTarget->AddHP(rewardHP);
+			}
 			if (pBattleTarget->GetType() == Player)
 			{
 				Character* player = (Character*)pBattleTarget;
@@ -105,12 +111,6 @@ void Monster_Wolf::Die()
 				player->AddExp(rewardExp);
 			}
 
-			float rate = Utils::GetRandom();
-			if (rate < 0.75f)
-			{
-				cout << "HP 오브를 얻었습니다. HP가 (" << rewardHP << ")만큼 회복됩니다." << endl;
-				pBattleTarget->AddHP(rewardHP);
-			}
 		}
 	}
 }

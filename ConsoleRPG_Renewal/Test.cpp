@@ -13,9 +13,35 @@ void Test::Run()
 	//Test_CreatureFactory();
 	//Test_CharacterNameInput();
 	//Test_CharacterAttackSelect();
+	Test_HumanBattle();
 }
 
+void Test::Test_HumanBattle()
+{
+	Creature_Base* pPlayer = CreatureFactory::MakeCreature(HumanType);
+	Creature_Base* pMonster = CreatureFactory::MakeCreature(Orc);	
 
+	BattleManager bm;
+	while ( pPlayer->IsAlive() )
+	{
+		bm.SetBattlers(pPlayer, pMonster);
+		
+		pPlayer->PrintStatus();
+		pMonster->PrintStatus();
+
+		bm.BattleStart();
+
+		if (!pMonster->IsAlive())
+		{
+			CreatureFactory::DestroyCreature(pMonster);
+			pMonster = CreatureFactory::MakeCreature(Orc);		
+			cout << endl << "[" << pMonster->GetName() << "]가 새롭게 등장합니다." << endl;
+		}
+	}
+
+	CreatureFactory::DestroyCreature(pMonster);
+	CreatureFactory::DestroyCreature(pPlayer);
+}
 
 void Test::Test_CharacterPrintStatus()
 {

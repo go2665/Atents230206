@@ -143,6 +143,11 @@ protected:
 	virtual void SetRandomStatus();
 
 	/// <summary>
+	/// 스테미너와 지혜를 기반으로 HP와 MP 재설정
+	/// </summary>
+	virtual void RefreshHPMP();
+
+	/// <summary>
 	/// 죽었을 때 실행될 함수
 	/// </summary>
 	virtual void Die();

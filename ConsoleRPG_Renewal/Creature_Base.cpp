@@ -122,6 +122,12 @@ void Creature_Base::SetRandomStatus()
 	status.intelligence = 5;
 	status.stamina = 5;
 	status.wisdom = 5;
+
+	RefreshHPMP();
+}
+
+void Creature_Base::RefreshHPMP()
+{
 	maxHP = status.stamina * HP_Multiplier;
 	hp = maxHP;
 	maxMP = status.wisdom * MP_Multiplier;

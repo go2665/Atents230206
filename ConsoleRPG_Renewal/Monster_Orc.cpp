@@ -99,13 +99,7 @@ void Monster_Orc::Die()
 		Monster::Die();
 		if (pBattleTarget != nullptr)	// 죽었을 때 싸우던 대상이 있으면
 		{
-			if (pBattleTarget->GetType() == Player)
-			{
-				Character* player = (Character*)pBattleTarget;
-				cout << "경험치를 (" << rewardExp << ")만큼 획득합니다." << endl;
-				player->AddExp(rewardExp);
-			}
-
+			cout << endl << "승리 보상 ------------------------------------------------------" << endl;
 			float rate = Utils::GetRandom();
 			if (rate < 0.5f)
 			{
@@ -118,6 +112,14 @@ void Monster_Orc::Die()
 				cout << "MP 오브를 얻었습니다. MP가 (" << rewardMP << ")만큼 회복됩니다." << endl;
 				pBattleTarget->AddMP(rewardMP);
 			}
+			if (pBattleTarget->GetType() == Player)
+			{
+				Character* player = (Character*)pBattleTarget;
+				cout << "경험치를 (" << rewardExp << ")만큼 획득합니다." << endl;
+				player->AddExp(rewardExp);
+			}
+
+			cout << "----------------------------------------------------------------" << endl << endl;
 		}
 	}
 }

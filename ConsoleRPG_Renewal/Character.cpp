@@ -118,6 +118,7 @@ void Character::PrintStatus()
 	cout << "\n ┌───────────────────────────────────────────────────┐\n";
 	printf(" │ 이름 : %-20s (종족 : %s, Lv : %d)   │\n", name, raceName, level);
 	printf(" │ Health : ( %3d / %3d )     Mana : ( %3d / %3d )   │\n", hp, maxHP, mp, maxMP);
+	printf(" │ Experience : ( %3d / %3d )                        │\n", exp, maxExp);
 	printf(" │ 힘   : %5d  │", status.strength);
 	printf(" │ 민첩 : %5d  │", status.dexterity);
 	printf(" │ 지능 : %5d  │\n", status.intelligence);
@@ -150,7 +151,7 @@ void Character::Die()
 void Character::NormalAttack()
 {
 	cout << "일반 공격" << endl;
-	int damage = (int)(status.strength * 1.2f);
+	int damage = status.strength;
 	pBattleTarget->Defence(damage);
 }
 
@@ -162,4 +163,14 @@ void Character::Skill01()
 void Character::Skill02()
 {
 	cout << "스킬 2번" << endl;
+}
+
+void Character::LevelUp()
+{
+	level++;
+	hp = maxHP;
+	mp = maxMP;
+
+	cout << endl << endl << "LEVEL UP!" << endl << "당신은 이제 " << level << "레벨 입니다." << endl;
+	cout << "HP와 MP가 완전 회복 됩니다." << endl;
 }

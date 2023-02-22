@@ -9,11 +9,11 @@ private:
 	const int MAX_NAME_SIZE = 10;
 	void InputNameProcess();
 
+protected:
+	RaceType race = HumanType;
 	char skill1_Name[16];
 	char skill2_Name[16];
 
-protected:
-	RaceType race = HumanType;
 	const int ExpCap = 100;
 	int exp = 0;
 	int maxExp = ExpCap;
@@ -34,7 +34,15 @@ protected:
 	Position position;
 
 public:
-	inline void AddExp(int _exp) { exp += _exp; }
+	inline void AddExp(int _exp) 
+	{ 
+		exp += _exp; 
+		if (exp > maxExp)
+		{
+			exp -= maxExp;
+			LevelUp();
+		}
+	}
 
 	/// <summary>
 	/// 초기화용 함수. 팩토리에서 실행.
@@ -65,5 +73,8 @@ protected:
 	virtual void NormalAttack();
 	virtual void Skill01();
 	virtual void Skill02();
+
+	virtual void LevelUp();
+	
 };
 

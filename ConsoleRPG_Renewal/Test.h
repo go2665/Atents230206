@@ -8,6 +8,9 @@ public:
 	void Run();
 
 private:
+	// 2/22
+	void Test_HumanBattle();
+
 	// 2/21
 	void Test_CharacterPrintStatus();
 	void Test_CharacterAttackSelect();
