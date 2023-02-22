@@ -3,6 +3,8 @@
 #include "Monster_Orc.h"
 #include "Monster_Wolf.h"
 #include "Human.h"
+#include "Elf.h"
+#include "Drawf.h"
 
 Creature_Base* CreatureFactory::MakeCreature(CreatureType type)
 {
@@ -37,10 +39,10 @@ Creature_Base* CreatureFactory::MakeCreature(RaceType type)
 		player = new Human();
 		break;
 	case ElfType :
-		player = new Character();
+		player = new Elf();
 		break;
 	case DrawfType :
-		player = new Character();
+		player = new Drawf();
 		break;
 	default:
 		// 들어오면 안되는 곳

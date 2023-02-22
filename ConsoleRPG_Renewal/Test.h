@@ -9,6 +9,7 @@ public:
 
 private:
 	// 2/22
+	void Test_SelectRace();
 	void Test_HumanBattle();
 
 	// 2/21

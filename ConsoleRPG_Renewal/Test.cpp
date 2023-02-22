@@ -13,7 +13,53 @@ void Test::Run()
 	//Test_CreatureFactory();
 	//Test_CharacterNameInput();
 	//Test_CharacterAttackSelect();
-	Test_HumanBattle();
+	//Test_HumanBattle();
+	Test_SelectRace();
+}
+
+
+
+void Test::Test_SelectRace()
+{
+	int select = -1;
+	while (select == -1)
+	{
+		cout << "종족을 선택해 주세요(1:인간, 2:엘프, 3:드워프) : ";
+		cin >> select;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT32_MAX, '\n');
+			select = -1;
+			cout << "잘못된 입력입니다." << endl;
+		}
+		else
+		{
+			if (select < 1 || select > 3)
+			{
+				select = -1;
+				cout << "잘못된 입력입니다." << endl;
+			}
+		}
+	}
+
+	RaceType type = (RaceType)(select - 1);
+
+	Creature_Base* pPlayer = CreatureFactory::MakeCreature(type);
+	Creature_Base* pMonster = CreatureFactory::MakeCreature(Orc);
+
+	BattleManager bm;
+	
+	bm.SetBattlers(pPlayer, pMonster);
+
+	pPlayer->PrintStatus();
+	pMonster->PrintStatus();
+
+	bm.BattleStart();
+
+	CreatureFactory::DestroyCreature(pMonster);
+	CreatureFactory::DestroyCreature(pPlayer);
+	
 }
 
 void Test::Test_HumanBattle()

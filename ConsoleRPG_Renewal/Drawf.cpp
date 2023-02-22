@@ -1,43 +1,43 @@
-#include "Human.h"
+#include "Drawf.h"
 #include "Utils.h"
 #include <iostream>
 using namespace std;
 
-void Human::Initialize()
+void Drawf::Initialize()
 {
 	Character::Initialize();
-	race = RaceType::HumanType;
-	strcpy_s(skill1_Name, "´Ü°Ë ´øÁö±â");
-	strcpy_s(skill2_Name, "¸ÅÁ÷ ¹Ì»çÀÏ");
-	maxExp = (int)(ExpCap * 0.5f);
+	race = RaceType::DrawfType;
+	strcpy_s(skill1_Name, "¹ß±¸¸£±â");
+	strcpy_s(skill2_Name, "µµ³¢ ´øÁö±â");
+	maxExp = ExpCap;
 }
 
-void Human::OnTurnAction()
+void Drawf::OnTurnAction()
 {
 	Attack();
 }
 
-void Human::SetRandomStatus()
+void Drawf::SetRandomStatus()
 {
 	Creature_Base::SetRandomStatus();
-	status.strength = Utils::GetRandom(10, 21);		// 10~20
-	status.dexterity = Utils::GetRandom(10, 21);	// 10~20
-	status.intelligence = Utils::GetRandom(10, 21);	// 10~20
-	status.stamina = Utils::GetRandom(10, 21);		// 10~20
+	status.strength = Utils::GetRandom(15, 31);		// 15~30
+	status.dexterity = Utils::GetRandom(10, 16);	// 10~15
+	status.intelligence = Utils::GetRandom(10, 16);	// 10~15
+	status.stamina = Utils::GetRandom(15, 31);		// 15~30
 	status.wisdom = Utils::GetRandom(10, 21);		// 10~20	
 
 	RefreshHPMP();
 }
 
-void Human::RefreshHPMP()
+void Drawf::RefreshHPMP()
 {
-	maxHP = status.stamina * HP_Multiplier * 5;
+	maxHP = status.stamina * HP_Multiplier * 7;
 	hp = maxHP;
-	maxMP = status.wisdom * MP_Multiplier * 5;
+	maxMP = status.wisdom * MP_Multiplier;
 	mp = maxMP;
 }
 
-void Human::NormalAttack()
+void Drawf::NormalAttack()
 {
 	cout << "ÀÏ¹Ý °ø°Ý" << endl;							// (Èû * 0.9 + 1) ~ (Èû * 1.1 + 1)
 	int range = (int)(status.strength * 0.1f) + 1;
@@ -45,29 +45,33 @@ void Human::NormalAttack()
 	pBattleTarget->Defence(damage);
 }
 
-void Human::Skill01()
+void Drawf::Skill01()
 {
 	cout << skill1_Name << endl;
-	AddMP(-1);
-	int range = (int)(status.dexterity * 0.5f) + 1;		// (Èû - ¹ÎÃ¸ * 0.5 + 1) ~ (Èû + ¹ÎÃ¸ * 0.5 + 1)
-	int damage = Utils::GetRandom(status.strength - range, status.strength + range + 1);
+	AddMP(-10);
+	int range = (int)(status.strength * 0.5f) + 1;		// (Èû + 1) ~ (Èû * 1.5 + 1)
+	int damage = Utils::GetRandom(status.strength, status.strength + range + 1);
 	pBattleTarget->Defence(damage);
 }
 
-void Human::Skill02()
+void Drawf::Skill02()
 {
 	cout << skill2_Name << endl;
 	AddMP(-10);
-	int count = Utils::GetRandom(3, 6);
-	cout << count << "°³ ¸¸Å­ÀÇ ¸ÅÁ÷ ¹Ì»çÀÏ ½ÃÀü ¼º°ø." << endl;
-	for (int i = 0; i < count; i++)
+	if (Utils::GetRandom() < 0.5f)
 	{
-		int damage = (int)(status.intelligence * 0.5f);
-		pBattleTarget->Defence(damage * 5);
+		int range1 = (int)(status.strength * 2.0f);		// (Èû * 2) ~ (Èû * 5)
+		int range2 = (int)(status.strength * 5.0f);
+		int damage = Utils::GetRandom(status.strength + range1, status.strength + range2 + 1);
+		pBattleTarget->Defence(damage);
+	}
+	else
+	{
+		cout << "ºø³ª°¨!" << endl;
 	}
 }
 
-void Human::LevelUp()
+void Drawf::LevelUp()
 {
 	Character::LevelUp();
 
