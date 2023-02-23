@@ -143,6 +143,7 @@
     <ClCompile Include="Monster_Wolf.cpp" />
     <ClCompile Include="NamePicker.cpp" />
     <ClCompile Include="Position.cpp" />
+    <ClCompile Include="TerrainBase.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +165,7 @@
     <ClInclude Include="NamePicker.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="Status.h" />
+    <ClInclude Include="TerrainBase.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>

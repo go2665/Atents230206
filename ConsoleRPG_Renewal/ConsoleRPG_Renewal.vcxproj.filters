@@ -31,6 +31,9 @@
     <Filter Include="Buff">
       <UniqueIdentifier>{23f9617f-63c1-4c22-bf46-2775d873ea9c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{fb782f01-93fa-4119-a49c-dd4a6a770712}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -72,9 +75,6 @@
     <ClCompile Include="BattleManager.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="Map.cpp">
-      <Filter>Common</Filter>
-    </ClCompile>
     <ClCompile Include="Human.cpp">
       <Filter>Creature\Character</Filter>
     </ClCompile>
@@ -83,6 +83,12 @@
     </ClCompile>
     <ClCompile Include="Elf.cpp">
       <Filter>Creature\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainBase.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -134,9 +140,6 @@
     <ClInclude Include="BattleManager.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="Map.h">
-      <Filter>Common</Filter>
-    </ClInclude>
     <ClInclude Include="Human.h">
       <Filter>Creature\Character</Filter>
     </ClInclude>
@@ -145,6 +148,12 @@
     </ClInclude>
     <ClInclude Include="Elf.h">
       <Filter>Creature\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainBase.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

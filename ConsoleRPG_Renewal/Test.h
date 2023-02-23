@@ -8,6 +8,9 @@ public:
 	void Run();
 
 private:
+	// 2/23
+	void Test_Terrain();
+
 	// 2/22
 	void Test_SelectRace();
 	void Test_HumanBattle();

@@ -6,6 +6,7 @@
 #include "BattleManager.h"
 #include "Utils.h"
 #include <iomanip>
+#include "TerrainBase.h"
 
 void Test::Run()
 {
@@ -14,10 +15,38 @@ void Test::Run()
 	//Test_CharacterNameInput();
 	//Test_CharacterAttackSelect();
 	//Test_HumanBattle();
-	Test_SelectRace();
+	//Test_SelectRace();
+	Test_Terrain();
 }
 
+void Test::Test_Terrain()
+{
+	TerrainBase* pTerrain = new TerrainBase();
 
+	pTerrain->monsters.push_back(Orc);
+	pTerrain->monsters.push_back(Orc);
+	pTerrain->monsters.push_back(Wolf);
+	pTerrain->monsters.push_back(Wolf);
+	pTerrain->monsters.push_back(Wolf);
+
+	int counter[2] = { 0, 0 };
+
+	for (int i = 0; i < 1000000; i++)
+	{
+		CreatureType type = pTerrain->GetAttackMonster();
+		if (type == Orc)
+			counter[0]++;
+		else
+			counter[1]++;
+	}
+
+	cout << "100만번 시도" << endl;
+	cout << "Orc : " << counter[0] << endl;
+	cout << "Wolf : " << counter[1] << endl;
+
+	delete pTerrain;
+	pTerrain = nullptr;
+}
 
 void Test::Test_SelectRace()
 {
