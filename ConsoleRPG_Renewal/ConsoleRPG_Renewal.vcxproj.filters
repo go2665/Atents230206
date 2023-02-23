@@ -34,11 +34,11 @@
     <Filter Include="Map">
       <UniqueIdentifier>{fb782f01-93fa-4119-a49c-dd4a6a770712}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Map\Terrain">
+      <UniqueIdentifier>{7faa2408-da00-44e0-abde-7486cabe03a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Test.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -69,7 +69,7 @@
     <ClCompile Include="Buff_Bite.cpp">
       <Filter>Buff</Filter>
     </ClCompile>
-    <ClCompile Include="CreatureFactory.cpp">
+    <ClCompile Include="Factory.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
     <ClCompile Include="BattleManager.cpp">
@@ -87,7 +87,25 @@
     <ClCompile Include="Map.cpp">
       <Filter>Map</Filter>
     </ClCompile>
+    <ClCompile Include="Desert.cpp">
+      <Filter>Map\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="Forest.cpp">
+      <Filter>Map\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="Mountain.cpp">
+      <Filter>Map\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="Plane.cpp">
+      <Filter>Map\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="StartPoint.cpp">
+      <Filter>Map\Terrain</Filter>
+    </ClCompile>
     <ClCompile Include="TerrainBase.cpp">
+      <Filter>Map\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -134,7 +152,7 @@
     <ClInclude Include="Buff_Bite.h">
       <Filter>Buff</Filter>
     </ClInclude>
-    <ClInclude Include="CreatureFactory.h">
+    <ClInclude Include="Factory.h">
       <Filter>Utility</Filter>
     </ClInclude>
     <ClInclude Include="BattleManager.h">
@@ -152,8 +170,23 @@
     <ClInclude Include="Map.h">
       <Filter>Map</Filter>
     </ClInclude>
+    <ClInclude Include="Desert.h">
+      <Filter>Map\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="Forest.h">
+      <Filter>Map\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="Mountain.h">
+      <Filter>Map\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="Plane.h">
+      <Filter>Map\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="StartPoint.h">
+      <Filter>Map\Terrain</Filter>
+    </ClInclude>
     <ClInclude Include="TerrainBase.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Map\Terrain</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

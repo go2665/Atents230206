@@ -41,3 +41,23 @@ const char* NamePicker::GetRaceName(RaceType race)
 	}
 	return nullptr;
 }
+
+const char* NamePicker::GetTerrainName(TerrainType type)
+{
+	switch (type)
+	{
+	case StartPointType:
+	case PlaneType:
+		return "평원";
+	case ForestType:
+		return "숲";
+	case MountainType:
+		return "산";
+	case DesertType:
+		return "사막";
+	case NumOfTypes:
+	default:
+		break;
+	}
+	return nullptr;
+}

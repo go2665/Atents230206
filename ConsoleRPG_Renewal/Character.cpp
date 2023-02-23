@@ -136,6 +136,13 @@ void Character::PrintStatus()
 	}
 }
 
+void Character::SetMap(Map* newMap)
+{
+	pMap = newMap;
+	Position pos = pMap->GetStartPosition();
+	SetPosition(pos);
+}
+
 void Character::Die()
 {
 	if (isAlive)
@@ -173,4 +180,67 @@ void Character::LevelUp()
 
 	cout << endl << endl << "LEVEL UP!" << endl << "당신은 이제 " << level << "레벨 입니다." << endl;
 	cout << "HP와 MP가 완전 회복 됩니다." << endl;
+}
+
+void Character::PrintPosition()
+{
+	cout << "[" << name << "]이(가) " << "(" << position.x << "," << position.y << ")에 있습니다." << endl << endl;
+}
+
+void Character::SetPosition(const Position& newPos)
+{
+	TerrainBase* terrainOld = pMap->GetTerrain(position);
+	if(terrainOld != nullptr)
+		terrainOld->TerrainExit();
+
+	position = newPos;
+	PrintPosition();
+
+	TerrainBase* terrainNew = pMap->GetTerrain(position);
+	if(terrainNew != nullptr)
+		terrainNew->TerrainEnter();
+}
+
+int Character::InputProcess_Move()
+{
+	int input = INPUT_EXIT;
+	cout << "입력] 동(" << Move_East << "), 서(" << Move_West << "), 남("
+		<< Move_South << "), 북(" << Move_North << ")" << endl;
+	cout << "어디로 이동할까요? : ";
+	cin >> input;
+
+	Position tempPos = position;
+	switch ((Input_Move)input)
+	{
+	case Move_East:
+		cout << "동쪽으로 이동합니다." << endl;
+		tempPos += Position(1, 0);
+		break;
+	case Move_West:
+		cout << "서쪽으로 이동합니다." << endl;
+		tempPos += Position(-1, 0);
+		break;
+	case Move_South:
+		cout << "남쪽으로 이동합니다." << endl;
+		tempPos += Position(0, 1);
+		break;
+	case Move_North:
+		cout << "북쪽으로 이동합니다." << endl;
+		tempPos += Position(0, -1);
+		break;
+	default:
+		cout << "입력이 잘못되었습니다." << endl;
+		return INPUT_EXIT;
+	}
+
+	if (pMap->IsValidPosition(tempPos))
+	{
+		SetPosition(tempPos);
+	}
+	else
+	{
+		cout << "맵 밖입니다. 이동하지 않습니다." << endl;
+	}
+
+	return input;
 }

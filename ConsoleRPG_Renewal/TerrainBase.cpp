@@ -1,5 +1,25 @@
 #include "TerrainBase.h"
 #include "Utils.h"
+#include "NamePicker.h"
+
+void TerrainBase::TerrainEnter()
+{
+    cout << endl << endl << endl << NamePicker::GetTerrainName(type) << " 지역에 들어갑니다 ------------------------" << endl;
+    PrintLandscape();
+    OnEnter();
+}
+
+void TerrainBase::TerrainExit()
+{
+    OnExit();
+    cout << NamePicker::GetTerrainName(type) << " 지역에서 나갑니다 ------------------------" << endl << endl << endl << endl;
+}
+
+void TerrainBase::TerrainSearch()
+{
+    cout << "탐색을 시작합니다. " << endl;
+    OnSearch();
+}
 
 CreatureType TerrainBase::GetAttackMonster()
 {

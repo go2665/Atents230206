@@ -11,10 +11,12 @@ public:
 	virtual void Initialize() {};
 	virtual void CleanUp() {};
 
-	void TerrainEnter() {};
-	void TerrainExit() {};
-	void TerrainSearch() {};
+	void TerrainEnter();
+	void TerrainExit();
+	void TerrainSearch();
 	CreatureType GetAttackMonster();
+
+	virtual void PrintLandscape() {};
 
 public:	// 임시로 테스트용도로 public
 	TerrainType type;

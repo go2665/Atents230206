@@ -6,7 +6,16 @@
 class Character : public Creature_Base
 {
 private:
+	/// <summary>
+	/// 이름 최대 길이
+	/// </summary>
 	const int MAX_NAME_SIZE = 10;
+
+	/// <summary>
+	/// 종료 입력 처리용
+	/// </summary>
+	const int INPUT_EXIT = -1;
+	
 	void InputNameProcess();
 
 protected:
@@ -64,6 +73,18 @@ public:
 	/// </summary>
 	virtual void PrintStatus() override;
 
+	/// <summary>
+	/// 캐릭터의 위치를 돌려주는 함수
+	/// </summary>
+	/// <returns>캐릭터의 위치에 대한 참조</returns>
+	const Position& GetPosition() { return position; }
+
+	/// <summary>
+	/// 맵을 할당하기
+	/// </summary>
+	/// <param name="newMap">새로운 맵</param>
+	void SetMap(Map* newMap);
+
 protected:
 	/// <summary>
 	/// 죽었을 때 실행될 함수
@@ -75,6 +96,21 @@ protected:
 	virtual void Skill02();
 
 	virtual void LevelUp();
-	
+
+	/// <summary>
+	/// position용 Set 함수
+	/// </summary>
+	/// <param name="newPos">position에 설정될 새 값</param>
+	void SetPosition(const Position& newPos);
+
+	/// <summary>
+	/// 자신의 위치를 출력하는 함수
+	/// </summary>
+	void PrintPosition();
+
+	/// <summary>
+	/// 플레이어의 이동 처리 함수
+	/// </summary>
+	int InputProcess_Move();	
 };
 

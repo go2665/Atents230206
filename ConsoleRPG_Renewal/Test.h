@@ -9,6 +9,7 @@ public:
 
 private:
 	// 2/23
+	void Test_Renewal();
 	void Test_Terrain();
 
 	// 2/22

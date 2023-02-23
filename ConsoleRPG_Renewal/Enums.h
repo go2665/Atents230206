@@ -2,11 +2,11 @@
 
 enum TerrainType
 {
-	Plane = 0,	// 평지
-	Forest,		// 숲
-	Mountain,	// 산(이동불가)
-	Desert,		// 사막
-	StartPoint,	// 시작지점
+	PlaneType = 0,	// 평지
+	ForestType,		// 숲
+	MountainType,	// 산(이동불가)
+	DesertType,		// 사막
+	StartPointType,	// 시작지점
 	NumOfTypes
 };
 
