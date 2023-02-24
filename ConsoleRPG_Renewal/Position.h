@@ -25,6 +25,10 @@ public:
 	int x;
 	int y;
 
+	static const Position Zero;
+	static const Position One;
+	static const Position MinusOne;
+
 	//const Position& Left = Position(-1, 0);
 	//const Position& Right = Position(1, 0);
 	//const Position& Up = Position(0, 1);

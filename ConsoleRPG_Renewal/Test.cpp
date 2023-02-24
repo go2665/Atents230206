@@ -19,38 +19,46 @@ void Test::Run()
 	//Test_HumanBattle();
 	//Test_SelectRace();
 	//Test_Terrain();
-	//Test_Renewal();
-	Test_StatusReroll();
+	Test_Renewal();
+	//Test_StatusReroll();
 }
 
 void Test::Test_StatusReroll()
 {
 	Character* pPlayer = (Character*)Factory::MakeCreature(HumanType);
+	Factory::DestroyCreature(pPlayer);
 	
 }
 
 void Test::Test_Renewal()
 {
 	Map* pMap = new Map("./Data/SampleMap.txt");
-	Creature_Base* pPlayer = Factory::MakeCreature(HumanType);
+	
+	Character* pPlayer = (Character*)Factory::MakeCreature(HumanType);
+	pPlayer->SetMap(pMap);
+	pPlayer->Loop();
+
+	Factory::DestroyCreature(pPlayer);
+	delete pMap;
+	pMap = nullptr;
 }
 
 void Test::Test_Terrain()
 {
 	//TerrainBase* pTerrain = new TerrainBase();
 
-	//pTerrain->monsters.push_back(Orc);
-	//pTerrain->monsters.push_back(Orc);
-	//pTerrain->monsters.push_back(Wolf);
-	//pTerrain->monsters.push_back(Wolf);
-	//pTerrain->monsters.push_back(Wolf);
+	//pTerrain->monsters.push_back(OrcType);
+	//pTerrain->monsters.push_back(OrcType);
+	//pTerrain->monsters.push_back(WolfType);
+	//pTerrain->monsters.push_back(WolfType);
+	//pTerrain->monsters.push_back(WolfType);
 
 	//int counter[2] = { 0, 0 };
 
 	//for (int i = 0; i < 1000000; i++)
 	//{
 	//	CreatureType type = pTerrain->GetAttackMonster();
-	//	if (type == Orc)
+	//	if (type == OrcType)
 	//		counter[0]++;
 	//	else
 	//		counter[1]++;
@@ -91,7 +99,7 @@ void Test::Test_SelectRace()
 	RaceType type = (RaceType)(select - 1);
 
 	Creature_Base* pPlayer = Factory::MakeCreature(type);
-	Creature_Base* pMonster = Factory::MakeCreature(Orc);
+	Creature_Base* pMonster = Factory::MakeCreature(OrcType);
 
 	BattleManager bm;
 	
@@ -110,7 +118,7 @@ void Test::Test_SelectRace()
 void Test::Test_HumanBattle()
 {
 	Creature_Base* pPlayer = Factory::MakeCreature(HumanType);
-	Creature_Base* pMonster = Factory::MakeCreature(Orc);	
+	Creature_Base* pMonster = Factory::MakeCreature(OrcType);	
 
 	BattleManager bm;
 	while ( pPlayer->IsAlive() )
@@ -125,7 +133,7 @@ void Test::Test_HumanBattle()
 		if (!pMonster->IsAlive())
 		{
 			Factory::DestroyCreature(pMonster);
-			pMonster = Factory::MakeCreature(Orc);		
+			pMonster = Factory::MakeCreature(OrcType);		
 			cout << endl << "[" << pMonster->GetName() << "]가 새롭게 등장합니다." << endl;
 		}
 	}
@@ -144,8 +152,8 @@ void Test::Test_CharacterPrintStatus()
 
 void Test::Test_CharacterAttackSelect()
 {
-	Creature_Base* pPlayer = Factory::MakeCreature(Player);
-	Creature_Base* pMonster = Factory::MakeCreature(Orc);
+	Creature_Base* pPlayer = Factory::MakeCreature(PlayerType);
+	Creature_Base* pMonster = Factory::MakeCreature(OrcType);
 	pPlayer->PrintStatus();
 	pMonster->PrintStatus();
 
@@ -222,8 +230,8 @@ void Test::Test_CreatureFactory()
 	cout << "테스트 - Factory" << endl;
 	Utils::SetRandomSeedByTime();
 
-	Creature_Base* pOrc = Factory::MakeCreature(Orc);
-	Creature_Base* pWolf = Factory::MakeCreature(Wolf);
+	Creature_Base* pOrc = Factory::MakeCreature(OrcType);
+	Creature_Base* pWolf = Factory::MakeCreature(WolfType);
 	pOrc->PrintStatus();
 	pWolf->PrintStatus();
 

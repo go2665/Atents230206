@@ -12,15 +12,15 @@ const char* NamePicker::GetName(CreatureType type)
 	int index = 0;
 	switch (type)
 	{
-	case Orc:
+	case OrcType:
 		index = Utils::GetRandom(0, orcNameCount);
 		result = GetOrcName(index);
 		break;
-	case Wolf:
+	case WolfType:
 		index = Utils::GetRandom(0, wolfNameCount);
 		result = GetWolfName(index);
 		break;
-	case Player:
+	case PlayerType:
 	case None:
 	default:
 		break;

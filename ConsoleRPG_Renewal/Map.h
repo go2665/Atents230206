@@ -5,6 +5,7 @@
 #include "TerrainBase.h"
 
 using namespace std;
+class Character;
 
 // 좌표계 (x+ : 오른쪽, y+ : 아래쪽) 
 
@@ -58,8 +59,19 @@ public:
 	/// <param name="pos">풍경을 출력할 함수</param>
 	void PrintLandscape(const Position& pos) const;
 
+	inline void SetPlayer(Character* target)
+	{
+		if (player == nullptr)
+		{
+			player = target;
+		}
+	}
+	inline Character* GetPlayer() { return player; }
 
+	
 private:
+	Character* player = nullptr;
+
 	int width = 10;
 	int height = 10;
 

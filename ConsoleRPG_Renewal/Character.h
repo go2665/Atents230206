@@ -38,9 +38,9 @@ protected:
 	PlayerState state = Move;
 
 	/// <summary>
-	/// 플레이어의 위치
+	/// 플레이어의 위치. 기본값으로 (-1,-1)
 	/// </summary>
-	Position position;
+	Position position = Position::MinusOne;
 
 public:
 	inline void AddExp(int _exp) 
@@ -57,6 +57,11 @@ public:
 	/// 초기화용 함수. 팩토리에서 실행.
 	/// </summary>
 	virtual void Initialize() override;
+
+	/// <summary>
+	/// 플레이어의 행동을 처리할 곳
+	/// </summary>
+	void Loop();
 
 	/// <summary>
 	/// 정리용 함수. Die에서 실행

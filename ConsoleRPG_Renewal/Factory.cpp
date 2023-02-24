@@ -16,10 +16,10 @@ Creature_Base* Factory::MakeCreature(CreatureType type)
 	Creature_Base* creature = nullptr;
 	switch (type)
 	{
-	case Orc:
+	case OrcType:
 		creature = new Monster_Orc();
 		break;
-	case Wolf:
+	case WolfType:
 		creature = new Monster_Wolf();
 		break;
 	case None:

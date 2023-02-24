@@ -1,4 +1,5 @@
 #include "TerrainBase.h"
+#include "Map.h"
 #include "Utils.h"
 #include "NamePicker.h"
 

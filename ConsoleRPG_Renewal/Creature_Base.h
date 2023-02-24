@@ -204,5 +204,7 @@ public :
 		if (mp < 0)
 			mp = 0;
 	}
+
+	inline void RecoveryAll() { hp = maxHP; mp = maxMP; }
 };
 

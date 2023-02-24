@@ -4,6 +4,8 @@
 
 using namespace std;
 
+class Map;
+
 // ¸Ê ÇÑÄ­
 class TerrainBase
 {
@@ -18,7 +20,16 @@ public:
 
 	virtual void PrintLandscape() {};
 
+	inline void SetMap(Map* pNewMap)
+	{
+		if (map == nullptr)
+		{
+			map = pNewMap;
+		}
+	}
+
 protected:
+	Map* map = nullptr;
 	TerrainType type;
 
 	list<CreatureType> monsters;

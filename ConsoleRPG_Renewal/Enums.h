@@ -26,9 +26,9 @@ enum Input_Move
 enum CreatureType
 {
 	None = -1,
-	Player = 0,	
-	Orc,
-	Wolf
+	PlayerType = 0,	
+	OrcType,
+	WolfType
 };
 
 enum RaceType

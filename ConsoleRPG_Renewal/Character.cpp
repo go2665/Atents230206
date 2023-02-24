@@ -54,7 +54,7 @@ void Character::InputNameProcess()
 
 void Character::Initialize()
 {
-	type = Player;
+	type = PlayerType;
 	InputNameProcess();
 
 	strcpy_s(skill1_Name, "스킬1");
@@ -62,14 +62,29 @@ void Character::Initialize()
 
 
 	StatusReroll();		// 스테이터스 설정
-	
+}
 
-	// 맵 관련 초기화
+void Character::Loop()
+{
+	int input = INPUT_EXIT;
+
+	do
+	{
+		switch (state)
+		{
+		case Move:
+			input = InputProcess_Move();
+			break;
+		default:
+			break;
+		}
+
+	} while (input != INPUT_EXIT);
+
 }
 
 void Character::CleanUp() 
 {
-	// 맵 관련 클리어
 	Creature_Base::CleanUp();
 }
 
@@ -141,6 +156,7 @@ void Character::PrintStatus()
 void Character::SetMap(Map* newMap)
 {
 	pMap = newMap;
+	pMap->SetPlayer(this);
 	Position pos = pMap->GetStartPosition();
 	SetPosition(pos);
 }
@@ -177,8 +193,7 @@ void Character::Skill02()
 void Character::LevelUp()
 {
 	level++;
-	hp = maxHP;
-	mp = maxMP;
+	RecoveryAll();
 
 	cout << endl << endl << "LEVEL UP!" << endl << "당신은 이제 " << level << "레벨 입니다." << endl;
 	cout << "HP와 MP가 완전 회복 됩니다." << endl;

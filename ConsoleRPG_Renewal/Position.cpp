@@ -1,5 +1,9 @@
 #include "Position.h"
 
+const Position Position::Zero = Position(0, 0);
+const Position Position::One = Position(1, 1);
+const Position Position::MinusOne = Position(-1, -1);
+
 Position& Position::operator=(const Position& ref)
 {
 	x = ref.x;

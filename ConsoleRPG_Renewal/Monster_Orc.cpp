@@ -10,8 +10,8 @@ using namespace std;
 
 void Monster_Orc::Initialize()
 {
-	type = Orc;
-	strcpy_s(name, NamePicker::GetName(Orc));
+	type = OrcType;
+	strcpy_s(name, NamePicker::GetName(OrcType));
 
 	rewardExp = 30;
 	rewardHP = 100;
@@ -112,7 +112,7 @@ void Monster_Orc::Die()
 				cout << "MP 오브를 얻었습니다. MP가 (" << rewardMP << ")만큼 회복됩니다." << endl;
 				pBattleTarget->AddMP(rewardMP);
 			}
-			if (pBattleTarget->GetType() == Player)
+			if (pBattleTarget->GetType() == PlayerType)
 			{
 				Character* player = (Character*)pBattleTarget;
 				cout << "경험치를 (" << rewardExp << ")만큼 획득합니다." << endl;

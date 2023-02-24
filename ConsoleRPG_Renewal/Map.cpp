@@ -10,7 +10,8 @@ Map::Map()	// 10 * 10 평지맵 만들기
 	terrainMap = new TerrainBase*[size];
 	for (int i = 0; i < size; i++)
 	{
-		terrainMap[i] = Factory::MakeTerrain(PlaneType);	// C++에서는 좋은 코드가 아님
+		terrainMap[i] = Factory::MakeTerrain(PlaneType);	// C++에서는 좋은 코드가 아님		
+		terrainMap[i]->SetMap(this);
 	}
 }
 
@@ -23,6 +24,7 @@ Map::Map(int xSize, int ySize)	// xSize * ySize 평지맵 만들기
 	for (int i = 0; i < size; i++)
 	{
 		terrainMap[i] = Factory::MakeTerrain(PlaneType);	// C++에서는 좋은 코드가 아님
+		terrainMap[i]->SetMap(this);
 	}
 }
 
@@ -35,7 +37,14 @@ Map::~Map()
 {
 	if (terrainMap != nullptr)		// 이전에 로딩된 맵이 있으면
 	{
-		delete terrainMap;			// 삭제
+		int size = width * height;
+		for (int i = 0; i < size; i++)
+		{
+			Factory::DestroyTerrain(terrainMap[i]);
+			terrainMap[i] = nullptr;
+		}
+
+		delete[] terrainMap;		// 삭제
 		terrainMap = nullptr;
 	}
 }
@@ -113,6 +122,7 @@ void Map::ReadMapData(const char* fileName)
 		for (int i = 0; i < index; i++)
 		{
 			terrainMap[i] = Factory::MakeTerrain((TerrainType)buffer[i]);	// 맵에 기록된대로 지형 생성
+			terrainMap[i]->SetMap(this);
 		}
 
 		height = lineCount;						// 높이 저장
