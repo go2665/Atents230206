@@ -8,6 +8,7 @@
 #include <iomanip>
 #include "TerrainBase.h"
 #include "Map.h"
+#include "Character.h"
 
 void Test::Run()
 {
@@ -18,7 +19,14 @@ void Test::Run()
 	//Test_HumanBattle();
 	//Test_SelectRace();
 	//Test_Terrain();
-	Test_Renewal();
+	//Test_Renewal();
+	Test_StatusReroll();
+}
+
+void Test::Test_StatusReroll()
+{
+	Character* pPlayer = (Character*)Factory::MakeCreature(HumanType);
+	
 }
 
 void Test::Test_Renewal()

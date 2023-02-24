@@ -112,5 +112,12 @@ protected:
 	/// 플레이어의 이동 처리 함수
 	/// </summary>
 	int InputProcess_Move();	
+
+
+public:
+	/// <summary>
+	/// 스테이터스를 만족할 때까지 다시 돌리는 함수
+	/// </summary>
+	void StatusReroll();
 };
 

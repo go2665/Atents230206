@@ -61,9 +61,8 @@ void Character::Initialize()
 	strcpy_s(skill2_Name, "스킬2");
 
 
-	SetRandomStatus();
-	PrintStatus();
-	// 확정할지 물어보기(y면 다음, n면 다시 SetRandomStatus)
+	StatusReroll();		// 스테이터스 설정
+	
 
 	// 맵 관련 초기화
 }
@@ -247,3 +246,44 @@ int Character::InputProcess_Move()
 
 	return input;
 }
+
+void Character::StatusReroll()
+{
+	bool retry = true;
+	
+	SetRandomStatus();
+	PrintStatus();
+
+	while(retry)
+	{
+		// 확정할지 물어보기(y면 다음, n면 다시 SetRandomStatus)
+		cout << "이 스테이터스로 결정하시겠습니까?(yes/no) : ";
+		char temp[32];
+		cin >> temp;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT32_MAX, '\n');
+			cout << "입력이 잘못되었습니다. 다시 입력해 주세요." << endl;
+			retry = true;
+			continue;
+		}
+
+		if (temp[0] == 'y' || temp[0] == 'Y')	// yes가 아닌 글자들을 한번 거르기
+		{
+			if (strcmp(temp, "yes") == 0
+				|| strcmp(temp, "y") == 0
+				|| strcmp(temp, "YES") == 0
+				|| strcmp(temp, "Yes") == 0
+				|| strcmp(temp, "Y") == 0)
+			{
+				retry = false;
+				continue;
+			}
+		}
+
+		SetRandomStatus();
+		PrintStatus();
+	} 	
+}
+

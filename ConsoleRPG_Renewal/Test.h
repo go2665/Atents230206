@@ -8,6 +8,8 @@ public:
 	void Run();
 
 private:
+	void Test_StatusReroll();
+
 	// 2/23
 	void Test_Renewal();
 	void Test_Terrain();
