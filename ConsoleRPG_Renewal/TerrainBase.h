@@ -9,7 +9,7 @@ class TerrainBase
 {
 public:
 	virtual void Initialize() {};
-	virtual void CleanUp() {};
+	virtual void CleanUp();
 
 	void TerrainEnter();
 	void TerrainExit();
@@ -18,7 +18,7 @@ public:
 
 	virtual void PrintLandscape() {};
 
-public:	// 임시로 테스트용도로 public
+protected:
 	TerrainType type;
 
 	list<CreatureType> monsters;

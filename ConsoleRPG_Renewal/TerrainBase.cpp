@@ -2,6 +2,11 @@
 #include "Utils.h"
 #include "NamePicker.h"
 
+void TerrainBase::CleanUp()
+{
+    monsters.clear();
+}
+
 void TerrainBase::TerrainEnter()
 {
     cout << endl << endl << endl << NamePicker::GetTerrainName(type) << " 지역에 들어갑니다 ------------------------" << endl;

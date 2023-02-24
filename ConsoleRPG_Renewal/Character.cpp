@@ -60,7 +60,10 @@ void Character::Initialize()
 	strcpy_s(skill1_Name, "스킬1");
 	strcpy_s(skill2_Name, "스킬2");
 
+
 	SetRandomStatus();
+	PrintStatus();
+	// 확정할지 물어보기(y면 다음, n면 다시 SetRandomStatus)
 
 	// 맵 관련 초기화
 }
