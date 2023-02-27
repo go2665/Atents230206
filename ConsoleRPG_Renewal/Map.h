@@ -3,6 +3,7 @@
 #include "Position.h"
 #include "Utils.h"
 #include "TerrainBase.h"
+#include "BattleManager.h"
 
 using namespace std;
 class Character;
@@ -67,10 +68,11 @@ public:
 		}
 	}
 	inline Character* GetPlayer() { return player; }
-
+	inline BattleManager* GetBattleManager() { return battleManager; }
 	
 private:
 	Character* player = nullptr;
+	BattleManager* battleManager = nullptr;
 
 	int width = 10;
 	int height = 10;

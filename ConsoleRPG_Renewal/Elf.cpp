@@ -70,16 +70,16 @@ void Elf::LevelUp()
 	int random = 0;
 	random = Utils::GetRandom(1, 6);
 	status.dexterity += random;
-	cout << "민첩이 (" << random << ")만큼 증가합니다.";
+	cout << "민첩이 (" << random << ")만큼 증가합니다." << endl;
 	random = Utils::GetRandom(1, 3);
 	status.intelligence += random;
-	cout << "지능이 (" << random << ")만큼 증가합니다.";
+	cout << "지능이 (" << random << ")만큼 증가합니다." << endl;
 	random = Utils::GetRandom(0, 2);
 	status.stamina += random;
-	cout << "체력이 (" << random << ")만큼 증가합니다.";
+	cout << "체력이 (" << random << ")만큼 증가합니다." << endl;
 	random = Utils::GetRandom(0, 4);
 	status.wisdom += random;
-	cout << "지혜가 (" << random << ")만큼 증가합니다.";
+	cout << "지혜가 (" << random << ")만큼 증가합니다." << endl;
 
 	RefreshHPMP();
 }

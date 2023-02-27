@@ -13,6 +13,7 @@ Map::Map()	// 10 * 10 평지맵 만들기
 		terrainMap[i] = Factory::MakeTerrain(PlaneType);	// C++에서는 좋은 코드가 아님		
 		terrainMap[i]->SetMap(this);
 	}
+	battleManager = new BattleManager();	
 }
 
 Map::Map(int xSize, int ySize)	// xSize * ySize 평지맵 만들기
@@ -26,15 +27,20 @@ Map::Map(int xSize, int ySize)	// xSize * ySize 평지맵 만들기
 		terrainMap[i] = Factory::MakeTerrain(PlaneType);	// C++에서는 좋은 코드가 아님
 		terrainMap[i]->SetMap(this);
 	}
+	battleManager = new BattleManager();
 }
 
 Map::Map(const char* filename)	// filename에 있는 파일 읽어서 맵 만들기
 {
 	ReadMapData(filename);
+	battleManager = new BattleManager();
 }
 
 Map::~Map()
 {
+	delete battleManager;
+	battleManager = nullptr;
+
 	if (terrainMap != nullptr)		// 이전에 로딩된 맵이 있으면
 	{
 		int size = width * height;

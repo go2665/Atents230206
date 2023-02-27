@@ -32,6 +32,7 @@ protected:
 	Map* map = nullptr;
 	TerrainType type;
 
+	float encounterChange = 0.0f;
 	list<CreatureType> monsters;
 
 	virtual void OnEnter() {};

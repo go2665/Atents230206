@@ -72,8 +72,9 @@ void BattleManager::BattleEnd()
 		winner = battlers[1];
 		loser = battlers[0];
 	}
-	cout << "전투 종료." << endl;
-	cout << "[" << winner->GetName() << "]가 [" << loser->GetName() << "]를 이겼습니다." << endl;
+	cout << endl << endl << "전투 종료." << endl;
+	cout << "[" << winner->GetName() << "]가 [" << loser->GetName() << "]를 이겼습니다." << endl << endl;
+	winner->PrintStatus();
 
 	battlers[0] = nullptr;
 	battlers[1] = nullptr;

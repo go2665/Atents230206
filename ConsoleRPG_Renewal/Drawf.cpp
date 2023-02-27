@@ -77,19 +77,19 @@ void Drawf::LevelUp()
 
 	int random = Utils::GetRandom(0, 3);
 	status.strength += random;
-	cout << "힘이 (" << random << ")만큼 증가합니다.";
+	cout << "힘이 (" << random << ")만큼 증가합니다." << endl;
 	random = Utils::GetRandom(0, 3);
 	status.dexterity += random;
-	cout << "민첩이 (" << random << ")만큼 증가합니다.";
+	cout << "민첩이 (" << random << ")만큼 증가합니다." << endl;
 	random = Utils::GetRandom(0, 3);
 	status.intelligence += random;
-	cout << "지능이 (" << random << ")만큼 증가합니다.";
+	cout << "지능이 (" << random << ")만큼 증가합니다." << endl;
 	random = Utils::GetRandom(0, 3);
 	status.stamina += random;
-	cout << "지능이 (" << random << ")만큼 증가합니다.";
+	cout << "지능이 (" << random << ")만큼 증가합니다." << endl;
 	random = Utils::GetRandom(0, 3);
 	status.wisdom += random;
-	cout << "지혜가 (" << random << ")만큼 증가합니다.";
+	cout << "지혜가 (" << random << ")만큼 증가합니다." << endl;
 
 	RefreshHPMP();
 }
