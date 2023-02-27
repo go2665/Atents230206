@@ -8,6 +8,10 @@ public:
 	void Run();
 
 private:
+	// 2/27
+	void Test_Singleton();
+
+	// 2/26
 	void Test_StatusReroll();
 
 	// 2/23

@@ -108,6 +108,9 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Test.h">
@@ -187,6 +190,9 @@
     </ClInclude>
     <ClInclude Include="TerrainBase.h">
       <Filter>Map\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

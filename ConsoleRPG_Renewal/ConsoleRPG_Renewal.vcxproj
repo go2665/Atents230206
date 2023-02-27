@@ -138,6 +138,7 @@
     <ClCompile Include="Drawf.cpp" />
     <ClCompile Include="Elf.cpp" />
     <ClCompile Include="Forest.cpp" />
+    <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Human.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="Elf.h" />
     <ClInclude Include="Enums.h" />
     <ClInclude Include="Forest.h" />
+    <ClInclude Include="GameManager.h" />
     <ClInclude Include="Human.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="Monster.h" />

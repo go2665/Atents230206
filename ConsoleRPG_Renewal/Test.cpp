@@ -9,6 +9,7 @@
 #include "TerrainBase.h"
 #include "Map.h"
 #include "Character.h"
+#include "GameManager.h"
 
 void Test::Run()
 {
@@ -19,8 +20,18 @@ void Test::Run()
 	//Test_HumanBattle();
 	//Test_SelectRace();
 	//Test_Terrain();
-	Test_Renewal();
 	//Test_StatusReroll();
+	//Test_Renewal();
+	Test_Singleton();
+}
+
+void Test::Test_Singleton()
+{
+	/*GameManager a;
+	GameManager* b = new GameManager();
+	GameManager* c = new GameManager(a);*/
+	GameManager* pManager = GameManager::GetInstance();
+	pManager->Test();
 }
 
 void Test::Test_StatusReroll()
