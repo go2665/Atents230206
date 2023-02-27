@@ -34,7 +34,7 @@ void Creature_Base::Attack()
 
 void Creature_Base::Defence(int damage)
 {
-	if (isBattle)
+	if (isBattle && isAlive)
 	{
 		// 방어 공식 들어갈 부분----------------
 		// 각 크리쳐 별로 별도 구현

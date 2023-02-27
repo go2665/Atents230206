@@ -11,7 +11,7 @@ void Plane::Initialize()
 	monsters.push_back(OrcType);
 	monsters.push_back(WolfType);
 
-	encounterChange = 0.5f;
+	encounterChange = 0.2f;
 }
 
 void Plane::CleanUp()
