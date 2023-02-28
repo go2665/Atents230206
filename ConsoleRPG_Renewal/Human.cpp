@@ -5,11 +5,12 @@ using namespace std;
 
 void Human::Initialize()
 {
-	Character::Initialize();
 	race = RaceType::HumanType;
 	strcpy_s(skill1_Name, "단검 던지기");
 	strcpy_s(skill2_Name, "매직 미사일");
 	maxExp = (int)(ExpCap * 0.5f);
+
+	Character::Initialize();
 }
 
 void Human::OnTurnAction()

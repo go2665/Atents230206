@@ -8,6 +8,9 @@ public:
 	void Run();
 
 private:
+	// 2/28
+	void Test_MakeCharacter();
+
 	// 2/27
 	void Test_Singleton();
 

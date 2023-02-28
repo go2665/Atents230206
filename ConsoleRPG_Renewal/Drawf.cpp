@@ -5,11 +5,12 @@ using namespace std;
 
 void Drawf::Initialize()
 {
-	Character::Initialize();
 	race = RaceType::DrawfType;
 	strcpy_s(skill1_Name, "발구르기");
 	strcpy_s(skill2_Name, "도끼 던지기");
 	maxExp = ExpCap;
+
+	Character::Initialize();
 }
 
 void Drawf::OnTurnAction()

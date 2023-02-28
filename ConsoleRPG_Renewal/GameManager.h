@@ -11,6 +11,8 @@ private:
 	BattleManager* battleManager = nullptr;
 	Map* map = nullptr;
 
+	void MakeCharacter();
+
 public:
 	void Initialize();
 	void CleanUp();

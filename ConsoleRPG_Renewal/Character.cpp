@@ -56,7 +56,7 @@ void Character::InputNameProcess()
 
 void Character::Initialize()
 {
-	type = PlayerType;
+	//type = PlayerType;
 	InputNameProcess();
 
 	strcpy_s(skill1_Name, "½ºÅ³1");

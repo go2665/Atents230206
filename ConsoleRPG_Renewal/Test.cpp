@@ -21,8 +21,13 @@ void Test::Run()
 	//Test_SelectRace();
 	//Test_Terrain();
 	//Test_StatusReroll();
-	Test_Renewal();
+	//Test_Renewal();
 	//Test_Singleton();
+	Test_MakeCharacter();
+}
+
+void Test::Test_MakeCharacter()
+{
 }
 
 void Test::Test_Singleton()
@@ -31,9 +36,6 @@ void Test::Test_Singleton()
 	GameManager* b = new GameManager();
 	GameManager* c = new GameManager(a);*/
 	GameManager* pManager = GameManager::GetInstance();
-
-
-	
 }
 
 void Test::Test_StatusReroll()

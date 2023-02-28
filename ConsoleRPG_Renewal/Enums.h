@@ -35,5 +35,6 @@ enum RaceType
 {
 	HumanType = 0,
 	ElfType,
-	DrawfType
+	DrawfType,
+	NumOfRaceType
 };

@@ -51,6 +51,7 @@ Creature_Base* Factory::MakeCreature(RaceType type)
 		break;
 	default:
 		// 들어오면 안되는 곳
+		cout << "ERROR!!! ERROR!!! ERROR!!! ERROR!!! ERROR!!!";
 		break;
 	}
 

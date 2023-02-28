@@ -5,11 +5,12 @@ using namespace std;
 
 void Elf::Initialize()
 {
-	Character::Initialize();
 	race = RaceType::ElfType;
 	strcpy_s(skill1_Name, "저격");
 	strcpy_s(skill2_Name, "정령소환");
 	maxExp = (int)(ExpCap * 1.1f);
+
+	Character::Initialize();
 }
 
 void Elf::OnTurnAction()
