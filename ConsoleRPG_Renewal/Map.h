@@ -60,20 +60,8 @@ public:
 	/// <param name="pos">풍경을 출력할 함수</param>
 	void PrintLandscape(const Position& pos) const;
 
-	inline void SetPlayer(Character* target)
-	{
-		if (player == nullptr)
-		{
-			player = target;
-		}
-	}
-	inline Character* GetPlayer() { return player; }
-	inline BattleManager* GetBattleManager() { return battleManager; }
 	
 private:
-	Character* player = nullptr;
-	BattleManager* battleManager = nullptr;
-
 	int width = 10;
 	int height = 10;
 

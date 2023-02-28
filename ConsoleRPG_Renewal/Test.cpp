@@ -21,8 +21,8 @@ void Test::Run()
 	//Test_SelectRace();
 	//Test_Terrain();
 	//Test_StatusReroll();
-	//Test_Renewal();
-	Test_Singleton();
+	Test_Renewal();
+	//Test_Singleton();
 }
 
 void Test::Test_Singleton()
@@ -31,7 +31,9 @@ void Test::Test_Singleton()
 	GameManager* b = new GameManager();
 	GameManager* c = new GameManager(a);*/
 	GameManager* pManager = GameManager::GetInstance();
-	pManager->Test();
+
+
+	
 }
 
 void Test::Test_StatusReroll()
@@ -42,16 +44,12 @@ void Test::Test_StatusReroll()
 }
 
 void Test::Test_Renewal()
-{
-	Map* pMap = new Map("./Data/SampleMap.txt");
-	
+{	
 	Character* pPlayer = (Character*)Factory::MakeCreature(HumanType);
-	pPlayer->SetMap(pMap);
+	pPlayer->StartMap();
 	pPlayer->Loop();
 
-	Factory::DestroyCreature(pPlayer);
-	delete pMap;
-	pMap = nullptr;
+	Factory::DestroyCreature(pPlayer);	
 }
 
 void Test::Test_Terrain()

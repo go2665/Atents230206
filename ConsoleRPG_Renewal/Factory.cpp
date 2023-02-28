@@ -63,8 +63,11 @@ Creature_Base* Factory::MakeCreature(RaceType type)
 
 void Factory::DestroyCreature(Creature_Base* target)
 {
-	target->CleanUp();
-	delete target;
+	if (target != nullptr)
+	{
+		target->CleanUp();
+		delete target;
+	}
 }
 
 TerrainBase* Factory::MakeTerrain(TerrainType type)
@@ -101,6 +104,9 @@ TerrainBase* Factory::MakeTerrain(TerrainType type)
 
 void Factory::DestroyTerrain(TerrainBase* target)
 {
-	target->CleanUp();
-	delete target;
+	if (target != nullptr)
+	{
+		target->CleanUp();
+		delete target;
+	}
 }

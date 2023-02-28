@@ -4,6 +4,7 @@
 #include "Creature_Base.h"
 #include "Map.h"
 #include "BattleManager.h"
+#include "GameManager.h"
 
 void Plane::Initialize()
 {
@@ -27,8 +28,8 @@ void Plane::OnEnter()
 		CreatureType type = GetAttackMonster();
 		Creature_Base* enemy = Factory::MakeCreature(type);
 
-		BattleManager* pBM = map->GetBattleManager();
-		pBM->SetBattlers((Creature_Base*)(map->GetPlayer()), enemy);
+		BattleManager* pBM = GameManager::GetInstance()->GetBattleManager();
+		pBM->SetBattlers((GameManager::GetInstance()->GetPlayer()), enemy);
 		pBM->BattleStart();
 	}
 }

@@ -85,10 +85,9 @@ public:
 	const Position& GetPosition() { return position; }
 
 	/// <summary>
-	/// 맵을 할당하기
+	/// 게임 메니저에 설정딘 맵 시작하기
 	/// </summary>
-	/// <param name="newMap">새로운 맵</param>
-	void SetMap(Map* newMap);
+	void StartMap();
 
 protected:
 	/// <summary>

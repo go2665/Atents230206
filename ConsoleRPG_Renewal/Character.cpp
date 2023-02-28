@@ -1,5 +1,7 @@
 #include "Character.h"
 #include "NamePicker.h"
+#include "GameManager.h"
+
 #include <iostream>
 #include <iomanip>
 using namespace std;
@@ -153,10 +155,9 @@ void Character::PrintStatus()
 	}
 }
 
-void Character::SetMap(Map* newMap)
-{
-	pMap = newMap;
-	pMap->SetPlayer(this);
+void Character::StartMap()
+{	
+	pMap = GameManager::GetInstance()->GetMap();
 	Position pos = pMap->GetStartPosition();
 	SetPosition(pos);
 }
