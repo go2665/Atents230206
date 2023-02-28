@@ -78,6 +78,24 @@ void Map::PrintLandscape(const Position& pos) const
 	}
 }
 
+void Map::PrintMap() const
+{
+	for (int i = 0; i < height; i++)
+	{		
+		wchar_t temp[32];
+		wcscpy_s(temp, L"");
+		int j = 0;
+		for (j = 0; j < width; j++)
+		{
+			TerrainBase* terrain = terrainMap[j + i * width];
+			temp[j] = terrain->GetPrint();
+		}
+		temp[j] = L'\n';
+		//cout << temp << endl;
+		wprintf_s(temp);
+	}
+}
+
 void Map::ReadMapData(const char* fileName)
 {
 	if (terrainMap != nullptr)		// 이전에 로딩된 맵이 있으면

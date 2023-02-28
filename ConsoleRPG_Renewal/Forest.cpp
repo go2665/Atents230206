@@ -9,6 +9,7 @@
 void Forest::Initialize()
 {
 	type = ForestType;
+	printChar = 'ก่';
 	monsters.push_back(OrcType);
 	monsters.push_back(OrcType);
 	monsters.push_back(WolfType);

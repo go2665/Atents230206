@@ -28,9 +28,12 @@ public:
 		}
 	}
 
+	inline wchar_t GetPrint() { return printChar; }
+
 protected:
 	Map* map = nullptr;
 	TerrainType type;
+	wchar_t printChar;
 
 	float encounterChange = 0.0f;
 	list<CreatureType> monsters;

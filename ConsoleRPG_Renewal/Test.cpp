@@ -23,7 +23,14 @@ void Test::Run()
 	//Test_StatusReroll();
 	//Test_Renewal();
 	//Test_Singleton();
-	Test_MakeCharacter();
+	//Test_MakeCharacter();
+	Test_MapPrint();
+}
+
+void Test::Test_MapPrint()
+{
+	Map* map = GameManager::GetInstance()->GetMap();
+	map->PrintMap();
 }
 
 void Test::Test_MakeCharacter()

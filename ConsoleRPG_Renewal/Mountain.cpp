@@ -9,6 +9,7 @@
 void Mountain::Initialize()
 {
 	type = MountainType;
+	printChar = '¡â';
 	monsters.push_back(OrcType);
 	monsters.push_back(WolfType);
 	monsters.push_back(WolfType);

@@ -6,7 +6,6 @@
 #include "BattleManager.h"
 
 using namespace std;
-class Character;
 
 // 좌표계 (x+ : 오른쪽, y+ : 아래쪽) 
 
@@ -60,6 +59,11 @@ public:
 	/// <param name="pos">풍경을 출력할 함수</param>
 	void PrintLandscape(const Position& pos) const;
 
+	/// <summary>
+	/// 맵 자체를 출력하는 함수
+	/// </summary>
+	void PrintMap() const;
+
 	
 private:
 	int width = 10;
@@ -68,6 +72,8 @@ private:
 	TerrainBase** terrainMap;	// 2차원 배열이지만 1차원으로 사용. TerrainBase*의 배열을 담을 예정
 
 	Position startPosition;
+
+	wchar_t printPlayer = '＠';
 
 
 	/// <summary>

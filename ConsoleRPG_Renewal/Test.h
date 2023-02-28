@@ -9,6 +9,7 @@ public:
 
 private:
 	// 2/28
+	void Test_MapPrint();
 	void Test_MakeCharacter();
 
 	// 2/27
