@@ -9,7 +9,7 @@
 void Desert::Initialize()
 {
 	type = DesertType;
-	printChar = '¢Æ';
+	printChar = L'¢Ì';
 	monsters.push_back(OrcType);
 	monsters.push_back(OrcType);
 	monsters.push_back(OrcType);

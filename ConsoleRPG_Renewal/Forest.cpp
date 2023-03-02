@@ -9,7 +9,7 @@
 void Forest::Initialize()
 {
 	type = ForestType;
-	printChar = '¡è';
+	printChar = L'¢¼';
 	monsters.push_back(OrcType);
 	monsters.push_back(OrcType);
 	monsters.push_back(WolfType);

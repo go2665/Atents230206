@@ -73,7 +73,7 @@ private:
 
 	Position startPosition;
 
-	wchar_t printPlayer = '£À';
+	wchar_t printPlayer = L'£À';
 
 
 	/// <summary>

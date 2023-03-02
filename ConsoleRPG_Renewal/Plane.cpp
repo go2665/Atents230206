@@ -9,7 +9,7 @@
 void Plane::Initialize()
 {
 	type = PlaneType;
-	printChar = 'бр';
+	printChar = L'бр';
 	monsters.push_back(OrcType);
 	monsters.push_back(WolfType);
 

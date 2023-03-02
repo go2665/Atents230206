@@ -38,6 +38,8 @@ void GameManager::MakeCharacter()
 
 void GameManager::Initialize()
 {
+	setlocale(LC_ALL, "");
+
 	CleanUp();
 
 	map = new Map("./Data/SampleMap.txt");

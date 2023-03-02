@@ -24,6 +24,9 @@ void Test::Run()
 	//Test_Renewal();
 	//Test_Singleton();
 	//Test_MakeCharacter();
+
+	
+
 	Test_MapPrint();
 }
 

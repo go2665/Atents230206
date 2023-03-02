@@ -7,6 +7,7 @@
 void StartPoint::Initialize()
 {
 	type = StartPointType;
+	printChar = L'¡Ý';
 }
 
 void StartPoint::CleanUp()
