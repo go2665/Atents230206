@@ -40,3 +40,13 @@ const Position Position::operator/(const int& ref)
 {
 	return Position(x / ref, y / ref);
 }
+
+bool Position::operator==(const Position& ref)
+{
+	return (x == ref.x) && (y == ref.y);
+}
+
+bool Position::operator!=(const Position& ref)
+{
+	return (x != ref.x) || (y != ref.y);
+}

@@ -24,10 +24,15 @@ void Test::Run()
 	//Test_Renewal();
 	//Test_Singleton();
 	//Test_MakeCharacter();
+	//Test_MapPrint();
+	Test_MapMove();
+}
 
-	
-
-	Test_MapPrint();
+void Test::Test_MapMove()
+{
+	Character* player = GameManager::GetInstance()->GetPlayer();
+	player->StartMap();
+	player->Loop();
 }
 
 void Test::Test_MapPrint()

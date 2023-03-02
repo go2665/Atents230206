@@ -38,10 +38,13 @@ public:
 	Position& operator= (const Position& ref);	// 대입 연산자
 	Position& operator+= (const Position& ref);
 
-	const Position operator+(const Position& ref);
+	const Position operator+(const Position& ref);	// 산술연산자
 	const Position operator-(const Position& ref);
 	const Position operator*(const int& ref);
 	const Position operator/(const int& ref);
+
+	bool operator==(const Position& ref) ;
+	bool operator!=(const Position& ref) ;
 
 
 	// 실습 : 명령어 오버로딩 만들어보기

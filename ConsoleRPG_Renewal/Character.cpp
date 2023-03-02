@@ -213,6 +213,7 @@ void Character::SetPosition(const Position& newPos)
 
 	position = newPos;
 	PrintPosition();
+	pMap->SetPlayerPosition(position);
 
 	TerrainBase* terrainNew = pMap->GetTerrain(position);
 	if(terrainNew != nullptr)
@@ -222,6 +223,7 @@ void Character::SetPosition(const Position& newPos)
 int Character::InputProcess_Move()
 {
 	int input = INPUT_EXIT;
+	pMap->PrintMap();
 	cout << "입력] 동(" << Move_East << "), 서(" << Move_West << "), 남("
 		<< Move_South << "), 북(" << Move_North << ")" << endl;
 	cout << "어디로 이동할까요? : ";

@@ -8,6 +8,9 @@ public:
 	void Run();
 
 private:
+	// 3/2 
+	void Test_MapMove();
+
 	// 2/28
 	void Test_MapPrint();
 	void Test_MakeCharacter();

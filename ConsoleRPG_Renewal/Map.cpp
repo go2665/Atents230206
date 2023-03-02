@@ -80,15 +80,25 @@ void Map::PrintLandscape(const Position& pos) const
 
 void Map::PrintMap() const
 {
+	cout << endl;
 	for (int i = 0; i < height; i++)
 	{		
 		for (int j = 0; j < width; j++)
 		{
-			TerrainBase* terrain = terrainMap[j + i * width];
-			wcout << terrain->GetPrint();
+			if (Position(j, i) != playerPosition)
+			{
+				TerrainBase* terrain = terrainMap[j + i * width];
+				wcout << terrain->GetPrint();
+			}
+			else
+			{
+				wcout << printPlayer;
+			}
+
 		}
 		wcout << endl;
 	}
+	cout << endl;
 }
 
 void Map::ReadMapData(const char* fileName)

@@ -64,6 +64,11 @@ public:
 	/// </summary>
 	void PrintMap() const;
 
+	/// <summary>
+	/// 플레이어의 위치를 기록하는 함수
+	/// </summary>
+	/// <param name="pos">플레이어의 현재 위치</param>
+	inline void SetPlayerPosition(Position& pos) { playerPosition = pos; }
 	
 private:
 	int width = 10;
@@ -72,8 +77,9 @@ private:
 	TerrainBase** terrainMap;	// 2차원 배열이지만 1차원으로 사용. TerrainBase*의 배열을 담을 예정
 
 	Position startPosition;
+	Position playerPosition;
 
-	wchar_t printPlayer = L'＠';
+	wchar_t printPlayer = L'@';
 
 
 	/// <summary>
