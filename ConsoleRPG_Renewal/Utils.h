@@ -40,5 +40,18 @@ public:
 	//	float range = (float)(gap * f);	// gap * f = 0.0 ~ 4.5
 	//	return min + range;				// °á°ú = 5.5 + (0.0 ~ 4.5)
 	//}
+
+	template<typename T>
+	static inline bool CheckSavingThrow(T min, T max, T check)
+	{
+		float ratio = (float)(check - min) / (float)(max - min);
+		float rand = GetRandom();
+		bool result = false;
+
+		if (rand < ratio)
+			result = true;
+
+		return result;
+	}
 };
 
