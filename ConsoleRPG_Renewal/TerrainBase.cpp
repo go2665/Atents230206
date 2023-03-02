@@ -2,6 +2,7 @@
 #include "Map.h"
 #include "Utils.h"
 #include "NamePicker.h"
+#include "GameManager.h"
 
 void TerrainBase::CleanUp()
 {
@@ -37,4 +38,55 @@ CreatureType TerrainBase::GetAttackMonster()
         iter++;    
 
     return *iter;       // 최종 iter의 실제값을 리턴
+}
+
+void TerrainBase::OnSearch()
+{
+    float eventRatio = Utils::GetRandom();
+    if (eventRatio < 0.5f)
+    {
+        Event_Nothing();            // 50%
+    }
+    else if (eventRatio < 0.8f)
+    {
+        Event_Insomnia();           // 30%
+    }
+    else
+    {
+        Event_AmbushOfTiger();      // 20%
+    }
+}
+
+void TerrainBase::Event_Nothing()
+{
+    cout << "아무일도 일어나지 않았다." << endl;
+}
+
+void TerrainBase::Event_Insomnia()
+{
+    cout << "불면증으로 잠을 설쳤다." << endl;
+    Character* player = GameManager::GetInstance()->GetPlayer();
+    player->AddMP(-(player->GetMaxHP() >> 2));  // MP 25% 감소
+}
+
+void TerrainBase::Event_AmbushOfTiger()
+{
+    cout << "호랑이가 습격했다!" << endl;
+    Character* player = GameManager::GetInstance()->GetPlayer();
+    int dex = player->GetDexterity();
+    // 15에서 100% 습격당함
+    // 25에서 0% 습격당함
+
+    bool result = Utils::CheckSavingThrow(15, 25, dex);
+    if (!result)
+    {
+        cout << "호랑이의 습격은 성공이었다." << endl << "나는 엄청난 피해를 입었다." << endl;
+        player->AddHP(-(player->GetMaxHP() >> 1));  // HP 최대치의 절반만큼 감소
+    }
+    else
+    {
+        cout << "나는 호랑이의 습격을 물리쳤다." << endl;
+        cout << "35의 경험치를 얻었다." << endl;
+        player->AddExp(35);
+    }
 }

@@ -4,13 +4,13 @@
 
 int main()
 {
-	GameManager* pManager = GameManager::GetInstance();
-	pManager->Initialize();
+	//GameManager* pManager = GameManager::GetInstance();
+	//pManager->Initialize();
 
 	Test test;
 	test.Run();
 
-	pManager->CleanUp();
+	//pManager->CleanUp();
 
 	return 0;
 }

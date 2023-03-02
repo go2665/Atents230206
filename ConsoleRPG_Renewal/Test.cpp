@@ -14,18 +14,44 @@
 void Test::Run()
 {
 	cout << "Test ½ÃÀÛ" << endl;
-	//Test_CreatureFactory();
-	//Test_CharacterNameInput();
-	//Test_CharacterAttackSelect();
-	//Test_HumanBattle();
-	//Test_SelectRace();
-	//Test_Terrain();
-	//Test_StatusReroll();
-	//Test_Renewal();
-	//Test_Singleton();
-	//Test_MakeCharacter();
-	//Test_MapPrint();
-	Test_MapMove();
+	bool makeGameManager = true;
+	if (makeGameManager)
+	{
+		GameManager* pManager = GameManager::GetInstance();
+		pManager->Initialize();
+
+		//Test_CreatureFactory();
+		//Test_CharacterNameInput();
+		//Test_CharacterAttackSelect();
+		//Test_HumanBattle();
+		//Test_SelectRace();
+		//Test_Terrain();
+		//Test_StatusReroll();
+		//Test_Renewal();
+		//Test_Singleton();
+		//Test_MakeCharacter();
+		//Test_MapPrint();
+		Test_MapMove();
+
+		pManager->CleanUp();
+	}
+	else
+	{
+		Test_SavingThrow();
+	}
+}
+
+void Test::Test_SavingThrow()
+{
+	int testNum = 1000000;
+	int count = 0;
+	for (int i = 0; i < testNum; i++)
+	{
+		bool result = Utils::CheckSavingThrow(15, 25, 20);
+		if (result)
+			count++;
+	}
+	printf("¼º°ø·ü : %.5f %%\n", (float)count / (float)testNum);
 }
 
 void Test::Test_MapMove()

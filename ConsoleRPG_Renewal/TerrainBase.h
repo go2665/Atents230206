@@ -40,7 +40,10 @@ protected:
 
 	virtual void OnEnter() {};
 	virtual void OnExit() {};
-	virtual void OnSearch() {};
+	virtual void OnSearch();
 
+	void Event_Nothing();
+	void Event_Insomnia();
+	void Event_AmbushOfTiger();
 };
 

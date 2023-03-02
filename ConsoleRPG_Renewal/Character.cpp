@@ -56,13 +56,7 @@ void Character::InputNameProcess()
 
 void Character::Initialize()
 {
-	//type = PlayerType;
-	InputNameProcess();
-
-	strcpy_s(skill1_Name, "스킬1");
-	strcpy_s(skill2_Name, "스킬2");
-
-
+	InputNameProcess();	// 이름 입력 받고
 	StatusReroll();		// 스테이터스 설정
 }
 
@@ -230,7 +224,7 @@ int Character::InputProcess_Move()
 	cin >> input;
 
 	Position tempPos = position;
-	switch ((Input_Move)input)
+	switch (input)
 	{
 	case Move_East:
 		cout << "동쪽으로 이동합니다." << endl;

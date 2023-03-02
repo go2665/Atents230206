@@ -9,6 +9,7 @@ public:
 
 private:
 	// 3/2 
+	void Test_SavingThrow();
 	void Test_MapMove();
 
 	// 2/28

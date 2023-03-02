@@ -175,6 +175,8 @@ public :
 	inline const int GetWisdom() { return status.wisdom; }
 	inline const int GetMaxHP() { return maxHP; }
 	inline const int GetHP() { return hp; }
+	inline const int GetMaxMP() { return maxMP; }
+	inline const int GetMP() { return mp; }
 
 	// Setter
 	inline void SetBattleTarget(Creature_Base* pTarget) { pBattleTarget = pTarget; }
