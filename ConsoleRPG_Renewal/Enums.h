@@ -18,6 +18,7 @@ enum PlayerState
 
 enum Input_Move
 {
+	To_Action = 0,
 	Move_East = 1,
 	Move_West,
 	Move_South,

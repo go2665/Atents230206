@@ -66,6 +66,9 @@ void Character::Loop()
 
 	do
 	{
+		PrintStatus();		// 내 상태와 맵은 매턴 출력
+		pMap->PrintMap();
+
 		switch (state)
 		{
 		case Action:
@@ -77,6 +80,8 @@ void Character::Loop()
 		default:
 			break;
 		}
+
+		// 사망 판정하기
 
 	} while (input != INPUT_EXIT);
 
@@ -219,12 +224,12 @@ void Character::SetPosition(const Position& newPos)
 
 int Character::InputProcess_Action()
 {
-	int input = INPUT_EXIT;
+	int input = INPUT_FAIL;	
 
-	while (input < 1 || input > 3)
+	while ( (input != 1) && (input != 2) && (input != 3) && (input != -1) )
 	{
 		cout << "입력] 이동(1), 탐색(2), " << pMap->GetPlayerCurrentTerrain()->GetActionListText() << endl;
-		cout << "종료(-1)" << endl;
+		cout << "종료(-1) : ";
 		cin >> input;
 		if (cin.fail())
 		{
@@ -238,13 +243,14 @@ int Character::InputProcess_Action()
 	{
 	case 1:
 		state = Move;
-		cout << "입력 모드로 변경" << endl;
+		cout << "이동 모드로 변경" << endl;
 		break;
 	case 2:
 		cout << "탐색 처리" <<  endl;
 		pMap->GetPlayerCurrentTerrain()->TerrainSearch();
 		break;
 	case 3:
+		pMap->GetPlayerCurrentTerrain()->RunAction();
 		break;
 	}
 
@@ -254,16 +260,19 @@ int Character::InputProcess_Action()
 
 int Character::InputProcess_Move()
 {
-	int input = INPUT_EXIT;
-	pMap->PrintMap();
+	int input = INPUT_EXIT;	
 	cout << "입력] 동(" << Move_East << "), 서(" << Move_West << "), 남("
-		<< Move_South << "), 북(" << Move_North << ")" << endl;
+		<< Move_South << "), 북(" << Move_North << "), " << "지역활동(" << To_Action << ")" << endl;
 	cout << "어디로 이동할까요? : ";
 	cin >> input;
 
 	Position tempPos = position;
 	switch (input)
 	{
+	case To_Action:
+		cout << "지역 활동을 시작합니다." << endl;
+		state = Action;
+		break;
 	case Move_East:
 		cout << "동쪽으로 이동합니다." << endl;
 		tempPos += Position(1, 0);
@@ -285,13 +294,16 @@ int Character::InputProcess_Move()
 		return INPUT_EXIT;
 	}
 
-	if (pMap->IsValidPosition(tempPos))
+	if (state == Move)
 	{
-		SetPosition(tempPos);
-	}
-	else
-	{
-		cout << "맵 밖입니다. 이동하지 않습니다." << endl;
+		if (pMap->IsValidPosition(tempPos))
+		{
+			SetPosition(tempPos);
+		}
+		else
+		{
+			cout << "맵 밖입니다. 이동하지 않습니다." << endl;
+		}
 	}
 
 	return input;

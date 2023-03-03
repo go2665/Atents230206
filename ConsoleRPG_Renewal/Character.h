@@ -38,9 +38,9 @@ protected:
 	Map* pMap = nullptr;
 
 	/// <summary>
-	/// 이 플레이어의 현재 상태(이동중, 전투중 등등)
+	/// 이 플레이어의 현재 상태(이동중, 행동중 등등)
 	/// </summary>
-	PlayerState state = Move;
+	PlayerState state = Action;
 
 	/// <summary>
 	/// 플레이어의 위치. 기본값으로 (-1,-1)

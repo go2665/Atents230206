@@ -63,7 +63,8 @@ void TerrainBase::RunAction()
     cout << "특수 행동을 실행하는데 (" << actionCost << ")만큼의 MP가 사용됩니다." << endl;
     if (player->GetMP() > actionCost)
     {
-        cout << "액션을 수행합니다. " << endl;
+        player->AddMP(-actionCost);
+        cout << endl;
         OnAction();
     }
     else
@@ -80,7 +81,7 @@ void TerrainBase::Event_Nothing()
 void TerrainBase::Event_Insomnia()
 {
     cout << "불면증으로 잠을 설쳤다." << endl;
-    player->AddMP(-(player->GetMaxHP() >> 2));  // MP 25% 감소
+    player->AddMP(-(player->GetMaxMP() >> 2));  // MP 25% 감소
 }
 
 void TerrainBase::Event_AmbushOfTiger()
