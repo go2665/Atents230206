@@ -7,5 +7,7 @@ public:
 	virtual void CleanUp() override;
 
 	virtual void OnEnter() override;
+
+	virtual void OnAction() override;
 };
 

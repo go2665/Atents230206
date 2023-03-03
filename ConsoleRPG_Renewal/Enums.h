@@ -12,7 +12,8 @@ enum TerrainType
 
 enum PlayerState
 {
-	Move = 0,	// 이동 상태
+	Action = 0,		// 행동 상태
+	Move,			// 이동 상태
 };
 
 enum Input_Move

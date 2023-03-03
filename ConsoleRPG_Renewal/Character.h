@@ -15,6 +15,11 @@ private:
 	/// 종료 입력 처리용
 	/// </summary>
 	const int INPUT_EXIT = -1;
+
+	/// <summary>
+	/// 입력 실패 표시용
+	/// </summary>
+	const int INPUT_FAIL = -999;
 	
 	void InputNameProcess();
 
@@ -111,6 +116,11 @@ protected:
 	/// 자신의 위치를 출력하는 함수
 	/// </summary>
 	void PrintPosition();
+
+	/// <summary>
+	/// 플레이어의 액션 처리 함수
+	/// </summary>
+	int InputProcess_Action();
 
 	/// <summary>
 	/// 플레이어의 이동 처리 함수

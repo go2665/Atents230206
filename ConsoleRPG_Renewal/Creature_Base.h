@@ -198,6 +198,7 @@ public :
 			hp = 0;
 		}
 	}
+	inline void AddMaxHP(int _hp) { maxHP += _hp; }
 	inline void AddMP(int _mp)	// 모든 HP변동은 이 함수를 통해서 처리할 것
 	{ 
 		mp += _mp; 
@@ -206,6 +207,7 @@ public :
 		if (mp < 0)
 			mp = 0;
 	}
+	inline void AddMaxMP(int _mp) { maxHP += _mp; }
 
 	inline void RecoveryAll() { hp = maxHP; mp = maxMP; }
 };

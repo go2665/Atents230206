@@ -68,6 +68,9 @@ void Character::Loop()
 	{
 		switch (state)
 		{
+		case Action:
+			input = InputProcess_Action();
+			break;
 		case Move:
 			input = InputProcess_Move();
 			break;
@@ -212,6 +215,41 @@ void Character::SetPosition(const Position& newPos)
 	TerrainBase* terrainNew = pMap->GetTerrain(position);
 	if(terrainNew != nullptr)
 		terrainNew->TerrainEnter();
+}
+
+int Character::InputProcess_Action()
+{
+	int input = INPUT_EXIT;
+
+	while (input < 1 || input > 3)
+	{
+		cout << "입력] 이동(1), 탐색(2), " << pMap->GetPlayerCurrentTerrain()->GetActionListText() << endl;
+		cout << "종료(-1)" << endl;
+		cin >> input;
+		if (cin.fail())
+		{
+			cin.clear();
+			cin.ignore(INT32_MAX, '\n');
+			input = INPUT_FAIL;
+		}
+	}
+	
+	switch (input)
+	{
+	case 1:
+		state = Move;
+		cout << "입력 모드로 변경" << endl;
+		break;
+	case 2:
+		cout << "탐색 처리" <<  endl;
+		pMap->GetPlayerCurrentTerrain()->TerrainSearch();
+		break;
+	case 3:
+		break;
+	}
+
+
+	return input;
 }
 
 int Character::InputProcess_Move()

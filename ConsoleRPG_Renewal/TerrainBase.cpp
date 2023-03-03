@@ -12,6 +12,7 @@ void TerrainBase::CleanUp()
 void TerrainBase::TerrainEnter()
 {
     cout << endl << endl << endl << NamePicker::GetTerrainName(type) << " 지역에 들어갑니다 ------------------------" << endl;
+    player = GameManager::GetInstance()->GetPlayer();
     PrintLandscape();
     OnEnter();
 }
@@ -57,6 +58,20 @@ void TerrainBase::OnSearch()
     }
 }
 
+void TerrainBase::RunAction()
+{
+    cout << "특수 행동을 실행하는데 (" << actionCost << ")만큼의 MP가 사용됩니다." << endl;
+    if (player->GetMP() > actionCost)
+    {
+        cout << "액션을 수행합니다. " << endl;
+        OnAction();
+    }
+    else
+    {
+        cout << "MP가 부족합니다." << endl;
+    }
+}
+
 void TerrainBase::Event_Nothing()
 {
     cout << "아무일도 일어나지 않았다." << endl;
@@ -65,14 +80,12 @@ void TerrainBase::Event_Nothing()
 void TerrainBase::Event_Insomnia()
 {
     cout << "불면증으로 잠을 설쳤다." << endl;
-    Character* player = GameManager::GetInstance()->GetPlayer();
     player->AddMP(-(player->GetMaxHP() >> 2));  // MP 25% 감소
 }
 
 void TerrainBase::Event_AmbushOfTiger()
 {
     cout << "호랑이가 습격했다!" << endl;
-    Character* player = GameManager::GetInstance()->GetPlayer();
     int dex = player->GetDexterity();
     // 15에서 100% 습격당함
     // 25에서 0% 습격당함

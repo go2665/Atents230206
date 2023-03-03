@@ -17,6 +17,8 @@ void Forest::Initialize()
 	monsters.push_back(WolfType);
 
 	encounterChange = 0.5f;
+
+	strcpy_s(actionListText, "채집하기(3)");
 }
 
 void Forest::CleanUp()
@@ -35,5 +37,29 @@ void Forest::OnEnter()
 		BattleManager* pBM = GameManager::GetInstance()->GetBattleManager();
 		pBM->SetBattlers((GameManager::GetInstance()->GetPlayer()), enemy);
 		pBM->BattleStart();
+	}
+}
+
+void Forest::OnAction()
+{
+	cout << "채집을 시작합니다." << endl;
+	float r = Utils::GetRandom();
+	if (r < 0.5f)
+	{
+		cout << "독버섯을 먹어버렸다." << endl;
+		cout << "HP -100" << endl;
+		player->AddHP(-100);
+	}
+	else if (r < 0.9f)
+	{
+		cout << "맛있는 과일을 발견했다." << endl;
+		cout << "HP +50" << endl;
+		player->AddHP(50);
+	}
+	else
+	{
+		cout << "심봤다!" << endl;
+		cout << "최대 HP +500" << endl;
+		player->AddMaxHP(500);
 	}
 }

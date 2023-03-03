@@ -69,6 +69,12 @@ public:
 	/// </summary>
 	/// <param name="pos">플레이어의 현재 위치</param>
 	inline void SetPlayerPosition(Position& pos) { playerPosition = pos; }
+
+	/// <summary>
+	/// 플레이어가 위치한 터레인을 돌려주는 함수
+	/// </summary>
+	/// <returns></returns>
+	inline TerrainBase* GetPlayerCurrentTerrain() { return GetTerrain(playerPosition); }
 	
 private:
 	int width = 10;

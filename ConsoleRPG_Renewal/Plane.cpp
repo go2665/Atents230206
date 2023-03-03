@@ -14,6 +14,8 @@ void Plane::Initialize()
 	monsters.push_back(WolfType);
 
 	encounterChange = 0.2f;
+
+	strcpy_s(actionListText, "둘러보기(3)");
 }
 
 void Plane::CleanUp()
@@ -32,5 +34,23 @@ void Plane::OnEnter()
 		BattleManager* pBM = GameManager::GetInstance()->GetBattleManager();
 		pBM->SetBattlers((GameManager::GetInstance()->GetPlayer()), enemy);
 		pBM->BattleStart();
+	}
+}
+
+void Plane::OnAction()
+{	
+	cout << "새가 날아가는 것이 보인다." << endl;
+	float r = Utils::GetRandom();
+	if (r < 0.7f)
+	{
+		cout << "돌을 던져 새를 잡았다." << endl;
+		cout << "안정적인 맛이었다." << endl;
+		cout << "최대 HP +10" << endl;
+		player->AddMaxHP(10);
+	}
+	else
+	{
+		cout << "새똥을 맞았다." << endl;
+		player->AddMP(-100);
 	}
 }

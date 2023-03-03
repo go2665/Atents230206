@@ -8,6 +8,8 @@ void StartPoint::Initialize()
 {
 	type = StartPointType;
 	printChar = L'◎';
+
+	strcpy_s(actionListText, "저장하기(3)");
 }
 
 void StartPoint::CleanUp()
@@ -21,4 +23,10 @@ void StartPoint::OnEnter()
 	cout << "모든 HP와 MP가 회복됩니다." << endl << endl;
 	Character* player = GameManager::GetInstance()->GetPlayer();
 	player->RecoveryAll();
+}
+
+void StartPoint::OnAction()
+{
+	// 파일에 저장하기
+	cout << "저장을 시작합니다." << endl;
 }

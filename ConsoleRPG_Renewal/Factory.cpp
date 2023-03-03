@@ -10,6 +10,7 @@
 #include "Mountain.h"
 #include "Desert.h"
 #include "StartPoint.h"
+#include "GameManager.h"
 
 Creature_Base* Factory::MakeCreature(CreatureType type)
 {
