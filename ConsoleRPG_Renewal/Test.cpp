@@ -10,6 +10,7 @@
 #include "Map.h"
 #include "Character.h"
 #include "GameManager.h"
+#include "SaveData.h"
 
 void Test::Run()
 {
@@ -34,7 +35,8 @@ void Test::Run()
 		//Test_MakeCharacter();
 		//Test_MapPrint();
 		//Test_MapMove();
-		Test_SaveGameData();
+		//Test_SaveGameData();
+		Test_LoadGameData();
 
 		pManager->CleanUp();
 	}
@@ -50,6 +52,21 @@ void Test::Test_SaveGameData()
 {
 	GameManager::GetInstance()->SavePlayerData();
 
+}
+
+void Test::Test_LoadGameData()
+{
+	bool result = GameManager::GetInstance()->LoadPlayerData();
+	if (result)
+	{
+		cout << "로딩 성공" << endl;
+		Character* player = GameManager::GetInstance()->GetPlayer();		
+		player->PrintStatus();
+	}
+	else
+	{
+		cout << "로딩 실패" << endl;
+	}
 }
 
 void Test::Test_FileRead()

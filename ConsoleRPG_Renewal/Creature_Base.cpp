@@ -3,7 +3,7 @@
 using namespace std;
 
 
-void Creature_Base::Initialize()
+void Creature_Base::Initialize(SaveData* data)
 {
 	SetRandomStatus();
 }

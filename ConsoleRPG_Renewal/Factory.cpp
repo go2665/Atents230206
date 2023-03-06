@@ -36,7 +36,7 @@ Creature_Base* Factory::MakeCreature(CreatureType type)
     return creature;
 }
 
-Creature_Base* Factory::MakeCreature(RaceType type)
+Creature_Base* Factory::MakeCreature(RaceType type, SaveData* data)
 {
 	Creature_Base* player = nullptr;
 	switch (type)
@@ -58,7 +58,7 @@ Creature_Base* Factory::MakeCreature(RaceType type)
 
 	if (player != nullptr)
 	{
-		player->Initialize();
+		player->Initialize(data);
 	}
 	return player;
 }

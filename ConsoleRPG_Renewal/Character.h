@@ -2,6 +2,7 @@
 #include "Creature_Base.h"
 #include "Position.h"
 #include "Map.h"
+#include "SaveData.h"
 
 class Character : public Creature_Base
 {
@@ -61,7 +62,7 @@ public:
 	/// <summary>
 	/// 초기화용 함수. 팩토리에서 실행.
 	/// </summary>
-	virtual void Initialize() override;
+	virtual void Initialize(SaveData* data = nullptr) override;
 
 	/// <summary>
 	/// 플레이어의 행동을 처리할 곳
@@ -97,6 +98,8 @@ public:
 	inline const RaceType GetRace() { return race; }
 	inline const int GetExp() { return exp; }
 	inline const int GetMaxExp() { return maxExp; }
+
+	void LoadData(SaveData& data);
 
 protected:
 	/// <summary>

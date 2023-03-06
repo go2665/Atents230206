@@ -3,14 +3,14 @@
 #include <iostream>
 using namespace std;
 
-void Drawf::Initialize()
+void Drawf::Initialize(SaveData* data)
 {
 	race = RaceType::DrawfType;
 	strcpy_s(skill1_Name, "발구르기");
 	strcpy_s(skill2_Name, "도끼 던지기");
 	maxExp = ExpCap;
 
-	Character::Initialize();
+	Character::Initialize(data);
 }
 
 void Drawf::OnTurnAction()

@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 using namespace std;
 
 GameManager* GameManager::instance = nullptr;
@@ -92,7 +93,67 @@ void GameManager::SavePlayerData()
 
 bool GameManager::LoadPlayerData()
 {
-	return false;
+	SaveData data;
+	bool result = false;
+	char temp[256];
+
+	// 이름,레벨,스테이터스,hp,maxHP,mp,maxMP,종족,exp,최대exp
+	ifstream ifs;
+	ifs.open("./Data/Save/SaveData.txt");
+	if (ifs.is_open())
+	{
+		ifs.getline(temp, 256, ',');
+		strcpy_s(data.name, temp);
+
+		ifs.getline(temp, 256, ',');
+		data.level = atoi(temp);
+
+		ifs.getline(temp, 256, ',');
+		data.strength = atoi(temp);
+
+		ifs.getline(temp, 256, ',');
+		data.dexterity = atoi(temp);
+
+		ifs.getline(temp, 256, ',');
+		data.stamina = atoi(temp);
+
+		ifs.getline(temp, 256, ',');
+		data.intelligence = atoi(temp);
+
+		ifs.getline(temp, 256, ',');
+		data.wisdom = atoi(temp);
+
+		ifs.getline(temp, 256, ',');
+		data.hp = atoi(temp);
+
+		ifs.getline(temp, 256, ',');
+		data.maxHP = atoi(temp);
+
+		ifs.getline(temp, 256, ',');
+		data.mp = atoi(temp);
+
+		ifs.getline(temp, 256, ',');
+		data.maxMP = atoi(temp);
+
+		ifs.getline(temp, 256, ',');
+		data.race = atoi(temp);
+
+		ifs.getline(temp, 256, ',');
+		data.exp = atoi(temp);
+
+		ifs.getline(temp, 256, ',');
+		data.maxExp = atoi(temp);
+
+		result = true;
+
+		// 기존 플레이어 삭제하고 새로 만드는 작업
+		Factory::DestroyCreature(player);
+		player = (Character*)Factory::MakeCreature((RaceType)data.race, &data);
+
+		ifs.close();
+	}
+
+	return result;
 }
 
 void GameManager::Test()

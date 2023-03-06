@@ -3,6 +3,7 @@
 #include "Character.h"
 #include "Map.h"
 #include "BattleManager.h"
+#include "SaveData.h"
 
 class GameManager
 {

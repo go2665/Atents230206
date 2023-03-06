@@ -3,14 +3,14 @@
 #include <iostream>
 using namespace std;
 
-void Human::Initialize()
+void Human::Initialize(SaveData* data)
 {
 	race = RaceType::HumanType;
 	strcpy_s(skill1_Name, "단검 던지기");
 	strcpy_s(skill2_Name, "매직 미사일");
 	maxExp = (int)(ExpCap * 0.5f);
 
-	Character::Initialize();
+	Character::Initialize(data);
 }
 
 void Human::OnTurnAction()

@@ -3,7 +3,7 @@
 class Monster_Wolf : public Monster
 {
 public:
-	virtual void Initialize() override;
+	virtual void Initialize(SaveData* data = nullptr) override;
 	virtual void Attack() override;
 
 protected:

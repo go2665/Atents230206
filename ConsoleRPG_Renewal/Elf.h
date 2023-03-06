@@ -3,7 +3,7 @@
 class Elf : public Character
 {
 public:
-	virtual void Initialize() override;
+	virtual void Initialize(SaveData* data = nullptr) override;
 
 	
 

@@ -11,6 +11,7 @@ public:
 private:
 	// 3/6
 	void Test_SaveGameData();
+	void Test_LoadGameData();
 	void Test_FileRead();
 	void Test_FileWrite();
 

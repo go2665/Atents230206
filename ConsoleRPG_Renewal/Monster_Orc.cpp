@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void Monster_Orc::Initialize()
+void Monster_Orc::Initialize(SaveData* data)
 {
 	type = OrcType;
 	strcpy_s(name, NamePicker::GetName(OrcType));

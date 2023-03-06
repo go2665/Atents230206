@@ -3,6 +3,7 @@
 #include "Status.h"
 #include "Enums.h"
 #include "BuffBase.h"
+#include "SaveData.h"
 
 class Creature_Base
 {
@@ -76,7 +77,7 @@ public:
 	/// <summary>
 	/// 초기화용 함수. 팩토리에서 실행.
 	/// </summary>
-	virtual void Initialize();
+	virtual void Initialize(SaveData* data = nullptr);
 
 	/// <summary>
 	/// 정리용 함수. Die에서 실행

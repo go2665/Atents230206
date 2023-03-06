@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void Monster_Wolf::Initialize()
+void Monster_Wolf::Initialize(SaveData* data)
 {
 	type = WolfType;
 	strcpy_s(name, NamePicker::GetName(WolfType));

@@ -3,14 +3,14 @@
 #include <iostream>
 using namespace std;
 
-void Elf::Initialize()
+void Elf::Initialize(SaveData* data)
 {
 	race = RaceType::ElfType;
 	strcpy_s(skill1_Name, "저격");
 	strcpy_s(skill2_Name, "정령소환");
 	maxExp = (int)(ExpCap * 1.1f);
 
-	Character::Initialize();
+	Character::Initialize(data);
 }
 
 void Elf::OnTurnAction()

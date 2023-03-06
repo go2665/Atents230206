@@ -54,10 +54,17 @@ void Character::InputNameProcess()
 	cout << "당신의 이름은 " << name << "입니다." << endl;
 }
 
-void Character::Initialize()
+void Character::Initialize(SaveData* data)
 {
-	InputNameProcess();	// 이름 입력 받고
-	StatusReroll();		// 스테이터스 설정
+	if (data != nullptr)
+	{
+		LoadData(*data);
+	}
+	else
+	{
+		InputNameProcess();	// 이름 입력 받고
+		StatusReroll();		// 스테이터스 설정
+	}
 }
 
 void Character::Loop()
@@ -162,6 +169,25 @@ void Character::StartMap()
 	pMap = GameManager::GetInstance()->GetMap();
 	Position pos = pMap->GetStartPosition();
 	SetPosition(pos);
+}
+
+void Character::LoadData(SaveData& data)
+{
+	strcpy_s(name, data.name);
+	level = data.level;
+	status.strength = data.strength;
+	status.dexterity = data.dexterity;
+	status.stamina = data.stamina;
+	status.intelligence = data.intelligence;
+	status.wisdom = data.wisdom;
+	hp = data.hp;
+	maxHP = data.maxHP;
+	mp = data.mp;
+	maxMP = data.maxMP;
+	race = (RaceType)data.race;
+	exp = data.exp;
+	maxExp = data.maxExp;
+
 }
 
 void Character::Die()

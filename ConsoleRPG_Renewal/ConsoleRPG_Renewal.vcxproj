@@ -175,6 +175,7 @@
     <ClInclude Include="NamePicker.h" />
     <ClInclude Include="Plane.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="SaveData.h" />
     <ClInclude Include="StartPoint.h" />
     <ClInclude Include="Status.h" />
     <ClInclude Include="TerrainBase.h" />
