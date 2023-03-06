@@ -14,6 +14,8 @@
 void Test::Run()
 {
 	cout << "Test 시작" << endl;
+	Utils::SetRandomSeedByTime();
+
 	bool makeGameManager = true;
 	if (makeGameManager)
 	{
@@ -31,14 +33,48 @@ void Test::Run()
 		//Test_Singleton();
 		//Test_MakeCharacter();
 		//Test_MapPrint();
-		Test_MapMove();
+		//Test_MapMove();
+		Test_SaveGameData();
 
 		pManager->CleanUp();
 	}
 	else
 	{
-		Test_SavingThrow();
+		//Test_SavingThrow();
+		//Test_FileWrite();
+		Test_FileRead();
 	}
+}
+
+void Test::Test_SaveGameData()
+{
+	GameManager::GetInstance()->SavePlayerData();
+
+}
+
+void Test::Test_FileRead()
+{
+	char temp[256];
+	int line = 0;
+
+	ifstream ifs;
+	ifs.open("./data/_Hello.txt");
+	if (ifs.is_open())
+	{
+		while (ifs.getline(temp, 256, ' '))
+		{
+			cout << "읽은 것 " << line++ << " : " << temp << endl;
+		}
+		ifs.close();
+	}
+}
+
+void Test::Test_FileWrite()
+{
+	ofstream ofs;
+	ofs.open("./data/_Hello.txt");
+	ofs << "Hello Hello Hello Hello Hello, World! 안녕!";
+	ofs.close();
 }
 
 void Test::Test_SavingThrow()

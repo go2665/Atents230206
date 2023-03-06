@@ -168,6 +168,7 @@ public :
 	// 각종 Getter 함수	
 	inline CreatureType GetType() { return type; }
 	inline const char* GetName() { return name; }
+	inline const int GetLevel() { return level; }
 	inline const int GetStringth() { return status.strength; }
 	inline const int GetDexterity() { return status.dexterity; }
 	inline const int GetIntelligence() { return status.intelligence; }

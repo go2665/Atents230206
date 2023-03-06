@@ -21,6 +21,9 @@ public:
 	inline BattleManager* GetBattleManager() { return battleManager; }
 	inline Map* GetMap() { return map; }
 
+	void SavePlayerData();
+	bool LoadPlayerData();
+
 
 private:
 	// 싱글톤 인스턴스를 저장할 static변수 만들기

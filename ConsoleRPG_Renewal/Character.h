@@ -94,6 +94,10 @@ public:
 	/// </summary>
 	void StartMap();
 
+	inline const RaceType GetRace() { return race; }
+	inline const int GetExp() { return exp; }
+	inline const int GetMaxExp() { return maxExp; }
+
 protected:
 	/// <summary>
 	/// 죽었을 때 실행될 함수

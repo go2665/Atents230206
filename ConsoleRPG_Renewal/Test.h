@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class Test
@@ -8,6 +9,11 @@ public:
 	void Run();
 
 private:
+	// 3/6
+	void Test_SaveGameData();
+	void Test_FileRead();
+	void Test_FileWrite();
+
 	// 3/2 
 	void Test_SavingThrow();
 	void Test_MapMove();

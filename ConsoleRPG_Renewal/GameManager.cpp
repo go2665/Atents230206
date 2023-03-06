@@ -2,6 +2,7 @@
 #include "Factory.h"
 
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 GameManager* GameManager::instance = nullptr;
@@ -58,6 +59,40 @@ void GameManager::CleanUp()
 
 	delete map;
 	map = nullptr;
+}
+
+void GameManager::SavePlayerData()
+{
+	// ./Data/Save 폴더에 SaveData.txt라는 파일에 데이터를 저장한다.
+	
+	// 저장 양식
+	// 이름,레벨,스테이터스,hp,maxHP,mp,maxMP,종족,exp,최대exp
+	if (player != nullptr)
+	{
+		ofstream ofs;
+		ofs.open("./Data/Save/SaveData.txt");
+		ofs << player->GetName();					// 이름 저장
+		ofs << "," << player->GetLevel();			// 레벨
+		ofs << "," << player->GetStringth();		// 힘
+		ofs << "," << player->GetDexterity();		// 민첩
+		ofs << "," << player->GetStatmina();		// 체력
+		ofs << "," << player->GetIntelligence();	// 지능
+		ofs << "," << player->GetWisdom();			// 지혜
+		ofs << "," << player->GetHP();				// HP
+		ofs << "," << player->GetMaxHP();			// 최대 HP
+		ofs << "," << player->GetMP();				// MP
+		ofs << "," << player->GetMaxMP();			// 최대 MP
+		ofs << "," << player->GetRace();			// 종족
+		ofs << "," << player->GetExp();				// 현재 경험치
+		ofs << "," << player->GetMaxExp();			// 최대 경험치
+		
+		ofs.close();
+	}
+}
+
+bool GameManager::LoadPlayerData()
+{
+	return false;
 }
 
 void GameManager::Test()
